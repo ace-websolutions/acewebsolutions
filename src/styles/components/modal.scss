@@ -1,0 +1,75 @@
+.modal {
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  transition: 200ms ease-in-out;
+  .modal-container {
+    height: 550px;
+    width: 650px;
+    max-width: 100%;
+    position: relative;
+    z-index: 200;
+    background: $bg-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1rem;
+    overflow: hidden;
+    .close {
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 1rem 2rem;
+      cursor: pointer;
+      border: none;
+      color: #fff;
+    }
+    img {
+      height: 50%;
+      width: 100%;
+      background-size: cover;
+    }
+    p {
+      padding: 0.25rem 3rem;
+      color: #fff;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    .card-btn-group {
+      margin: 1rem 0rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        margin: 0 2rem;
+        padding: 0.5rem 2rem;
+        border: none;
+        border-radius: 1rem;
+        background-color: $secondary;
+        a {
+          font-size: 1.2rem;
+          font-weight: 400;
+          height: 100%;
+          width: 100%;
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.modal-true {
+  opacity: 1;
+  pointer-events: auto;
+}

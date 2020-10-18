@@ -1,0 +1,119 @@
+.hero {
+  height: 100vh;
+  overflow: hidden;
+  .flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 12;
+    color: #fff;
+    max-width: 350px;
+    margin: 0 auto;
+    h2 {
+      margin: 0.25rem 0;
+      font-size: 3rem;
+      line-height: 4.2rem;
+      font-weight: 700;
+      z-index: 10;
+      width: 100%;
+      @include media("<=tablet") {
+        font-size: 2.6rem;
+        line-height: 3rem;
+      }
+      .line {
+        margin-bottom: 8px;
+        height: 72px;
+        position: relative;
+        overflow: hidden;
+        @include media("<=tablet") {
+          height: 48px;
+        }
+        span {
+          position: absolute;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      .break {
+        margin-bottom: 0.3rem;
+        background: $primary;
+        height: 1px;
+        width: 0;
+        display: block;
+      }
+    }
+    h4 {
+      margin: 0.25rem 0;
+      font-size: 2rem;
+      line-height: 3rem;
+      font-weight: 100;
+      z-index: 10;
+      width: 100%;
+      // mix-blend-mode: difference;
+      @include media("<=tablet") {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+      .line {
+        height: 48px;
+        position: relative;
+        overflow: hidden;
+        @include media("<=tablet") {
+          height: 32px;
+        }
+        span {
+          position: absolute;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+    .contact-btn {
+      opacity: 1;
+      width: 250px;
+      position: relative;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      box-sizing: border-box;
+      text-align: center;
+      border-radius: 8px;
+      background-color: $secondary;
+      font-weight: 700;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    .btn-group {
+      opacity: 1;
+      margin-top: 18px;
+      a {
+        text-decoration: none;
+        color: #fff;
+        position: relative;
+      }
+    }
+  }
+  .arrow {
+    opacity: 0;
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    button {
+      color: #fff;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+  .particle {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    // color: $secondary;
+  }
+}

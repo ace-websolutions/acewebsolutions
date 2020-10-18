@@ -1,0 +1,73 @@
+.card {
+  height: 300px;
+  width: 33.333%;
+  // width: 32%;
+  // margin-bottom: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  @include media("<=tablet") {
+    width: 50%;
+  }
+  @include media("<=phone") {
+    width: 75%;
+  }
+  .img-container {
+    height: 100%;
+    width: 100%;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 300ms ease-in-out;
+    img {
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+    }
+  }
+  .info-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 200ms ease-out;
+    .info {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h4 {
+        color: $primary;
+        font-size: 1.2rem;
+      }
+      button {
+        padding: 6px;
+        border: 1px solid $primary;
+        color: $primary;
+        border-radius: 0.25rem;
+        background-color: rgba($color: #fff, $alpha: 0.4);
+        cursor: pointer;
+        transition: 200ms ease-out;
+        &:hover {
+          background-color: $primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+  &:hover {
+    .img-container {
+      opacity: 0.4;
+    }
+    .info-container {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

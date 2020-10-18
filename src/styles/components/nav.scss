@@ -1,0 +1,89 @@
+#nav {
+  height: 8vh;
+  min-height: 8vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  color: #fff;
+  .nav-bar {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    progress {
+      appearance: none;
+      width: 100%;
+      height: 10px;
+      border: none;
+      position: fixed;
+      top: -5px;
+      background: transparent;
+    }
+    ::-webkit-progress-bar {
+      background: transparent;
+    }
+    ::-webkit-progress-value {
+      background: $secondary;
+    }
+    ::-moz-progress-bar {
+      background: $secondary;
+    }
+    .logo {
+      padding: 12px 8px 8px 16px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        display: inline-block;
+        padding-left: 0.25rem;
+      }
+    }
+    .nav-button-group {
+      padding-right: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        font-size: 1.1rem;
+        position: relative;
+        box-sizing: border-box;
+        padding: 1rem;
+        cursor: pointer;
+      }
+      @include media("<=tablet") {
+        display: none;
+      }
+    }
+    .burger {
+      margin-left: auto;
+      background-color: transparent;
+      border: none;
+      padding: 1rem;
+      box-sizing: border-box;
+      cursor: pointer;
+      text-decoration: none;
+      @include media(">tablet") {
+        display: none;
+      }
+    }
+    .nav-button-group-mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      position: absolute;
+      top: 10vh;
+      right: -100%;
+      transition: all 300ms ease-in-out;
+      &.mobile-true {
+        opacity: 1;
+        right: 0;
+      }
+    }
+  }
+}
