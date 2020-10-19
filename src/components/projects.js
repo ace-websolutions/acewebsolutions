@@ -7,18 +7,26 @@ gsap.registerPlugin(ScrollTrigger)
 
 function Projects() {
   useEffect(() => {
+    gsap.from(".tl-project-title", {
+      scrollTrigger: { trigger: "#projects", start: "top center" },
+      opacity: 0,
+      x: -60,
+    })
+
     const tlProject = gsap.timeline({
-      scrollTrigger: { trigger: ".tl-project-title", start: "top center" },
+      scrollTrigger: { trigger: ".projects-container", start: "top center" },
       defaults: { duration: 1.6, ease: "power4.inOut" },
     })
-    tlProject
-      .from(".tl-project-title", { opacity: 0, x: -60 })
-      .from(".tl-project", { opacity: 0, y: 60, stagger: 0.4 }, "<.5")
+    tlProject.from(".tl-project", { opacity: 0, y: 60, stagger: 0.4 }, "<.5")
 
     gsap.to(
       "#nav",
       {
-        scrollTrigger: { trigger: "#projects", start: "top top" },
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "top top",
+          toggleActions: "play reverse play reverse",
+        },
         css: { color: "#000" },
       },
       0

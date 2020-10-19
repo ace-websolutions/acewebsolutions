@@ -2,6 +2,7 @@
   height: 8vh;
   min-height: 8vh;
   width: 100%;
+  max-width: 100%;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -15,7 +16,8 @@
     position: relative;
     progress {
       appearance: none;
-      width: 100%;
+      min-width: 100vw;
+      width: 100vw;
       height: 10px;
       border: none;
       position: fixed;
@@ -27,9 +29,11 @@
     }
     ::-webkit-progress-value {
       background: $secondary;
+      background-attachment: fixed;
     }
     ::-moz-progress-bar {
       background: $secondary;
+      background-attachment: fixed;
     }
     .logo {
       padding: 12px 8px 8px 16px;
@@ -53,12 +57,17 @@
         box-sizing: border-box;
         padding: 1rem;
         cursor: pointer;
+        transition: color 150ms ease-out;
+        &:hover {
+          color: $primary;
+        }
       }
       @include media("<=tablet") {
         display: none;
       }
     }
     .burger {
+      color: inherit;
       margin-left: auto;
       background-color: transparent;
       border: none;

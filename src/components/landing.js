@@ -72,7 +72,7 @@ const Landing = () => {
             to="contact"
             spy={true}
             smooth={true}
-            offset={100}
+            offset={0}
             duration={700}
           >
             Contact
@@ -93,7 +93,7 @@ const Landing = () => {
           activeClass="active"
           spy={true}
           smooth={true}
-          offset={60}
+          offset={0}
           duration={500}
         >
           <button className="bounce">

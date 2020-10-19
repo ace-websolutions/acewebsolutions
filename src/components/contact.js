@@ -7,19 +7,23 @@ gsap.registerPlugin(ScrollTrigger)
 
 function Contact() {
   useEffect(() => {
+    gsap.from(".tl-contact-title", {
+      scrollTrigger: { trigger: "#contact", start: "top center" },
+      opacity: 0,
+      x: -60,
+    })
+
     const tlContact = gsap.timeline({
-      scrollTrigger: { trigger: ".tl-contact-title", start: "top center" },
+      scrollTrigger: { trigger: ".direct-methods", start: "top bottom" },
       defaults: { duration: 1.6, ease: "power4.inOut" },
     })
-    tlContact
-      .from(".tl-contact-title", { opacity: 0, x: 60 })
-      .from(".tl-contact", { opacity: 0, y: 60, stagger: 0.4 }, "<.5")
+    tlContact.from(".tl-contact", { opacity: 0, y: 60, stagger: 0.4 })
 
     const tlForm = gsap.timeline({
-      scrollTrigger: { trigger: "form", start: "center bottom" },
+      scrollTrigger: { trigger: "form", start: "top center" },
       defaults: { duration: 1.6, ease: "power4.inOut" },
     })
-    tlForm.from(".tl-form", { opacity: 0, y: 60, stagger: 0.2 }, "<.5")
+    tlForm.from(".tl-form", { opacity: 0, y: 60, stagger: 0.2 })
   }, [])
   return (
     <section id="contact">
@@ -52,7 +56,7 @@ function Contact() {
             </form>
             <div className="direct-contact">
               <hr />
-              <h3>Contact me directly</h3>
+              <h3 className="tl-contact">Contact me directly</h3>
               <div className="direct-methods">
                 <div className="contact-email tl-contact">
                   <a href="mailto: info@acewebsolutions.io">

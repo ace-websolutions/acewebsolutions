@@ -7,19 +7,26 @@ gsap.registerPlugin(ScrollTrigger)
 
 function About() {
   useEffect(() => {
+    gsap.from(".tl-about-title", {
+      scrollTrigger: { trigger: "#about", start: "top center" },
+      opacity: 0,
+      x: -60,
+    })
+
     const tlAbout = gsap.timeline({
-      scrollTrigger: { trigger: ".about", start: "center center" },
+      scrollTrigger: { trigger: ".about-text", start: "top center" },
       defaults: {
         duration: 1.6,
         ease: "power4.inOut",
       },
     })
-    tlAbout
-      .from(".tl-about-title", { opacity: 0, x: -60 })
-      .from(".tl-about", { opacity: 0, y: 60, stagger: 0.4 }, "<.5")
+    tlAbout.from(".tl-about", { opacity: 0, y: 60, stagger: 0.4 }, "<.5")
 
     const tlSVG = gsap.timeline({
-      scrollTrigger: { trigger: ".about-svg", start: "center center" },
+      scrollTrigger: {
+        trigger: ".about-svg-container",
+        start: "top center",
+      },
       defaults: { duration: 1.6, ease: "power4.inOut" },
     })
     tlSVG
@@ -62,12 +69,23 @@ function About() {
       )
 
     const tlSkills = gsap.timeline({
-      scrollTrigger: { trigger: ".skills", start: "top center" },
+      scrollTrigger: { trigger: ".skills-text", start: "top center" },
       defaults: { duration: 1.6, ease: "power4.inOut" },
     })
-    tlSkills
-      .from(".tl-skills-title", { opacity: 0, x: 60 })
-      .from(".tl-skills", { opacity: 0, y: 60, stagger: 0.2 }, "<.5")
+    tlSkills.from(".tl-skills", { opacity: 0, y: 60, stagger: 0.2 })
+
+    const tlSkillsIcons = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".icon-container",
+        start: "top center",
+      },
+      defaults: { duration: 1.6, ease: "power4.inOut" },
+    })
+    tlSkillsIcons.from(
+      ".tl-skills-icons",
+      { opacity: 0, y: 60, stagger: 0.2 },
+      "<.5"
+    )
   }, [])
 
   return (
@@ -81,7 +99,7 @@ function About() {
               </h2>
             </header>
             <div className="about">
-              <p className="tl-about">
+              <p className="about-text tl-about">
                 I am a self taught developer passionate about creating projects
                 that can help improve the lives of those around me. I started
                 this company to challenge myself and see how far I can go. The
@@ -93,7 +111,7 @@ function About() {
               </div>
             </div>
             <div className="skills">
-              <p className="tl-about">
+              <p className="skills-text tl-skills">
                 I believe anything can be achieved if you work hard enough, and
                 you should never stop learning. Through various resources I have
                 learned and put into use all of the skills you see here. In the
@@ -102,7 +120,7 @@ function About() {
               </p>
               <div className="icon-container">
                 {SKILLICONS.map(icon => (
-                  <div key={icon.name} className="icon tl-skills">
+                  <div key={icon.name} className="icon tl-skills-icons">
                     {icon.import}
                     <h5>{icon.name}</h5>
                   </div>
