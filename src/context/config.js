@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import {
   FaHtml5,
   FaCss3Alt,
@@ -8,13 +8,16 @@ import {
   FaGitAlt,
   FaSass,
   FaNpm,
-} from "react-icons/fa";
+  FaCode,
+  FaServer,
+  FaSearch,
+} from "react-icons/fa"
 import {
   SiJavascript,
   SiMongodb,
   SiMaterialUi,
   SiGreensock,
-} from "react-icons/si";
+} from "react-icons/si"
 
 export const PROJECTS = [
   {
@@ -74,7 +77,7 @@ export const PROJECTS = [
     codeColor: "#EB3C3E",
     img: "placeholder",
   },
-];
+]
 
 export const SKILLICONS = [
   { import: <FaHtml5 size={50} />, name: "HTML" },
@@ -100,4 +103,24 @@ export const SKILLICONS = [
   { import: <FaGitAlt size={50} />, name: "Git" },
 
   { import: <FaGithub size={50} />, name: "Github" },
-];
+]
+export const SERVICES = [
+  {
+    icon: <FaCode size={50} />,
+    title: "Front-End",
+    description:
+      "Custom built websites made to your satisfaction.  Every detail approved by you, for you.",
+  },
+  {
+    icon: <FaServer size={50} />,
+    title: "Hosting",
+    description:
+      "From domain registration to server deployment, your site will be taken care of.  I host on fast, reliable, secure, and scalable servers.",
+  },
+  {
+    icon: <FaSearch size={50} />,
+    title: "SEO",
+    description:
+      "My code is optimized for search engines, meaning your site will have the best chance of being seen in top search engines.",
+  },
+]

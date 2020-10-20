@@ -5,6 +5,7 @@ import Nav from "../components/nav"
 import Layout from "../components/layout"
 import Landing from "../components/landing"
 import About from "../components/about"
+import Services from "../components/services"
 import Projects from "../components/projects"
 import Contact from "../components/contact"
 import Footer from "../components/footer"
@@ -18,6 +19,7 @@ const IndexPage = () => (
     <Layout>
       <Landing />
       <About />
+      <Services />
       <Projects />
       <Contact />
     </Layout>
