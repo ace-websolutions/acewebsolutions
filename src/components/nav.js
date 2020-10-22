@@ -20,8 +20,8 @@ function Nav() {
   return (
     <section id="nav">
       <div className="container">
+        <progress max="100" value="0"></progress>
         <nav className="nav-bar">
-          <progress max="100" value="0"></progress>
           <Link
             to="landing"
             spy={false}
@@ -45,11 +45,21 @@ function Nav() {
               About
             </Link>
             <Link
-              to="projects"
+              to="services"
               activeClass="active"
               spy={true}
               smooth={true}
               offset={0}
+              duration={500}
+            >
+              Services
+            </Link>
+            <Link
+              to="projects"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={1}
               duration={500}
             >
               Projects
@@ -69,51 +79,48 @@ function Nav() {
             <FiMenu size={30} />
           </button>
           <div className={`nav-button-group-mobile mobile-${open}`}>
-            <Link
-              to="about"
-              spy={true}
-              onClick={() => setOpen(false)}
-              smooth={true}
-              offset={0}
-              duration={500}
-              style={{
-                width: "100%",
-                height: "100%",
-                textAlign: "center",
-              }}
-            >
-              About
-            </Link>
-            <Link
-              to="projects"
-              spy={true}
-              onClick={() => setOpen(false)}
-              smooth={true}
-              offset={0}
-              duration={500}
-              style={{
-                width: "100%",
-                height: "100%",
-                textAlign: "center",
-              }}
-            >
-              Projects
-            </Link>
-            <Link
-              to="contact"
-              spy={true}
-              onClick={() => setOpen(false)}
-              smooth={true}
-              offset={0}
-              duration={500}
-              style={{
-                width: "100%",
-                height: "100%",
-                textAlign: "center",
-              }}
-            >
-              Contact
-            </Link>
+            <div className="mobile-buttons">
+              <Link
+                to="about"
+                spy={true}
+                onClick={() => setOpen(false)}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                About
+              </Link>
+              <Link
+                to="services"
+                spy={true}
+                onClick={() => setOpen(false)}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                Services
+              </Link>
+              <Link
+                to="projects"
+                spy={true}
+                onClick={() => setOpen(false)}
+                smooth={true}
+                offset={1}
+                duration={500}
+              >
+                Projects
+              </Link>
+              <Link
+                to="contact"
+                spy={true}
+                onClick={() => setOpen(false)}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                Contact
+              </Link>
+            </div>
           </div>
         </nav>
       </div>

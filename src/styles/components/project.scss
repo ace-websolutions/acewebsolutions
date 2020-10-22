@@ -7,7 +7,7 @@
   overflow: hidden;
   position: relative;
   @include media("<=tablet") {
-    width: 50%;
+    width: 46%;
   }
   @include media("<=phone") {
     width: 75%;

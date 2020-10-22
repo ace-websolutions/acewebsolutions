@@ -28,8 +28,9 @@ function Projects() {
           toggleActions: "play reverse play reverse",
         },
         css: { color: "#000" },
+        ease: "none",
       },
-      0
+      "0"
     )
   }, [])
 
