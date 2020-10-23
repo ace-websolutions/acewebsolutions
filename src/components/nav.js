@@ -69,7 +69,7 @@ function Nav() {
               activeClass="active"
               spy={true}
               smooth={true}
-              offset={0}
+              offset={1}
               duration={500}
             >
               Contact
@@ -115,7 +115,7 @@ function Nav() {
                 spy={true}
                 onClick={() => setOpen(false)}
                 smooth={true}
-                offset={0}
+                offset={1}
                 duration={500}
               >
                 Contact

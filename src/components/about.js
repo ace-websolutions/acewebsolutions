@@ -10,24 +10,53 @@ function About() {
     gsap.from(".tl-about-title", {
       scrollTrigger: { trigger: "#about", start: "top center" },
       opacity: 0,
-      x: -60,
+      y: -80,
+      ease: "power4.inOut",
+      duration: 1.2,
     })
-
-    const tlAbout = gsap.timeline({
+    gsap.from(".tl-about-subtitle", {
+      scrollTrigger: { trigger: "#about", start: "top center" },
+      opacity: 0,
+      y: -80,
+      ease: "power4.inOut",
+      duration: 1.2,
+    })
+    gsap.from(".tl-about", {
       scrollTrigger: { trigger: ".about-text", start: "top center" },
-      defaults: {
-        duration: 1.6,
-        ease: "power4.inOut",
-      },
+      opacity: 0,
+      x: -80,
+      ease: "power4.inOut",
+      duration: 1.2,
     })
-    tlAbout.from(".tl-about", { opacity: 0, y: 60, stagger: 0.4 }, "<.5")
 
-    const tlSVG = gsap.timeline({
+    gsap.from(".about-svg-container", {
+      scrollTrigger: { trigger: ".about-svg-container", start: "top center" },
+      opacity: 0,
+      x: 80,
+      ease: "power4.inOut",
+      duration: 1.2,
+    })
+    gsap.from(".icon-container", {
       scrollTrigger: {
-        trigger: ".about-svg-container",
+        trigger: ".icon-container",
         start: "top center",
       },
-      defaults: { duration: 1.6, ease: "power4.inOut" },
+      opacity: 0,
+      x: -80,
+      ease: "power4.inOut",
+      duration: 1.2,
+    })
+    gsap.from(".tl-skills", {
+      scrollTrigger: { trigger: ".skills-text", start: "top center" },
+      opacity: 0,
+      x: 80,
+      ease: "power4.inOut",
+      duration: 1.2,
+    })
+
+    const tlSVG = gsap.timeline({
+      scrollTrigger: { trigger: ".about-svg-container", start: "top center" },
+      defaults: { duration: 1, ease: "power4.inOut" },
     })
     tlSVG
       .from(".tl-about-svg-intro", {
@@ -68,22 +97,16 @@ function About() {
         "<-.25"
       )
 
-    const tlSkills = gsap.timeline({
-      scrollTrigger: { trigger: ".skills-text", start: "top center" },
-      defaults: { duration: 1.6, ease: "power4.inOut" },
-    })
-    tlSkills.from(".tl-skills", { opacity: 0, y: 60, stagger: 0.2 })
-
     const tlSkillsIcons = gsap.timeline({
       scrollTrigger: {
         trigger: ".icon-container",
         start: "top center",
       },
-      defaults: { duration: 1.6, ease: "power4.inOut" },
+      defaults: { duration: 1, ease: "back.out" },
     })
     tlSkillsIcons.from(
       ".tl-skills-icons",
-      { opacity: 0, y: 60, stagger: 0.2 },
+      { scale: 0, transformOrigin: "center", stagger: 0.1 },
       "<.5"
     )
   }, [])
@@ -97,14 +120,15 @@ function About() {
               <h2 className="tl-about-title">
                 Hello, I'm <span>Nick</span> -
               </h2>
+              <p className="tl-about-subtitle">A self taught web developer.</p>
             </header>
             <div className="about">
               <p className="about-text tl-about">
-                I am a self taught developer passionate about creating projects
-                that can help improve the lives of those around me. I started
-                this company to challenge myself and see how far I can go. The
-                ability to one day perhaps be making a living off of working
-                with computers keeps me motivated.
+                I am passionate about creating projects that can help improve
+                the lives of those around me. I started this company to
+                challenge myself and see how far I can go. The ability to one
+                day perhaps be making a living off of working with computers
+                keeps me motivated.
               </p>
               <div className="about-svg-container">
                 <WebsiteSVG className="about-svg" />
@@ -114,9 +138,9 @@ function About() {
               <p className="skills-text tl-skills">
                 I believe anything can be achieved if you work hard enough, and
                 you should never stop learning. Through various resources I have
-                learned and put into use all of the skills you see here. In the
+                discovered and practiced all of the skills you see here. In the
                 modern web, new tools are always popping up and it is important
-                to find crucial ones what
+                to stay on top of the new technology in order to stay relevant .
               </p>
               <div className="icon-container">
                 {SKILLICONS.map(icon => (

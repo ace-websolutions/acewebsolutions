@@ -10,14 +10,23 @@ function Projects() {
     gsap.from(".tl-project-title", {
       scrollTrigger: { trigger: "#projects", start: "top center" },
       opacity: 0,
-      x: -60,
+      y: -80,
+      ease: "power4.inOut",
+      duration: 1.2,
+    })
+    gsap.from(".tl-project-subtitle", {
+      scrollTrigger: { trigger: "#projects", start: "top center" },
+      opacity: 0,
+      y: 80,
+      ease: "power4.inOut",
+      duration: 1.2,
     })
 
     const tlProject = gsap.timeline({
       scrollTrigger: { trigger: ".projects-container", start: "top center" },
-      defaults: { duration: 1.6, ease: "power4.inOut" },
+      defaults: { duration: 1.2, ease: "power4.inOut" },
     })
-    tlProject.from(".tl-project", { opacity: 0, y: 60, stagger: 0.4 }, "<.5")
+    tlProject.from(".tl-project", { opacity: 0, y: 60, stagger: 0.2 }, "<.5")
 
     gsap.to(
       "#nav",
@@ -41,7 +50,7 @@ function Projects() {
           <div className="flex proj-container">
             <header>
               <h2 className="tl-project-title">My work so far</h2>
-              <p className="tl-project-title">
+              <p className="tl-project-subtitle">
                 A running list of my projects used to help get me where I am
                 today{" "}
               </p>

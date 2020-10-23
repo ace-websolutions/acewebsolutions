@@ -26,7 +26,7 @@
       align-items: center;
       box-sizing: border-box;
       .service-card {
-        height: 300px;
+        min-height: 300px;
         width: 25%;
         box-sizing: border-box;
         overflow: hidden;
@@ -47,6 +47,7 @@
         }
         svg {
           color: $primary;
+          display: block;
         }
         .service-description {
           padding: 0.5rem 2rem;

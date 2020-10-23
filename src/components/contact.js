@@ -10,9 +10,17 @@ function Contact() {
     gsap.from(".tl-contact-title", {
       scrollTrigger: { trigger: "#contact", start: "top center" },
       opacity: 0,
-      x: -60,
+      y: -80,
+      ease: "power4.inOut",
+      duration: 1.2,
     })
-
+    gsap.from(".tl-contact-subtitle", {
+      scrollTrigger: { trigger: "#contact", start: "top center" },
+      opacity: 0,
+      y: 80,
+      ease: "power4.inOut",
+      duration: 1.2,
+    })
     const tlContact = gsap.timeline({
       scrollTrigger: { trigger: ".direct-methods", start: "top bottom" },
       defaults: { duration: 1.6, ease: "power4.inOut" },
@@ -32,12 +40,12 @@ function Contact() {
           <div className="flex contact-container">
             <header>
               <h2 className="tl-contact-title">Let's get in touch</h2>
-              <p className="tl-contact-title">
+              <p className="tl-contact-subtitle">
                 Currently accepting work, lets talk about what <span>you</span>{" "}
                 have in mind!
               </p>
             </header>
-            <form action="#">
+            <form onSubmit={e => e.preventDefault()}>
               <div className="form-email tl-form">
                 <input type="email" name="email" placeholder="Email" />
               </div>

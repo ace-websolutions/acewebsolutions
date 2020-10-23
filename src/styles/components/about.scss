@@ -23,6 +23,9 @@
           color: $primary;
         }
       }
+      p {
+        color: #999;
+      }
     }
     .about {
       width: 100%;
@@ -34,6 +37,10 @@
         flex-direction: column-reverse;
       }
       p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 450px;
         min-width: 50%;
         width: 50%;
         padding: 1.5rem;
@@ -87,6 +94,10 @@
         flex-direction: column-reverse;
       }
       p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 450px;
         min-width: 50%;
         width: 50%;
         padding: 1.5rem;
