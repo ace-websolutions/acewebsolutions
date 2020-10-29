@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import Modal from "./modal"
 
 function Project({ project }) {
@@ -11,18 +13,32 @@ function Project({ project }) {
     setOpen(false)
   }
 
+  const data = useStaticQuery(graphql`
+    query Images {
+      image: file(relativePath: { eq: "placeholder.jpg" }) {
+        childImageSharp {
+          id
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+  console.log(data)
   return (
     <>
       <article className="card tl-project">
         <div className="img-container">
-          <img
-            src={require(`../images/${project.img}.jpg`)}
+          <Img
+            fixed={data.image.childImageSharp.fixed}
             alt={project.title}
+            backgroundColor
           />
         </div>
         <div className="info-container">
           <div className="info">
-            <h4>{project.title}</h4>
+            <h2>{project.title}</h2>
             <button onClick={handleOpen}>Learn More</button>
           </div>
         </div>

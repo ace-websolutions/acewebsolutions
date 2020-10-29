@@ -45,24 +45,16 @@ const Services = () => {
     })
     const tlHost = gsap.timeline({
       repeat: -1,
+      yoyo: true,
       delay: 2,
       defaults: {
-        duration: 1.5,
-        delay: 0.5,
+        duration: 1.4,
       },
     })
     tlHost.to(".svg-host", {
-      y: -10,
-      ease: "elastic",
+      y: -15,
+      ease: "none",
     })
-    tlHost.to(
-      ".svg-host",
-      {
-        y: 0,
-        ease: "none",
-      },
-      ">-.5"
-    )
 
     const tlSeo = gsap.timeline({
       repeat: -1,
