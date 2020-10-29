@@ -27,7 +27,9 @@
       box-sizing: border-box;
       .service-card {
         min-height: 300px;
+        min-width: 25%;
         width: 25%;
+        margin: 1rem;
         box-sizing: border-box;
         overflow: hidden;
         position: relative;
@@ -39,9 +41,11 @@
         color: $bg-dark;
         border-radius: 8px;
         @include media("<=tablet") {
+          min-width: 50%;
           width: 50%;
         }
         @include media("<=phone") {
+          min-width: 75%;
           width: 75%;
         }
         svg {

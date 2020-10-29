@@ -17,7 +17,7 @@ function About() {
     gsap.from(".tl-about-subtitle", {
       scrollTrigger: { trigger: "#about", start: "top center" },
       opacity: 0,
-      y: -80,
+      y: 80,
       ease: "power4.inOut",
       duration: 1.2,
     })
