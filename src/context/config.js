@@ -1,4 +1,8 @@
 import React from "react"
+import CodingSVG from "../images/coding.svg"
+import HostingSVG from "../images/hosting.svg"
+import SeoSVG from "../images/seo.svg"
+
 import {
   FaHtml5,
   FaCss3Alt,
@@ -107,18 +111,21 @@ export const SKILLICONS = [
 export const SERVICES = [
   {
     icon: <FaCode size={50} />,
+    svg: <CodingSVG />,
     title: "Front-End",
     description:
       "Custom built websites made to your satisfaction.  Every detail approved by you, for you.",
   },
   {
     icon: <FaServer size={50} />,
+    svg: <HostingSVG />,
     title: "Hosting",
     description:
       "From domain registration to server deployment, your site will be taken care of.  I host on fast, reliable, secure, and scalable servers.",
   },
   {
     icon: <FaSearch size={50} />,
+    svg: <SeoSVG />,
     title: "SEO",
     description:
       "My code is optimized for search engines, meaning your site will have the best chance of being seen in top search engines.",

@@ -29,6 +29,22 @@ const Footer = () => {
                 >
                   Eucalyp
                 </a>{" "}
+                <a
+                  href="https://www.flaticon.com/authors/freepik"
+                  title="SVG Author"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Freepik
+                </a>{" "}
+                <a
+                  href="https://www.flaticon.com/authors/srip"
+                  title="SVG Author"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Srip
+                </a>{" "}
                 from{" "}
                 <a
                   href="https://www.flaticon.com/"
@@ -38,9 +54,6 @@ const Footer = () => {
                 >
                   Flaticon
                 </a>
-                {/* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */}
-                {/* Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */}
-                {/* Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */}
               </li>
             </ul>
           </div>

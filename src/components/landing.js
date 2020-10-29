@@ -79,7 +79,7 @@ const Landing = () => {
           </Link>
           <div className="btn-group">
             <a
-              href="https://www.github.com/nick-dasto"
+              href="https://www.github.com/ace-websolutions"
               rel="noreferrer"
               target="_blank"
             >

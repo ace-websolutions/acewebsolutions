@@ -20,6 +20,68 @@ const Services = () => {
       ease: "power4.inOut",
       duration: 1.2,
     })
+    gsap.from(".service-card", {
+      scrollTrigger: { trigger: ".services-container", start: "top center" },
+      opacity: 0,
+      ease: "power4.inOut",
+      duration: 1.2,
+      stagger: 0.6,
+    })
+    gsap.to(".svg-gear", {
+      transformOrigin: "center",
+      rotate: 360,
+      repeat: -1,
+      yoyo: true,
+      ease: "none",
+      duration: 7,
+    })
+    gsap.to(".svg-gear-rev", {
+      transformOrigin: "center",
+      rotate: -360,
+      repeat: -1,
+      yoyo: true,
+      ease: "none",
+      duration: 7,
+    })
+    const tlHost = gsap.timeline({
+      repeat: -1,
+      delay: 2,
+      defaults: {
+        duration: 1.5,
+        delay: 0.5,
+      },
+    })
+    tlHost.to(".svg-host", {
+      y: -10,
+      ease: "elastic",
+    })
+    tlHost.to(
+      ".svg-host",
+      {
+        y: 0,
+        ease: "none",
+      },
+      ">-.5"
+    )
+
+    const tlSeo = gsap.timeline({
+      repeat: -1,
+      repeatDelay: 1.2,
+      delay: 3,
+      defaults: {
+        scaleX: 0,
+        duration: 0.4,
+        stagger: 0.8,
+      },
+    })
+    tlSeo
+      .from(".svg-seo", {
+        transformOrigin: "left",
+      })
+      .to(".svg-seo", {
+        transformOrigin: "right",
+        delay: 2,
+      })
   }, [])
 
   return (
@@ -36,7 +98,7 @@ const Services = () => {
             <div className="services-container">
               {SERVICES.map(service => (
                 <div className="service-card">
-                  {service.icon}
+                  {service.svg}
                   <div className="service-description">
                     <h4>{service.title}</h4>
                     <p>{service.description}</p>
