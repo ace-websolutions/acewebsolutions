@@ -39,7 +39,7 @@ export const PROJECTS = [
     live: "https://aceconstruction.herokuapp.com/",
     code: "https://github.com/ace-websolutions/construction",
     img: "construction.png",
-    imgNode: 3,
+    imgNode: 0,
   },
   // {
   //   title: "Travel App",
