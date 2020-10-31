@@ -23,9 +23,10 @@ const Services = () => {
     gsap.from(".service-card", {
       scrollTrigger: { trigger: ".services-container", start: "top center" },
       opacity: 0,
-      ease: "power4.inOut",
-      duration: 1.2,
-      stagger: 0.6,
+      scale: 0,
+      ease: "back.out",
+      duration: 1,
+      stagger: 0.3,
     })
     gsap.to(".svg-gear", {
       transformOrigin: "center",
