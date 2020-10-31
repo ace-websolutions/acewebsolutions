@@ -45,7 +45,7 @@ function Contact() {
                 have in mind!
               </p>
             </header>
-            <form name="contact" method="POST" netlify>
+            <form name="contact" netlify>
               <div className="form-email tl-form">
                 <input type="email" name="email" placeholder="Email" />
               </div>
