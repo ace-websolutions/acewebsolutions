@@ -45,7 +45,13 @@ function Contact() {
                 have in mind!
               </p>
             </header>
-            <form name="contact" method="POST" data-netlify="true">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="bot-field" />
               <div className="form-email tl-form">
                 <input type="email" name="email" placeholder="Email" />
               </div>
@@ -59,7 +65,7 @@ function Contact() {
                 />
               </div>
               <div className="form-submit tl-form">
-                <input name="submit" type="submit" value="Send" />
+                <input type="submit" value="Send" />
               </div>
             </form>
             <div className="direct-contact">

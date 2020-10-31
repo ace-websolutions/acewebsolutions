@@ -39,7 +39,6 @@ function Project({ project }) {
       }
     }
   `)
-  console.log(data)
   return (
     <>
       <article className="card tl-project">
