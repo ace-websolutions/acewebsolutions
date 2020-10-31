@@ -45,7 +45,7 @@ function Contact() {
                 have in mind!
               </p>
             </header>
-            <form name="contact" netlify>
+            <form name="contact" method="POST" data-netlify="true">
               <div className="form-email tl-form">
                 <input type="email" name="email" placeholder="Email" />
               </div>
@@ -54,12 +54,12 @@ function Contact() {
               </div>
               <div className="form-textarea tl-form">
                 <textarea
-                  name="project description"
+                  name="project-description"
                   placeholder="Project Description"
                 />
               </div>
               <div className="form-submit tl-form">
-                <input type="submit" value="Send" />
+                <input name="submit" type="submit" value="Send" />
               </div>
             </form>
             <div className="direct-contact">
