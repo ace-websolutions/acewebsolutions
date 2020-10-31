@@ -15,6 +15,20 @@ function Project({ project }) {
 
   const data = useStaticQuery(graphql`
     query Images {
+      images: allFile(filter: { relativeDirectory: { eq: "thumbnail" } }) {
+        nodes {
+          id
+          childImageSharp {
+            id
+            fixed(width: 300) {
+              ...GatsbyImageSharpFixed
+            }
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
       image: file(relativePath: { eq: "placeholder.jpg" }) {
         childImageSharp {
           id
@@ -31,7 +45,7 @@ function Project({ project }) {
       <article className="card tl-project">
         <div className="img-container">
           <Img
-            fixed={data.image.childImageSharp.fixed}
+            fixed={data.images.nodes[project.imgNode].childImageSharp.fixed}
             alt={project.title}
             backgroundColor
           />
@@ -39,11 +53,16 @@ function Project({ project }) {
         <div className="info-container">
           <div className="info">
             <h2>{project.title}</h2>
-            <button onClick={handleOpen}>Learn More</button>
+            <button onClick={handleOpen}>See More</button>
           </div>
         </div>
       </article>
-      <Modal project={project} open={open} handleClose={handleClose} />
+      <Modal
+        project={project}
+        data={data}
+        open={open}
+        handleClose={handleClose}
+      />
     </>
   )
 }

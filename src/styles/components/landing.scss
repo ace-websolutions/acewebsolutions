@@ -7,7 +7,7 @@
     align-items: center;
     z-index: 12;
     color: #fff;
-    max-width: 350px;
+    max-width: 427px;
     margin: 0 auto;
     h2 {
       margin: 0.25rem 0;
@@ -25,8 +25,8 @@
         height: 72px;
         position: relative;
         overflow: hidden;
-        @include media("<=tablet") {
-          height: 48px;
+        @include media("<=phone") {
+          height: 100px;
         }
         span {
           position: absolute;

@@ -31,7 +31,6 @@ function Nav() {
             className="logo"
           >
             <GiSpades size={42} />
-            <span>Ace Web Solutions</span>
           </Link>
           <div className="nav-button-group">
             <Link

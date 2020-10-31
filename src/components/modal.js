@@ -1,17 +1,22 @@
 import React from "react"
+import Img from "gatsby-image"
 import ClickAwayListener from "react-click-away-listener"
 import { AiOutlineCloseCircle } from "react-icons/ai"
 
-const Modal = ({ project, open, handleClose }) => {
+const Modal = ({ project, data, open, handleClose }) => {
   return (
     <div id="modal" className={`modal modal-${open}`}>
       {/* <ClickAwayListener onClickAway={handleClose}> */}
       <div className="modal-container">
         <AiOutlineCloseCircle onClick={handleClose} className="close" />
-        <img
-          src={require(`../images/${project.img}.jpg`)}
-          alt={project.title}
-        />
+        <div className="modal-img-container">
+          <Img
+            fluid={data.images.nodes[project.imgNode].childImageSharp.fluid}
+            alt={project.title}
+            backgroundColor
+            style={{ height: "100%", width: "100%" }}
+          />
+        </div>
         <p>{project.description}</p>
         <div className="card-btn-group">
           <button className="live">

@@ -24,63 +24,49 @@ import {
 } from "react-icons/si"
 
 export const PROJECTS = [
-  {
-    title: "Restaurant Site",
-    description: "Animated Multi Page App.",
-    live: "#",
-    code: "#",
-    liveColor: "",
-    codeColor: "",
-    img: "placeholder",
-  },
-  {
-    title: "Doctor Landing",
-    description: "Animated Landing Page.",
-    live: "#",
-    code: "#",
-    liveColor: "",
-    codeColor: "",
-    img: "placeholder",
-  },
+  // {
+  //   title: "Doctor Landing",
+  //   description: "Animated Landing Page.",
+  //   live: "#",
+  //   code: "#",
+  //   img: "placeholder.jpg",
+  //   imgNode: 3,
+  // },
   {
     title: "Construction Underwriters",
     description:
       "Example of a single page web application.  Features sections such as: Services, About and Contact.  Uses google maps for directions and is completely responsive on mobile devices.",
     live: "https://aceconstruction.herokuapp.com/",
-    code: "https://github.com/nick-dasto/construction",
-    liveColor: "#00bcd4",
-    codeColor: "#33c9dc",
-    img: "placeholder",
+    code: "https://github.com/ace-websolutions/construction",
+    img: "construction.png",
+    imgNode: 3,
   },
-  {
-    title: "Travel App",
-    description:
-      "Full stack application make to keep track of someones travels.  It is a multi-page application with user authentication and a MongoDB backend. View your account from anywhere and add posts. ",
-    live: "https://merntravelapp.herokuapp.com/",
-    code: "https://github.com/nick-dasto/travelapp",
-    liveColor: "#ff9100",
-    codeColor: "#ffa733",
-    img: "placeholder",
-  },
-  {
-    title: "To-Do App",
-    description: "Full Stack ToDo list",
-    live: "#",
-    code: "#",
-    liveColor: "",
-    codeColor: "",
-    img: "placeholder",
-  },
-  {
-    title: "Home Dashboard",
-    description:
-      "Locally hosted web app created to make accessing my work and home web interfaces easy and convenient.  From any device with wifi I can check up on live projects and quickly access my cameras or network attached storage!",
-    live: "#",
-    code: "#",
-    liveColor: "#ee2e31",
-    codeColor: "#EB3C3E",
-    img: "placeholder",
-  },
+  // {
+  //   title: "Travel App",
+  //   description:
+  //     "Full stack application make to keep track of someones travels.  It is a multi-page application with user authentication and a MongoDB backend. View your account from anywhere and add posts. ",
+  //   live: "https://merntravelapp.herokuapp.com/",
+  //   code: "https://github.com/ace-websolutions/travelapp",
+  //   img: "travel.png",
+  //   imgNode: 2,
+  // },
+  // {
+  //   title: "To-Do App",
+  //   description: "Full Stack ToDo list",
+  //   live: "http://acetodoapp.herokuapp.com/",
+  //   code: "#",
+  //   img: "todo.png",
+  //   imgNode: 3,
+  // },
+  // {
+  //   title: "HomeBrew App",
+  //   description:
+  //     "Full stack application make to keep track of someones travels.  It is a multi-page application with user authentication and a MongoDB backend. View your account from anywhere and add posts.",
+  //   live: "https://mernhomebrew.herokuapp.com/",
+  //   code: "#",
+  //   img: "brew.png",
+  //   imgNode: 1,
+  // },
 ]
 
 export const SKILLICONS = [
