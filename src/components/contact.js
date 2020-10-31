@@ -45,7 +45,7 @@ function Contact() {
                 have in mind!
               </p>
             </header>
-            <form onSubmit={e => e.preventDefault()}>
+            <form name="contact" method="POST" netlify>
               <div className="form-email tl-form">
                 <input type="email" name="email" placeholder="Email" />
               </div>
