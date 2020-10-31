@@ -55,16 +55,16 @@ const Landing = () => {
         <div className="flex">
           <h2>
             <div className="line">
-              <span>Web Developer</span>
+              <span>Ace Web Solutions</span>
             </div>
             <div className="break"></div>
           </h2>
           <h4>
             <div className="line">
-              <span>Front end focused</span>
+              <span>Front end web</span>
             </div>
             <div className="line">
-              <span>Back end capable</span>
+              <span>developer</span>
             </div>
           </h4>
           <Link
@@ -79,7 +79,7 @@ const Landing = () => {
           </Link>
           <div className="btn-group">
             <a
-              href="https://www.github.com/nick-dasto"
+              href="https://www.github.com/ace-websolutions"
               rel="noreferrer"
               target="_blank"
             >

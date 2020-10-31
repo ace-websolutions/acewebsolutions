@@ -36,9 +36,8 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
+        align-items: flex-start;
         padding-top: 2rem;
-        background-color: $bg-light;
         color: $bg-dark;
         border-radius: 8px;
         @include media("<=tablet") {
@@ -48,18 +47,29 @@
         @include media("<=phone") {
           min-width: 75%;
           width: 75%;
+          align-items: center;
         }
         svg {
-          color: $primary;
-          display: block;
+          height: 85%;
+          width: 85%;
+          fill: $bg-light;
+          .color-prime {
+            fill: $primary;
+          }
         }
         .service-description {
-          padding: 0.5rem 2rem;
+          padding: 0.5rem 0;
           box-sizing: border-box;
+          text-align: left;
+          @include media("<=phone") {
+            text-align: center;
+          }
           h4 {
+            color: $bg-light;
             text-transform: uppercase;
           }
           p {
+            color: #999;
           }
         }
       }
