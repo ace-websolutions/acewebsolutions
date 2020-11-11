@@ -44,7 +44,7 @@ function Project({ project }) {
       <article className="card tl-project">
         <div className="img-container">
           <Img
-            fixed={data.images.nodes[project.imgNode].childImageSharp.fixed}
+            fixed={data.images.nodes[0].childImageSharp.fixed}
             alt={project.title}
             backgroundColor
           />

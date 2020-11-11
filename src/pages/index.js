@@ -1,5 +1,6 @@
 import React from "react"
 
+import SEO from "../components/seo"
 import Intro from "../components/intro"
 import Nav from "../components/nav"
 import Layout from "../components/layout"
@@ -14,6 +15,7 @@ import "../styles/App.scss"
 
 const IndexPage = () => (
   <>
+    <SEO title='Welcome'/>
     <Intro />
     <Nav />
     <Layout>

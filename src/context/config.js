@@ -24,49 +24,30 @@ import {
 } from "react-icons/si"
 
 export const PROJECTS = [
-  // {
-  //   title: "Doctor Landing",
-  //   description: "Animated Landing Page.",
-  //   live: "#",
-  //   code: "#",
-  //   img: "placeholder.jpg",
-  //   imgNode: 3,
-  // },
+  {
+    title: "Coming Soon",
+    description:
+      "Example of a single page web application.  Features sections such as: Services, About and Contact.  Uses form submission and completely responsive on mobile devices.",
+    live: "#",
+    code: "#",
+    img: "construction.png",
+  },
+  {
+    title: "Dog Walking",
+    description:
+      "Example of a single page web application.  Features sections such as: Services, About and Contact.  Uses form submission and completely responsive on mobile devices.",
+    live: "https://festive-villani-dc6a2f.netlify.app/",
+    code: "https://github.com/ace-websolutions/dogwalking",
+    img: "construction.png",
+  },
   {
     title: "Construction Underwriters",
     description:
       "Example of a single page web application.  Features sections such as: Services, About and Contact.  Uses google maps for directions and is completely responsive on mobile devices.",
-    live: "https://aceconstruction.herokuapp.com/",
-    code: "https://github.com/ace-websolutions/construction",
+    live: "https://eloquent-brown-193374.netlify.app/",
+    code: "https://github.com/ace-websolutions/construction-underwriters",
     img: "construction.png",
-    imgNode: 0,
   },
-  // {
-  //   title: "Travel App",
-  //   description:
-  //     "Full stack application make to keep track of someones travels.  It is a multi-page application with user authentication and a MongoDB backend. View your account from anywhere and add posts. ",
-  //   live: "https://merntravelapp.herokuapp.com/",
-  //   code: "https://github.com/ace-websolutions/travelapp",
-  //   img: "travel.png",
-  //   imgNode: 2,
-  // },
-  // {
-  //   title: "To-Do App",
-  //   description: "Full Stack ToDo list",
-  //   live: "http://acetodoapp.herokuapp.com/",
-  //   code: "#",
-  //   img: "todo.png",
-  //   imgNode: 3,
-  // },
-  // {
-  //   title: "HomeBrew App",
-  //   description:
-  //     "Full stack application make to keep track of someones travels.  It is a multi-page application with user authentication and a MongoDB backend. View your account from anywhere and add posts.",
-  //   live: "https://mernhomebrew.herokuapp.com/",
-  //   code: "#",
-  //   img: "brew.png",
-  //   imgNode: 1,
-  // },
 ]
 
 export const SKILLICONS = [
