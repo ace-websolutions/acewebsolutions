@@ -1,10 +1,20 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 import gsap from "gsap"
 import { AiOutlineMail } from "react-icons/ai"
 import { FaPhone } from "react-icons/fa"
+import { PageContext } from "../context/pagecontext"
 
 function ContactSection() {
+
+  const { setLeftPage, setRightPage } = useContext(PageContext)
+
   useEffect(() => {
+    setLeftPage('portfolio');
+    setRightPage(null);
+
+    gsap.to('#contact-nav',  { css: { className:'+=active'} } , 0 )
+    gsap.to('#right-arrow-nav',  { css: { className:'+=disabled'} } , 0 )
+
     gsap.from(".tl-contact-title", {
       opacity: 0,
       y: -80,

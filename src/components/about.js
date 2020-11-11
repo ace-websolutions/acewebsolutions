@@ -1,10 +1,18 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 import WebsiteSVG from "../images/website.svg"
 import gsap from "gsap"
 import { SKILLICONS } from "../context/config"
+import { PageContext } from "../context/pagecontext"
 
 function AboutSection() {
+
+  const{ setLeftPage, setRightPage } = useContext(PageContext)
+
   useEffect(() => {
+    setLeftPage('');
+    setRightPage('services'); 
+
+    gsap.to('#about-nav',  { css: { className:'+=active'} } , 0 )
     gsap.from(".tl-about-title", {
       opacity: 0,
       y: -80,

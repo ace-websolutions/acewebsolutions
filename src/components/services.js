@@ -1,9 +1,18 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 import gsap from "gsap"
 import { SERVICES } from "../context/config"
+import { PageContext } from "../context/pagecontext"
 
 const ServicesSection = () => {
+
+  const { setLeftPage, setRightPage } = useContext(PageContext) 
+  
   useEffect(() => {
+    setLeftPage('about');
+    setRightPage('portfolio'); 
+
+    gsap.to('#services-nav',  { css: { className:'+=active'} } , 0 )
+
     gsap.from(".tl-service-title", {
       opacity: 0,
       y: -80,

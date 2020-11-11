@@ -23,33 +23,6 @@ import {
   SiGreensock,
 } from "react-icons/si"
 
-export const PROJECTS = [
-  {
-    title: "Coming Soon",
-    description:
-      "Example of a single page web application.  Features sections such as: Services, About and Contact.  Uses form submission and completely responsive on mobile devices.",
-    live: "#",
-    code: "#",
-    img: "construction.png",
-  },
-  {
-    title: "Dog Walking",
-    description:
-      "Example of a single page web application.  Features sections such as: Services, About and Contact.  Uses form submission and completely responsive on mobile devices.",
-    live: "https://festive-villani-dc6a2f.netlify.app/",
-    code: "https://github.com/ace-websolutions/dogwalking",
-    img: "construction.png",
-  },
-  {
-    title: "Construction Underwriters",
-    description:
-      "Example of a single page web application.  Features sections such as: Services, About and Contact.  Uses google maps for directions and is completely responsive on mobile devices.",
-    live: "https://eloquent-brown-193374.netlify.app/",
-    code: "https://github.com/ace-websolutions/construction-underwriters",
-    img: "construction.png",
-  },
-]
-
 export const SKILLICONS = [
   { import: <FaHtml5 size={50} />, name: "HTML" },
 

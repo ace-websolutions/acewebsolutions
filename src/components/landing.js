@@ -7,6 +7,7 @@ import { FaGithub } from "react-icons/fa"
 
 const Landing = () => {
   useEffect(() => {
+    gsap.to('#left-arrow-nav',  { css: { className:'+=disabled'} } , 0 )
     gsap.to("body", 0, { css: { visibility: "visible" } })
 
     const tl = gsap.timeline()

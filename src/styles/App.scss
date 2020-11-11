@@ -30,10 +30,6 @@ html {
   min-width: 1080px;
   margin: 0 auto;
   height: 100%;
-  // @include media("<=1560px") {
-  //   width: 1280px;
-  //   min-width: 1280px;
-  // }
   @include media("<=desktop") {
     width: 1080px;
     min-width: 1080px;
@@ -59,11 +55,6 @@ html {
     display: flex;
     height: 100%;
   }
-}
-
-.active {
-  box-sizing: border-box;
-  border-bottom: 2px solid $primary;
 }
 
 .overflow-hidden {

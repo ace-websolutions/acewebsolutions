@@ -7,7 +7,7 @@ import ServicesSection from '../components/services'
 const Services = () => {
     return (
         <Layout>
-            <SEO title='Contact' />
+            <SEO title='Services' />
             <ServicesSection />
         </Layout>
     )

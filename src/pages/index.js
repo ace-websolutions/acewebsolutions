@@ -9,9 +9,9 @@ import "../styles/App.scss"
 
 const IndexPage = () => (
   <>
-    <SEO title='Welcome'/>
-    <Intro />
+    {/* <Intro /> */}
     <Layout>
+      <SEO title='Welcome'/>
       <Landing />
     </Layout>
   </>
