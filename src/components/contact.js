@@ -1,34 +1,28 @@
 import React, { useEffect } from "react"
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { AiOutlineMail } from "react-icons/ai"
 import { FaPhone } from "react-icons/fa"
-gsap.registerPlugin(ScrollTrigger)
 
-function Contact() {
+function ContactSection() {
   useEffect(() => {
     gsap.from(".tl-contact-title", {
-      scrollTrigger: { trigger: "#contact", start: "top center" },
       opacity: 0,
       y: -80,
       ease: "power4.inOut",
       duration: 1.2,
     })
     gsap.from(".tl-contact-subtitle", {
-      scrollTrigger: { trigger: "#contact", start: "top center" },
       opacity: 0,
       y: 80,
       ease: "power4.inOut",
       duration: 1.2,
     })
     const tlContact = gsap.timeline({
-      scrollTrigger: { trigger: ".direct-methods", start: "top bottom" },
       defaults: { duration: 1.6, ease: "power4.inOut" },
     })
     tlContact.from(".tl-contact", { opacity: 0, y: 60, stagger: 0.4 })
 
     const tlForm = gsap.timeline({
-      scrollTrigger: { trigger: "form", start: "top center" },
       defaults: { duration: 1.6, ease: "power4.inOut" },
     })
     tlForm.from(".tl-form", { opacity: 0, y: 60, stagger: 0.2 })
@@ -92,4 +86,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default ContactSection

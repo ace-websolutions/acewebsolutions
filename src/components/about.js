@@ -1,28 +1,23 @@
 import React, { useEffect } from "react"
 import WebsiteSVG from "../images/website.svg"
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SKILLICONS } from "../context/config"
-gsap.registerPlugin(ScrollTrigger)
 
-function About() {
+function AboutSection() {
   useEffect(() => {
     gsap.from(".tl-about-title", {
-      scrollTrigger: { trigger: "#about", start: "top center" },
       opacity: 0,
       y: -80,
       ease: "power4.inOut",
       duration: 1.2,
     })
     gsap.from(".tl-about-subtitle", {
-      scrollTrigger: { trigger: "#about", start: "top center" },
       opacity: 0,
       y: 80,
       ease: "power4.inOut",
       duration: 1.2,
     })
     gsap.from(".tl-about", {
-      scrollTrigger: { trigger: ".about-text", start: "top center" },
       opacity: 0,
       x: -80,
       ease: "power4.inOut",
@@ -30,24 +25,18 @@ function About() {
     })
 
     gsap.from(".about-svg-container", {
-      scrollTrigger: { trigger: ".about-svg-container", start: "top center" },
       opacity: 0,
       x: 80,
       ease: "power4.inOut",
       duration: 1.2,
     })
     gsap.from(".icon-container", {
-      scrollTrigger: {
-        trigger: ".icon-container",
-        start: "top center",
-      },
       opacity: 0,
       x: -80,
       ease: "power4.inOut",
       duration: 1.2,
     })
     gsap.from(".tl-skills", {
-      scrollTrigger: { trigger: ".skills-text", start: "top center" },
       opacity: 0,
       x: 80,
       ease: "power4.inOut",
@@ -55,7 +44,6 @@ function About() {
     })
 
     const tlSVG = gsap.timeline({
-      scrollTrigger: { trigger: ".about-svg-container", start: "top center" },
       defaults: { duration: 1, ease: "power4.inOut" },
     })
     tlSVG
@@ -98,10 +86,6 @@ function About() {
       )
 
     const tlSkillsIcons = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".icon-container",
-        start: "top center",
-      },
       defaults: { duration: 1, ease: "back.out" },
     })
     tlSkillsIcons.from(
@@ -158,4 +142,4 @@ function About() {
   )
 }
 
-export default About
+export default AboutSection

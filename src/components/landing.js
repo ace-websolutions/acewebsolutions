@@ -1,8 +1,9 @@
 import React, { useEffect } from "react"
 import gsap from "gsap"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import Particles from "react-particles-js"
-import { Link } from "react-scroll"
-import { FaAngleDoubleDown, FaGithub } from "react-icons/fa"
+import { GiSpades } from "react-icons/gi"
+import { FaGithub } from "react-icons/fa"
 
 const Landing = () => {
   useEffect(() => {
@@ -53,6 +54,7 @@ const Landing = () => {
     <section id="landing" className="hero">
       <div className="container">
         <div className="flex">
+        {/* <GiSpades size={60} /> */}
           <h2>
             <div className="line">
               <span>Ace Web Solutions</span>
@@ -67,16 +69,9 @@ const Landing = () => {
               <span>developer</span>
             </div>
           </h4>
-          <Link
-            className="contact-btn"
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={700}
-          >
-            Contact
-          </Link>
+          <AniLink fade to='contact'>
+              Contact
+            </AniLink>
           <div className="btn-group">
             <a
               href="https://www.github.com/ace-websolutions"
@@ -87,23 +82,18 @@ const Landing = () => {
             </a>
           </div>
         </div>
-        <Link
-          className="arrow"
-          to="about"
-          activeClass="active"
-          spy={true}
-          smooth={true}
-          offset={0}
-          duration={500}
-        >
-          <button className="bounce">
-            <FaAngleDoubleDown size={40} />
-          </button>
-        </Link>
         <Particles
           className="particle"
           params={{
+            background: {
+              color: {
+                value: "#111",
+              },
+            },
             particles: {
+              color:{
+                value: "#4361eeff"
+              },
               number: {
                 value: 160,
                 density: {
@@ -111,7 +101,7 @@ const Landing = () => {
                 },
               },
               size: {
-                value: 3,
+                value: 4,
                 random: true,
                 anim: {
                   speed: 4,

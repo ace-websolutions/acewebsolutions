@@ -1,21 +1,17 @@
 import React, { useEffect } from "react"
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { PROJECTS } from "../context/config"
 import Project from "./project"
-gsap.registerPlugin(ScrollTrigger)
 
-function Projects() {
+function PortfolioSection() {
   useEffect(() => {
     gsap.from(".tl-project-title", {
-      scrollTrigger: { trigger: "#projects", start: "top center" },
       opacity: 0,
       y: -80,
       ease: "power4.inOut",
       duration: 1.2,
     })
     gsap.from(".tl-project-subtitle", {
-      scrollTrigger: { trigger: "#projects", start: "top center" },
       opacity: 0,
       y: 80,
       ease: "power4.inOut",
@@ -23,28 +19,16 @@ function Projects() {
     })
 
     const tlProject = gsap.timeline({
-      scrollTrigger: { trigger: ".projects-container", start: "top center" },
       defaults: { duration: 1.2, ease: "power4.inOut" },
     })
     tlProject.from(".tl-project", { opacity: 0, y: 60, stagger: 0.2 }, "<.5")
 
-    gsap.to(
-      "#nav",
-      {
-        scrollTrigger: {
-          trigger: "#projects",
-          start: "top top",
-          toggleActions: "play reverse play reverse",
-        },
-        css: { color: "#000" },
-        ease: "none",
-      },
-      "0"
-    )
+    gsap.to("#nav",{ css: { color: "#000" },ease: "none", }, 0 )
+
   }, [])
 
   return (
-    <section id="projects">
+    <section id="portfolio">
       <div className="container">
         <div className="container-fluid">
           <div className="flex proj-container">
@@ -67,4 +51,4 @@ function Projects() {
   )
 }
 
-export default Projects
+export default PortfolioSection

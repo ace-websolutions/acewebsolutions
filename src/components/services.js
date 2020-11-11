@@ -1,27 +1,22 @@
 import React, { useEffect } from "react"
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SERVICES } from "../context/config"
-gsap.registerPlugin(ScrollTrigger)
 
-const Services = () => {
+const ServicesSection = () => {
   useEffect(() => {
     gsap.from(".tl-service-title", {
-      scrollTrigger: { trigger: "#services", start: "top center" },
       opacity: 0,
       y: -80,
       ease: "power4.inOut",
       duration: 1.2,
     })
     gsap.from(".tl-service-subtitle", {
-      scrollTrigger: { trigger: "#services", start: "top center" },
       opacity: 0,
       y: 80,
       ease: "power4.inOut",
       duration: 1.2,
     })
     gsap.from(".service-card", {
-      scrollTrigger: { trigger: ".services-container", start: "top center" },
       opacity: 0,
       scale: 0,
       ease: "back.out",
@@ -106,4 +101,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default ServicesSection

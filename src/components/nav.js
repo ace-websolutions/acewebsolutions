@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
 import gsap from "gsap"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Link } from "react-scroll"
-import { GiSpades } from "react-icons/gi"
 import { FiMenu } from "react-icons/fi"
 gsap.registerPlugin(ScrollTrigger)
 
@@ -22,103 +21,43 @@ function Nav() {
       <div className="container">
         <progress max="100" value="0"></progress>
         <nav className="nav-bar">
-          <Link
-            to="landing"
-            spy={false}
-            smooth={true}
-            offset={0}
-            duration={500}
-            className="logo"
-          >
+        {/* <AniLink fade to='/'>
             <GiSpades size={42} />
-          </Link>
+        </AniLink> */}
           <div className="nav-button-group">
-            <Link
-              to="about"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
-            >
+            <AniLink paintDrip hex="#4361eeff" to='/'>
+              Home
+            </AniLink>
+            <AniLink swipe top='entry' entryOffset={100} direction="up" to='/about'>
               About
-            </Link>
-            <Link
-              to="services"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
-            >
+            </AniLink>
+            <AniLink swipe top='entry' entryOffset={100} direction="right" duration={1.25} to='/services'>
               Services
-            </Link>
-            <Link
-              to="projects"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={1}
-              duration={500}
-            >
-              Projects
-            </Link>
-            <Link
-              to="contact"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={1}
-              duration={500}
-            >
+            </AniLink>
+            <AniLink swipe top='entry' entryOffset={100} direction="left" duration={1.25} to='/portfolio'>
+              Portfolio
+            </AniLink>
+            <AniLink swipe top='entry' entryOffset={100} direction="down" to='/contact'>
               Contact
-            </Link>
+            </AniLink>
           </div>
           <button className="burger" onClick={() => setOpen(!open)}>
             <FiMenu size={30} />
           </button>
           <div className={`nav-button-group-mobile mobile-${open}`}>
             <div className="mobile-buttons">
-              <Link
-                to="about"
-                spy={true}
-                onClick={() => setOpen(false)}
-                smooth={true}
-                offset={0}
-                duration={500}
-              >
-                About
-              </Link>
-              <Link
-                to="services"
-                spy={true}
-                onClick={() => setOpen(false)}
-                smooth={true}
-                offset={0}
-                duration={500}
-              >
-                Services
-              </Link>
-              <Link
-                to="projects"
-                spy={true}
-                onClick={() => setOpen(false)}
-                smooth={true}
-                offset={1}
-                duration={500}
-              >
-                Projects
-              </Link>
-              <Link
-                to="contact"
-                spy={true}
-                onClick={() => setOpen(false)}
-                smooth={true}
-                offset={1}
-                duration={500}
-              >
-                Contact
-              </Link>
+            <AniLink fade to='/about'>
+              About
+            </AniLink>
+            <AniLink fade to='/services'>
+              Services
+            </AniLink>
+            <AniLink fade to='/portfolio'>
+              Portfolio
+            </AniLink>
+            <AniLink fade to='/contact'>
+              Contact
+            </AniLink>
             </div>
           </div>
         </nav>

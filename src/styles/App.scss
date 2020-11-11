@@ -7,7 +7,7 @@
 @import "./components/nav.scss";
 @import "./components/about.scss";
 @import "./components/services.scss";
-@import "./components/projects.scss";
+@import "./components/portfolio.scss";
 @import "./components/project.scss";
 @import "./components/modal.scss";
 @import "./components/contact.scss";
@@ -15,7 +15,7 @@
 
 body,
 html {
-  visibility: hidden;
+  // visibility: hidden;
   user-select: none;
   background: $bg-dark;
   overscroll-behavior: none;
@@ -70,6 +70,12 @@ html {
   overflow: hidden;
 }
 
-// .svg-line {
-//   fill: rgb(63, 63, 63);
-// }
+#about, #services, #portfolio, #contact{
+  min-height: 100vh;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 6rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
