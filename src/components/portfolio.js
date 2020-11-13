@@ -68,8 +68,9 @@ function PortfolioSection() {
 
 
 useEffect(() => {
-
+  // eslint-disable-next-line
   setLeftPage('services');
+  // eslint-disable-next-line
   setRightPage('contact'); 
 
   gsap.to('#portfolio-nav',  { css: { className:'+=active'} } , 0 )

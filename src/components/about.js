@@ -9,7 +9,9 @@ function AboutSection() {
   const{ setLeftPage, setRightPage } = useContext(PageContext)
 
   useEffect(() => {
+    // eslint-disable-next-line
     setLeftPage('');
+    // eslint-disable-next-line
     setRightPage('services'); 
 
     gsap.to('#about-nav',  { css: { className:'+=active'} } , 0 )

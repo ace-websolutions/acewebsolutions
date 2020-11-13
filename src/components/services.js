@@ -8,7 +8,9 @@ const ServicesSection = () => {
   const { setLeftPage, setRightPage } = useContext(PageContext) 
   
   useEffect(() => {
+    // eslint-disable-next-line
     setLeftPage('about');
+    // eslint-disable-next-line
     setRightPage('portfolio'); 
 
     gsap.to('#services-nav',  { css: { className:'+=active'} } , 0 )

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react"
 import gsap from "gsap"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Link } from "gatsby"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { FiMenu, FiChevronRight, FiChevronLeft } from "react-icons/fi"
 import { PageContext } from "../context/pagecontext";
@@ -24,45 +24,45 @@ function Nav() {
         <progress max="100" value="0"></progress>
         <nav className="nav-bar">
           <div className="nav-button-group">
-            <AniLink id='left-arrow-nav' swipe top='entry' entryOffset={100} direction="right" duration={1.25} to={`/${leftPage}`}>
+            <Link id='left-arrow-nav' to={`/${leftPage}`}>
               <FiChevronLeft size={30} />
-            </AniLink>
-            <AniLink paintDrip hex="#4361eeff" to='/'>
+            </Link>
+            <Link to='/'>
               Home
-            </AniLink>
-            <AniLink id='about-nav' swipe top='entry' entryOffset={100} direction="up" to='/about'>
+            </Link>
+            <Link id='about-nav' to='/about'>
               About
-            </AniLink>
-            <AniLink id='services-nav' swipe top='entry' entryOffset={100} direction="up" to='/services'>
+            </Link>
+            <Link id='services-nav' to='/services'>
               Services
-            </AniLink>
-            <AniLink id='portfolio-nav' swipe top='entry' entryOffset={100} direction="up" to='/portfolio'>
+            </Link>
+            <Link id='portfolio-nav' to='/portfolio'>
               Portfolio
-            </AniLink>
-            <AniLink id='contact-nav' swipe top='entry' entryOffset={100} direction="up" to='/contact'>
+            </Link>
+            <Link id='contact-nav' to='/contact'>
               Contact
-            </AniLink>
-            <AniLink id='right-arrow-nav' swipe top='entry' entryOffset={100} direction="left" duration={1.25} to={`/${rightPage}`}>
+            </Link>
+            <Link id='right-arrow-nav' to={`/${rightPage}`}>
               <FiChevronRight size={30} />
-            </AniLink>
+            </Link>
           </div>
           <button className="burger" onClick={() => setOpen(!open)}>
             <FiMenu size={30} />
           </button>
           <div className={`nav-button-group-mobile mobile-${open}`}>
             <div className="mobile-buttons">
-            <AniLink fade to='/about'>
+            <Link to='/about'>
               About
-            </AniLink>
-            <AniLink fade to='/services'>
+            </Link>
+            <Link to='/services'>
               Services
-            </AniLink>
-            <AniLink fade to='/portfolio'>
+            </Link>
+            <Link to='/portfolio'>
               Portfolio
-            </AniLink>
-            <AniLink fade to='/contact'>
+            </Link>
+            <Link to='/contact'>
               Contact
-            </AniLink>
+            </Link>
             </div>
           </div>
         </nav>

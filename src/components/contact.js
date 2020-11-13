@@ -9,7 +9,9 @@ function ContactSection() {
   const { setLeftPage, setRightPage } = useContext(PageContext)
 
   useEffect(() => {
+    // eslint-disable-next-line
     setLeftPage('portfolio');
+    // eslint-disable-next-line
     setRightPage(null);
 
     gsap.to('#contact-nav',  { css: { className:'+=active'} } , 0 )
