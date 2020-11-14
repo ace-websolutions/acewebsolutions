@@ -44,7 +44,7 @@ function PortfolioSection() {
       code: "#",
       img:  '',
       tags:[],
-      link:'#',
+      link:'coming-soon',
     },
     {
       title: "Dog Walking",

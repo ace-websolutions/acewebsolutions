@@ -27,12 +27,15 @@ const variants = {
 
 
 const Layout = ({ children, location }) => {
+  React.useEffect(() => {
+    console.log(location)
+  })
   return (
     <PageProvider>
       <Nav />
           <AnimatePresence exitBeforeEnter>
           <motion.main  
-            key={location.pathname}         
+            key={location}         
             initial='initial'
             animate='animate'
             exit='exit'>
