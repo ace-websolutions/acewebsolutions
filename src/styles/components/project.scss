@@ -1,8 +1,8 @@
 .card {
-  height: 225px;
-  max-height: 225px;
-  width: 300px;
-  max-width: 300px;
+  height: 250px;
+  max-height: 250px;
+  width: 400px;
+  max-width: 400px;
   margin: 0 0.5rem 1rem 0.5rem;
   box-sizing: border-box;
   overflow: hidden;
@@ -42,18 +42,18 @@
       justify-content: center;
       align-items: center;
       h2 {
-        color: $secondary;
+        color: #fff;
       }
       button {
         padding: 6px;
-        border: 1px solid $secondary;
-        color: $secondary;
+        border: 1px solid #fff;
+        color: #fff;
         border-radius: 0.25rem;
         background-color: rgba($color: #fff, $alpha: 0.4);
         cursor: pointer;
         transition: 200ms ease-out;
         &:hover {
-          background-color: $secondary;
+          background-color: #fff;
           color: #fff;
         }
       }

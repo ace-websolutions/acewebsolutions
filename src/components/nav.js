@@ -46,9 +46,17 @@ function Nav() {
               <FiChevronRight size={30} />
             </Link>
           </div>
+          <div className="nav-buttons-group-mobile">
+          <Link id='left-arrow-nav' to={`/${leftPage}`}>
+              <FiChevronLeft size={30} />
+            </Link>
           <button className="burger" onClick={() => setOpen(!open)}>
             <FiMenu size={30} />
           </button>
+          <Link id='right-arrow-nav' to={`/${rightPage}`}>
+              <FiChevronRight size={30} />
+            </Link>
+          </div>
           <div className={`nav-button-group-mobile mobile-${open}`}>
             <div className="mobile-buttons">
             <Link to='/about'>

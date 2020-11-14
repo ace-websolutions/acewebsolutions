@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { fadeInUp, stagger } from '../animation/animation'
 import { SERVICES } from "../context/config"
 import { PageContext } from "../context/pagecontext"
-import HandSVG from "../images/handshake.svg"
+import { Link } from "gatsby"
 
 const ServicesSection = () => {
 
@@ -64,6 +64,23 @@ const ServicesSection = () => {
         transformOrigin: "right",
         delay: 2,
       })
+    // const tlHand = gsap.timeline({
+    //   repeat: -1,
+    //   repeatDelay: 1.2,
+    //   defaults: {
+    //     scaleY: 0,
+    //     duration: 0.4,
+    //     stagger: 0.8,
+    //   },
+    // })
+    // tlHand
+    //   .from(".svg-hand", {
+    //     transformOrigin: "bottom",
+    //   })
+    //   .to(".svg-hand", {
+    //     transformOrigin: "top",
+    //     delay: 2,
+    //   })
   }, [])
 
   return (
@@ -77,18 +94,6 @@ const ServicesSection = () => {
                 Personalized, functional, well maintained web applications
               </p>
             </motion.header>
-            <motion.div variants={fadeInUp} className='intro-service'>
-              <HandSVG />
-              <div className="intro-service-description">
-              <p>My ultimate goal is to help you do your business better.  I want to 
-                help drive more traffic to your brand, put your best image out for the world to see, and 
-                give you a lot less to worry about when it comes to prepense on the web.
-              </p>
-              <p>Every business, charity, hobbiest, or club can benefit from having a website
-                in this day in age. Let's make yours stick out!
-              </p>
-              </div>
-            </motion.div>
             <motion.div variants={stagger} className="services-container">
               {SERVICES.map(service => (
                 <motion.div variants={fadeInUp} key={service.title} className="service-card">
@@ -100,6 +105,9 @@ const ServicesSection = () => {
                 </motion.div>
               ))}
             </motion.div>
+            <motion.div className='next-section-button' variants={fadeInUp}>
+              <Link to='/portfolio'>Look at my work</Link>
+              </motion.div>
           </motion.div>
         </div>
       </div>

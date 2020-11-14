@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { fadeInUp, stagger } from '../animation/animation'
 import { SKILLICONS } from "../context/config"
 import { PageContext } from "../context/pagecontext"
+import { Link } from "gatsby"
 
 function AboutSection() {
 
@@ -65,11 +66,11 @@ function AboutSection() {
     const tlSkillsIcons = gsap.timeline({
       defaults: { duration: 1, ease: "back.out" },
     })
-    tlSkillsIcons.from(
-      ".tl-skills-icons",
-      { scale: 0, transformOrigin: "center", stagger: 0.1 },
-      "<.5"
-    )
+    // tlSkillsIcons.from(
+    //   ".tl-skills-icons",
+    //   { scale: 0, transformOrigin: "center", stagger: 0.1 },
+    //   "<.5"
+    // )
   }, [])
 
   return (
@@ -84,25 +85,26 @@ function AboutSection() {
               <p className="tl-about-subtitle">A self taught web developer.</p>
             </motion.header>
             <motion.div variants={fadeInUp} className="about">
-              <p className="about-text tl-about">
+            <div className="about-svg-container">
+                <WebsiteSVG className="about-svg" />
+              </div>
+              <div className="about-info-container">             
+               <p className="about-text tl-about">
                 I am passionate about creating projects that can help improve
                 the lives of those around me. I started this company to
                 challenge myself and see how far I can go. The ability to one
                 day perhaps be making a living off of working with computers
                 keeps me motivated.
               </p>
-              <div className="about-svg-container">
-                <WebsiteSVG className="about-svg" />
-              </div>
-            </motion.div>
-            <motion.div variants={fadeInUp} className="skills">
               <p className="skills-text tl-skills">
                 I believe anything can be achieved if you work hard enough, and
                 you should never stop learning. Through various resources I have
                 discovered and practiced all of the skills you see here. In the
                 modern web, new tools are always popping up and it is important
                 to stay on top of the new technology in order to stay relevant .
-              </p>
+              </p></div>
+            </motion.div>
+            <motion.div variants={fadeInUp} className="skills">
               <div ref={dragRef} className="icon-container">
                 {SKILLICONS.map(icon => (
                   <motion.div 
@@ -116,6 +118,9 @@ function AboutSection() {
                   </motion.div>
                 ))}
               </div>
+            </motion.div>
+            <motion.div className='next-section-button' variants={fadeInUp}>
+            <Link to='/services'>Look at what I offer</Link>
             </motion.div>
           </motion.div>
         </div>

@@ -1,6 +1,8 @@
 #portfolio {
-  background-color: $bg-light;
-  color: $bg-dark;
+  background: linear-gradient(
+    335deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
+  // color: $bg-dark;
+  color: #fff;
   .proj-container {
     flex-direction: column;
     header {

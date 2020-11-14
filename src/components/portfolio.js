@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react"
 import gsap from "gsap"
 import { motion } from 'framer-motion'
 import { fadeInUp, stagger } from '../animation/animation'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import Project from "./project"
 import { PageContext } from "../context/pagecontext"
 
@@ -75,7 +75,7 @@ useEffect(() => {
   setRightPage('contact'); 
 
   gsap.to('#portfolio-nav',  { css: { className:'+=active'} } , 0 )
-  gsap.to("#nav",{ css: { color: "#000" },ease: "none", }, 0 )
+  // gsap.to("#nav",{ css: { color: "#000" },ease: "none", }, 0 )
 
 }, [])
 
@@ -95,6 +95,9 @@ return (
             {PROJECTS.map(project => (
               <Project key={project.title} project={project} />
             ))}
+          </motion.div>
+          <motion.div className='next-section-button' variants={fadeInUp}>
+            <Link  to='/contact'>Get in touch</Link>
           </motion.div>
         </motion.div>
       </div>

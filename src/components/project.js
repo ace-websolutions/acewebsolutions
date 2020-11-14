@@ -14,9 +14,11 @@ function Project({ project }) {
         <div className="info-container">
           <div className="info">
             <h2>{project.title}</h2>
-            <Link to={`/project-${project.link}`}>
+            <div className="next-section-button">
+            <Link to={`/projects/${project.link}`}>
               See more
             </Link>
+            </div>
           </div>
         </div>
       </motion.article>

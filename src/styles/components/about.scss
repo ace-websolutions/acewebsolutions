@@ -1,6 +1,7 @@
 #about {
-  background-color: rgb(20, 20, 20);
-  color: #fff;
+  background: linear-gradient(
+    45deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
+  color:#fff;
   .about-container {
     flex-direction: column;
     flex-wrap: wrap;
@@ -32,33 +33,34 @@
       align-items: center;
       overflow: hidden;
       @include media("<=phone") {
-        flex-direction: column-reverse;
+        flex-direction: column;
       }
-      p {
+      .about-info-container{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 450px;
+        height: auto;
         min-width: 50%;
-        width: 50%;
         padding: 1.5rem;
         box-sizing: border-box;
-        text-align: right;
+        p {
+        text-align: left;
         font-size: 1.15rem;
         line-height: 2.2rem;
-        @include media("<=phone") {
-          min-width: 100%;
-          width: 100%;
-          text-align: center;
-        }
       }
+      @include media("<=phone") {
+        min-width: 100%;
+        width: 100%;
+        text-align: center;
+      }
+    }
       .about-svg-container {
         height: 450px;
-        max-height: 450px;
         min-width: 50%;
         width: 50%;
-        background: $secondary-faded;
-        border-radius: 8px;
+        background: $primary-faded;
+        border-radius: 50%;
         box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15),
           0px 2px 3px 0px rgba(0, 0, 0, 0.1);
         padding: 1rem;
@@ -68,17 +70,18 @@
         align-items: center;
         flex-wrap: wrap;
         @include media("<=phone") {
+          height: 300px;
           min-width: 100%;
           width: 100%;
         }
         svg {
-          height: 85%;
-          transform: rotate(10deg);
+          height: 75%;
+          transform: rotate(-10deg);
           @include media("<=tablet") {
-            transform: scale(0.85) rotate(10deg);
+            transform: scale(0.85) rotate(-10deg);
           }
           @include media("<=phone") {
-            transform: scale(0.8) rotate(10deg);
+             transform: scale(0.9) rotate(-10deg);
           }
         }
       }
@@ -89,30 +92,11 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      background: rgba(0, 0, 0, 0.226);
       @include media("<=phone") {
         flex-direction: column-reverse;
       }
-      p {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 450px;
-        min-width: 50%;
-        width: 50%;
-        padding: 1.5rem;
-        box-sizing: border-box;
-        text-align: left;
-        font-size: 1.15rem;
-        line-height: 2.2rem;
-        @include media("<=phone") {
-          min-width: 100%;
-          width: 100%;
-          text-align: center;
-        }
-      }
       .icon-container {
-        min-height: 450px;
-        background: $primary-faded;
         border-radius: 8px;
         box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15),
           0px 2px 3px 0px rgba(0, 0, 0, 0.1);

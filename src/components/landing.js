@@ -2,7 +2,6 @@ import React, { useEffect, useContext } from "react"
 import gsap from "gsap"
 import { Link } from "gatsby";
 import Particles from "react-particles-js"
-import { GiSpades } from "react-icons/gi"
 import { FaGithub } from "react-icons/fa"
 import { PageContext } from "../context/pagecontext"
 
@@ -64,15 +63,14 @@ const Landing = () => {
   }, [])
 
   return (
-    <section id="landing" className="hero">
+    <section id="landing">
       <div className="container">
-        <div className="flex">
-        {/* <GiSpades size={60} /> */}
+        <div className="flex landing-container">
+          <div className="text">
           <h2>
             <div className="line">
               <span>Ace Web Solutions</span>
             </div>
-            <div className="break"></div>
           </h2>
           <h4>
             <div className="line">
@@ -82,18 +80,23 @@ const Landing = () => {
               <span>developer</span>
             </div>
           </h4>
-          <Link fade to='contact'>
-              Contact
-            </Link>
           <div className="btn-group">
-            <a
-              href="https://www.github.com/ace-websolutions"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <FaGithub size={25} />
-            </a>
+            <div className="next-section-button landing-contact">
+                <Link to='/contact'>Contact Me</Link>
+              </div>
+              <a
+              className='git-link'
+                href="https://www.github.com/ace-websolutions"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <FaGithub size={25} />
+              </a>
           </div>
+        </div>
+        </div>
+        <div className="logo">
+
         </div>
         <Particles
           className="particle"
@@ -105,7 +108,7 @@ const Landing = () => {
             },
             particles: {
               color:{
-                value: "#4361eeff"
+                value: "#fff"
               },
               number: {
                 value: 160,

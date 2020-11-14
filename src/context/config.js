@@ -2,6 +2,7 @@ import React from "react"
 import CodingSVG from "../images/coding.svg"
 import HostingSVG from "../images/hosting.svg"
 import SeoSVG from "../images/seo.svg"
+import HandSVG from "../images/handshake.svg"
 
 import {
   FaHtml5,
@@ -42,6 +43,13 @@ export const SKILLICONS = [
   { import: <FaGithub size={50} />, name: "Github" },
 ]
 export const SERVICES = [
+  {
+    icon: <FaCode size={50} />,
+    svg: <HandSVG />,
+    title: "Business Asset",
+    description:
+      "My ultimate goal is to help you do your business better.  I want to help drive more traffic to your brand.",
+  },
   {
     icon: <FaCode size={50} />,
     svg: <CodingSVG />,
