@@ -17,16 +17,19 @@
     top: -5px;
     left: 0;
     background: transparent;
+    @include media(">tablet") {
+      display: none;
+    }
   }
   ::-webkit-progress-bar {
     background: transparent;
   }
   ::-webkit-progress-value {
-    background: $secondary;
+    background: $blue-gradient;
     background-attachment: fixed;
   }
   ::-moz-progress-bar {
-    background: $secondary;
+    background: $blue-gradient;
     background-attachment: fixed;
   }
 
@@ -34,9 +37,10 @@
     width: 100%;
     max-width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
+    margin-top: 1rem;
     .logo {
       padding: 12px 8px 8px 16px;
       cursor: pointer;
@@ -49,7 +53,6 @@
       }
     }
     .nav-button-group {
-      padding-right: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -57,17 +60,53 @@
         font-size: 1.1rem;
         position: relative;
         box-sizing: border-box;
-        padding: 1rem;
+        padding: 1rem .5rem;
+        color: inherit;
+        text-decoration: none;
         cursor: pointer;
-        transition: color 150ms ease-out;
+        transition: all 150ms ease-out;
+        margin: 0 .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
         &:hover {
           color: $primary;
+        }
+        &.active {
+          color: $primary;          
+        }
+        &.disabled{
+          opacity: .2;
+          pointer-events: none;
+          cursor: not-allowed;  
         }
       }
       @include media("<=tablet") {
         display: none;
       }
     }
+    .nav-buttons-group-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include media(">tablet") {
+        display: none;
+      }
+      a {
+        font-size: 1.1rem;
+        position: relative;
+        box-sizing: border-box;
+        padding: 1rem .5rem;
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 150ms ease-out;
+        margin: 0 .5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     .burger {
       color: inherit;
       background-color: transparent;
@@ -78,10 +117,9 @@
       z-index: 100;
       cursor: pointer;
       text-decoration: none;
-      @include media(">tablet") {
-        display: none;
-      }
+
     }
+  }
     .nav-button-group-mobile {
       height: 100vh;
       min-height: 100vh;

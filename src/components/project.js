@@ -1,34 +1,27 @@
-import React, { useState } from "react"
-import Modal from "./modal"
+import React from "react"
+import { motion } from 'framer-motion'
+import { fadeInUp } from '../animation/animation'
+import Img from 'gatsby-image'
+import { Link } from 'gatsby'
 
 function Project({ project }) {
-  const [open, setOpen] = useState(false)
-
-  const handleOpen = () => {
-    setOpen(true)
-  }
-  const handleClose = () => {
-    setOpen(false)
-  }
 
   return (
-    <>
-      <article className="card tl-project">
+      <motion.article variants={fadeInUp} className="card tl-project">
         <div className="img-container">
-          <img
-            src={require(`../images/${project.img}.jpg`)}
-            alt={project.title}
-          />
+        <Img fluid={project.img} alt={project.title} backgroundColor/>
         </div>
         <div className="info-container">
           <div className="info">
-            <h4>{project.title}</h4>
-            <button onClick={handleOpen}>Learn More</button>
+            <h2>{project.title}</h2>
+            <div className="next-section-button">
+            <Link to={`/projects/${project.link}`}>
+              See more
+            </Link>
+            </div>
           </div>
         </div>
-      </article>
-      <Modal project={project} open={open} handleClose={handleClose} />
-    </>
+      </motion.article>
   )
 }
 

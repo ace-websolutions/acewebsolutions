@@ -1,14 +1,25 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
+import Nav from "./nav"
+import Footer from "./footer"
+import { AnimatePresence, motion } from "framer-motion"
 
-const Layout = ({ children }) => {
-  return <main>{children}</main>
+const Layout = ({ children, location }) => {
+  return (
+    <>
+      <Nav />
+      <AnimatePresence exitBeforeEnter>
+        <motion.main
+          key={location.pathname}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+        >
+          {children}
+        </motion.main>
+      </AnimatePresence>
+      <Footer />
+    </>
+  )
 }
 
 export default Layout

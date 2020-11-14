@@ -1,9 +1,8 @@
-#projects {
-  text-align: center;
-  padding: 6rem 0;
-  box-sizing: border-box;
-  background-color: $bg-light;
-  color: $bg-dark;
+#portfolio {
+  background: linear-gradient(
+    335deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
+  // color: $bg-dark;
+  color: #fff;
   .proj-container {
     flex-direction: column;
     header {
@@ -22,7 +21,7 @@
     .projects-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
+      justify-content: center;
       align-items: center;
       box-sizing: border-box;
     }

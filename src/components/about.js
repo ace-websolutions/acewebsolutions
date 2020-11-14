@@ -1,61 +1,25 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext, useRef } from "react"
 import WebsiteSVG from "../images/website.svg"
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { motion } from "framer-motion"
+import { fadeInUp, stagger } from "../animation/animation"
 import { SKILLICONS } from "../context/config"
-gsap.registerPlugin(ScrollTrigger)
+import { PageContext } from "../context/pagecontext"
+import { Link } from "gatsby"
 
-function About() {
+function AboutSection() {
+  const { setLeftPage, setRightPage } = useContext(PageContext)
+  const dragRef = useRef(null)
+
   useEffect(() => {
-    gsap.from(".tl-about-title", {
-      scrollTrigger: { trigger: "#about", start: "top center" },
-      opacity: 0,
-      y: -80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".tl-about-subtitle", {
-      scrollTrigger: { trigger: "#about", start: "top center" },
-      opacity: 0,
-      y: 80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".tl-about", {
-      scrollTrigger: { trigger: ".about-text", start: "top center" },
-      opacity: 0,
-      x: -80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
+    // eslint-disable-next-line
+    setLeftPage("")
+    // eslint-disable-next-line
+    setRightPage("services")
 
-    gsap.from(".about-svg-container", {
-      scrollTrigger: { trigger: ".about-svg-container", start: "top center" },
-      opacity: 0,
-      x: 80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".icon-container", {
-      scrollTrigger: {
-        trigger: ".icon-container",
-        start: "top center",
-      },
-      opacity: 0,
-      x: -80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".tl-skills", {
-      scrollTrigger: { trigger: ".skills-text", start: "top center" },
-      opacity: 0,
-      x: 80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
+    gsap.to("#about-nav", { css: { className: "+=active" } }, 0)
 
     const tlSVG = gsap.timeline({
-      scrollTrigger: { trigger: ".about-svg-container", start: "top center" },
       defaults: { duration: 1, ease: "power4.inOut" },
     })
     tlSVG
@@ -96,66 +60,66 @@ function About() {
         },
         "<-.25"
       )
-
-    const tlSkillsIcons = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".icon-container",
-        start: "top center",
-      },
-      defaults: { duration: 1, ease: "back.out" },
-    })
-    tlSkillsIcons.from(
-      ".tl-skills-icons",
-      { scale: 0, transformOrigin: "center", stagger: 0.1 },
-      "<.5"
-    )
   }, [])
 
   return (
-    <section id="about">
+    <motion.section id="about">
       <div className="container">
         <div className="container-fluid">
-          <div className="flex about-container">
-            <header>
+          <motion.div variants={stagger} className="flex about-container">
+            <motion.header variants={fadeInUp}>
               <h2 className="tl-about-title">
                 Hello, I'm <span>Nick</span> -
               </h2>
               <p className="tl-about-subtitle">A self taught web developer.</p>
-            </header>
-            <div className="about">
-              <p className="about-text tl-about">
-                I am passionate about creating projects that can help improve
-                the lives of those around me. I started this company to
-                challenge myself and see how far I can go. The ability to one
-                day perhaps be making a living off of working with computers
-                keeps me motivated.
-              </p>
+            </motion.header>
+            <motion.div variants={fadeInUp} className="about">
               <div className="about-svg-container">
                 <WebsiteSVG className="about-svg" />
               </div>
-            </div>
-            <div className="skills">
-              <p className="skills-text tl-skills">
-                I believe anything can be achieved if you work hard enough, and
-                you should never stop learning. Through various resources I have
-                discovered and practiced all of the skills you see here. In the
-                modern web, new tools are always popping up and it is important
-                to stay on top of the new technology in order to stay relevant .
-              </p>
-              <div className="icon-container">
+              <div className="about-info-container">
+                <p className="about-text tl-about">
+                  I am passionate about creating projects that can help improve
+                  the lives of those around me. I started this company to
+                  challenge myself and see how far I can go. The ability to one
+                  day perhaps be making a living off of working with computers
+                  keeps me motivated.
+                </p>
+                <p className="skills-text tl-skills">
+                  I believe anything can be achieved if you work hard enough,
+                  and you should never stop learning. Through various resources
+                  I have discovered and practiced all of the skills you see
+                  here. In the modern web, new tools are always popping up and
+                  it is important to stay on top of the new technology in order
+                  to stay relevant .
+                </p>
+              </div>
+            </motion.div>
+            <motion.div variants={fadeInUp} className="skills">
+              <div ref={dragRef} className="icon-container">
                 {SKILLICONS.map(icon => (
-                  <div key={icon.name} className="icon tl-skills-icons">
+                  <motion.div
+                    drag
+                    dragConstraints={dragRef}
+                    dragTransition={{ bounceStiffness: 100, bounceDamping: 4 }}
+                    whileTap={{ cursor: "grabbing", scale: 0.8 }}
+                    key={icon.name}
+                    className="icon tl-skills-icons"
+                  >
                     {icon.import}
                     <h5>{icon.name}</h5>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+            <motion.div className="next-section-button" variants={fadeInUp}>
+              <Link to="/services">Look at what I offer</Link>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
-export default About
+export default AboutSection

@@ -1,32 +1,22 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { motion } from "framer-motion"
+import { fadeInUp, stagger } from "../animation/animation"
 import { SERVICES } from "../context/config"
-gsap.registerPlugin(ScrollTrigger)
+import { PageContext } from "../context/pagecontext"
+import { Link } from "gatsby"
 
-const Services = () => {
+const ServicesSection = () => {
+  const { setLeftPage, setRightPage } = useContext(PageContext)
+
   useEffect(() => {
-    gsap.from(".tl-service-title", {
-      scrollTrigger: { trigger: "#services", start: "top center" },
-      opacity: 0,
-      y: -80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".tl-service-subtitle", {
-      scrollTrigger: { trigger: "#services", start: "top center" },
-      opacity: 0,
-      y: 80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".service-card", {
-      scrollTrigger: { trigger: ".services-container", start: "top center" },
-      opacity: 0,
-      ease: "power4.inOut",
-      duration: 1.2,
-      stagger: 0.6,
-    })
+    // eslint-disable-next-line
+    setLeftPage("about")
+    // eslint-disable-next-line
+    setRightPage("portfolio")
+
+    gsap.to("#services-nav", { css: { className: "+=active" } }, 0)
+
     gsap.to(".svg-gear", {
       transformOrigin: "center",
       rotate: 360,
@@ -45,29 +35,19 @@ const Services = () => {
     })
     const tlHost = gsap.timeline({
       repeat: -1,
-      delay: 2,
+      yoyo: true,
       defaults: {
-        duration: 1.5,
-        delay: 0.5,
+        duration: 1.4,
       },
     })
     tlHost.to(".svg-host", {
-      y: -10,
-      ease: "elastic",
+      y: -15,
+      ease: "none",
     })
-    tlHost.to(
-      ".svg-host",
-      {
-        y: 0,
-        ease: "none",
-      },
-      ">-.5"
-    )
 
     const tlSeo = gsap.timeline({
       repeat: -1,
       repeatDelay: 1.2,
-      delay: 3,
       defaults: {
         scaleX: 0,
         duration: 0.4,
@@ -82,35 +62,59 @@ const Services = () => {
         transformOrigin: "right",
         delay: 2,
       })
+    // const tlHand = gsap.timeline({
+    //   repeat: -1,
+    //   repeatDelay: 1.2,
+    //   defaults: {
+    //     scaleY: 0,
+    //     duration: 0.4,
+    //     stagger: 0.8,
+    //   },
+    // })
+    // tlHand
+    //   .from(".svg-hand", {
+    //     transformOrigin: "bottom",
+    //   })
+    //   .to(".svg-hand", {
+    //     transformOrigin: "top",
+    //     delay: 2,
+    //   })
   }, [])
 
   return (
     <section id="services">
       <div className="container">
         <div className="container-fluid">
-          <div className="flex serv-container">
-            <header>
+          <motion.div variants={stagger} className="flex serv-container">
+            <motion.header variants={fadeInUp}>
               <h2 className="tl-service-title">Here is what I do</h2>
               <p className="tl-service-subtitle">
                 Personalized, functional, well maintained web applications
               </p>
-            </header>
-            <div className="services-container">
+            </motion.header>
+            <motion.div variants={stagger} className="services-container">
               {SERVICES.map(service => (
-                <div className="service-card">
+                <motion.div
+                  variants={fadeInUp}
+                  key={service.title}
+                  className="service-card"
+                >
                   {service.svg}
                   <div className="service-description">
-                    <h4>{service.title}</h4>
+                    <h3>{service.title}</h3>
                     <p>{service.description}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+            <motion.div className="next-section-button" variants={fadeInUp}>
+              <Link to="/portfolio">Look at my work</Link>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
   )
 }
 
-export default Services
+export default ServicesSection

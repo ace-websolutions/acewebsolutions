@@ -7,15 +7,15 @@
 @import "./components/nav.scss";
 @import "./components/about.scss";
 @import "./components/services.scss";
-@import "./components/projects.scss";
+@import "./components/portfolio.scss";
 @import "./components/project.scss";
+@import "./components/projectTemplate.scss";
 @import "./components/modal.scss";
 @import "./components/contact.scss";
 @import "./components/footer.scss";
 
 body,
 html {
-  visibility: hidden;
   user-select: none;
   background: $bg-dark;
   overscroll-behavior: none;
@@ -30,10 +30,6 @@ html {
   min-width: 1080px;
   margin: 0 auto;
   height: 100%;
-  // @include media("<=1560px") {
-  //   width: 1280px;
-  //   min-width: 1280px;
-  // }
   @include media("<=desktop") {
     width: 1080px;
     min-width: 1080px;
@@ -61,15 +57,40 @@ html {
   }
 }
 
-.active {
-  box-sizing: border-box;
-  border-bottom: 2px solid $primary;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
 
-// .svg-line {
-//   fill: rgb(63, 63, 63);
-// }
+#about, #services, #portfolio, #contact, #portfolio-project{
+  background: linear-gradient(
+    315deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
+  min-height: 100vh;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 6rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.next-section-button{
+  background: $primary;
+  height: auto;
+  max-width: 400px;
+  border: none;
+  border-radius: 16px;
+  margin: 3rem auto 0 auto;
+  cursor: pointer;
+  a{
+    text-decoration: none;
+    display: inline-block;
+    padding: .5rem 2rem;
+    box-sizing: border-box;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;  
+    width: 100%;
+    height: 100%;
+  }
+}
+

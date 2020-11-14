@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import gsap from "gsap"
+import { Link } from "gatsby"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Link } from "react-scroll"
-import { GiSpades } from "react-icons/gi"
-import { FiMenu } from "react-icons/fi"
+import { FiMenu, FiChevronRight, FiChevronLeft } from "react-icons/fi"
+import { PageContext } from "../context/pagecontext"
 gsap.registerPlugin(ScrollTrigger)
 
 function Nav() {
   const [open, setOpen] = useState(false)
+  const { leftPage, rightPage } = useContext(PageContext)
 
   useEffect(() => {
     gsap.to("progress", {
@@ -18,113 +19,56 @@ function Nav() {
   }, [])
 
   return (
-    <section id="nav">
+    <nav id="nav">
       <div className="container">
         <progress max="100" value="0"></progress>
         <nav className="nav-bar">
-          <Link
-            to="landing"
-            spy={false}
-            smooth={true}
-            offset={0}
-            duration={500}
-            className="logo"
-          >
-            <GiSpades size={42} />
-            <span>Ace Web Solutions</span>
-          </Link>
           <div className="nav-button-group">
-            <Link
-              to="about"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
-            >
+            <Link id="left-arrow-nav" to={`/${leftPage}`}>
+              <FiChevronLeft size={30} />
+            </Link>
+            <Link id="home-nav" to="/">
+              Home
+            </Link>
+            <Link id="about-nav" to="/about">
               About
             </Link>
-            <Link
-              to="services"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
-            >
+            <Link id="services-nav" to="/services">
               Services
             </Link>
-            <Link
-              to="projects"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={1}
-              duration={500}
-            >
-              Projects
+            <Link id="portfolio-nav" to="/portfolio">
+              Portfolio
             </Link>
-            <Link
-              to="contact"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={1}
-              duration={500}
-            >
+            <Link id="contact-nav" to="/contact">
               Contact
             </Link>
+            <Link id="right-arrow-nav" to={`/${rightPage}`}>
+              <FiChevronRight size={30} />
+            </Link>
           </div>
-          <button className="burger" onClick={() => setOpen(!open)}>
-            <FiMenu size={30} />
-          </button>
+          <div className="nav-buttons-group-mobile">
+            <Link id="left-arrow-nav" to={`/${leftPage}`}>
+              <FiChevronLeft size={30} />
+            </Link>
+            <button className="burger" onClick={() => setOpen(!open)}>
+              <FiMenu size={30} />
+            </button>
+            <Link id="right-arrow-nav" to={`/${rightPage}`}>
+              <FiChevronRight size={30} />
+            </Link>
+          </div>
           <div className={`nav-button-group-mobile mobile-${open}`}>
             <div className="mobile-buttons">
-              <Link
-                to="about"
-                spy={true}
-                onClick={() => setOpen(false)}
-                smooth={true}
-                offset={0}
-                duration={500}
-              >
-                About
-              </Link>
-              <Link
-                to="services"
-                spy={true}
-                onClick={() => setOpen(false)}
-                smooth={true}
-                offset={0}
-                duration={500}
-              >
-                Services
-              </Link>
-              <Link
-                to="projects"
-                spy={true}
-                onClick={() => setOpen(false)}
-                smooth={true}
-                offset={1}
-                duration={500}
-              >
-                Projects
-              </Link>
-              <Link
-                to="contact"
-                spy={true}
-                onClick={() => setOpen(false)}
-                smooth={true}
-                offset={1}
-                duration={500}
-              >
-                Contact
-              </Link>
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/services">Services</Link>
+              <Link to="/portfolio">Portfolio</Link>
+              <Link to="/contact">Contact</Link>
             </div>
           </div>
         </nav>
       </div>
-    </section>
+    </nav>
   )
 }
 
