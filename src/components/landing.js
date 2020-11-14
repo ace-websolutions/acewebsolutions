@@ -1,54 +1,66 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 import gsap from "gsap"
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Link } from "gatsby";
 import Particles from "react-particles-js"
 import { GiSpades } from "react-icons/gi"
 import { FaGithub } from "react-icons/fa"
+import { PageContext } from "../context/pagecontext"
 
 const Landing = () => {
+
+  const { setLeftPage, setRightPage } = useContext(PageContext)
+
   useEffect(() => {
-    gsap.to('#left-arrow-nav',  { css: { className:'+=disabled'} } , 0 )
-    gsap.to("body", 0, { css: { visibility: "visible" } })
+    // eslint-disable-next-line
+    setLeftPage('');
+    // eslint-disable-next-line
+    setRightPage('about'); 
 
-    const tl = gsap.timeline()
+    gsap.to('#home-nav',  { css: { className:'+=active'} } , 0 )
+    // gsap.to('#left-arrow-nav',  { css: { className:'+=disabled'} } , 0 )
+    gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
 
-    tl.from(".line span", 1.8, {
-      y: 100,
-      ease: "back.out",
-      delay: 1,
-      skewY: 7,
-      stagger: 0.3,
-    })
-      .to(".break", 1.8, {
-        width: "100%",
-        ease: "back.out",
-        delay: -1.6,
-      })
-      .to(".top", 2.4, {
-        y: "-130%",
-        skewY: -10,
-        ease: "power3.out",
-        delay: -0.25,
-      })
-      .to(".bottom", 2.4, {
-        y: "-130%",
-        skewY: -10,
-        ease: "power3.out",
-        delay: -2.3,
-      })
-      .to(".arrow", 1.6, {
-        bottom: "5%",
-        opacity: 1,
-        ease: "back.out",
-        delay: -2.6,
-      })
-      .to([".contact-btn", ".btn-group", ".arrow"], 0, {
-        css: { zIndex: 14 },
-      })
-      .to(".nav-bar", 1.8, {
-        opacity: 1,
-        delay: -1.8,
-      })
+    // gsap.to("body", 0, { css: { visibility: "visible" } })
+
+    // const tl = gsap.timeline()
+
+    // tl.from(".line span", 1.8, {
+    //   y: 100,
+    //   ease: "back.out",
+    //   delay: 1,
+    //   skewY: 7,
+    //   stagger: 0.3,
+    // })
+    //   .to(".break", 1.8, {
+    //     width: "100%",
+    //     ease: "back.out",
+    //     delay: -1.6,
+    //   })
+    //   .to(".top", 2.4, {
+    //     y: "-130%",
+    //     skewY: -10,
+    //     ease: "power3.out",
+    //     delay: -0.25,
+    //   })
+    //   .to(".bottom", 2.4, {
+    //     y: "-130%",
+    //     skewY: -10,
+    //     ease: "power3.out",
+    //     delay: -2.3,
+    //   })
+    //   .to(".arrow", 1.6, {
+    //     bottom: "5%",
+    //     opacity: 1,
+    //     ease: "back.out",
+    //     delay: -2.6,
+    //   })
+    //   .to([".contact-btn", ".btn-group", ".arrow"], 0, {
+    //     css: { zIndex: 14 },
+    //   })
+    //   .to(".nav-bar", 1.8, {
+    //     opacity: 1,
+    //     delay: -1.8,
+    //   })
   }, [])
 
   return (
@@ -70,9 +82,9 @@ const Landing = () => {
               <span>developer</span>
             </div>
           </h4>
-          <AniLink fade to='contact'>
+          <Link fade to='contact'>
               Contact
-            </AniLink>
+            </Link>
           <div className="btn-group">
             <a
               href="https://www.github.com/ace-websolutions"

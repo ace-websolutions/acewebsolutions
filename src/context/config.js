@@ -21,31 +21,24 @@ import {
   SiMongodb,
   SiMaterialUi,
   SiGreensock,
+  SiGatsby,
+  SiFramer
 } from "react-icons/si"
 
 export const SKILLICONS = [
   { import: <FaHtml5 size={50} />, name: "HTML" },
-
   { import: <FaCss3Alt size={50} />, name: "CSS" },
-
   { import: <SiJavascript size={50} />, name: "Javascript" },
-
   { import: <FaReact size={50} />, name: "React" },
-
   { import: <FaSass size={50} />, name: "Sass" },
-
+  { import: <SiGatsby size={50} />, name: "Gatsby" },
+  { import: <SiFramer size={50} />, name: "Framer Motion" },
   { import: <SiMaterialUi size={50} />, name: "Material" },
-
   { import: <SiGreensock size={50} />, name: "GSAP" },
-
   { import: <FaNode size={50} />, name: "NodeJS" },
-
   { import: <FaNpm size={50} />, name: "NPM" },
-
   { import: <SiMongodb size={50} />, name: "MongoDB" },
-
   { import: <FaGitAlt size={50} />, name: "Git" },
-
   { import: <FaGithub size={50} />, name: "Github" },
 ]
 export const SERVICES = [

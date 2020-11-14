@@ -1,12 +1,15 @@
-import React, { useEffect, useContext } from "react"
+import React, { useEffect, useContext, useRef } from "react"
 import WebsiteSVG from "../images/website.svg"
 import gsap from "gsap"
+import { motion } from 'framer-motion'
+import { fadeInUp, stagger } from '../animation/animation'
 import { SKILLICONS } from "../context/config"
 import { PageContext } from "../context/pagecontext"
 
 function AboutSection() {
 
   const{ setLeftPage, setRightPage } = useContext(PageContext)
+  const dragRef = useRef(null)
 
   useEffect(() => {
     // eslint-disable-next-line
@@ -15,43 +18,7 @@ function AboutSection() {
     setRightPage('services'); 
 
     gsap.to('#about-nav',  { css: { className:'+=active'} } , 0 )
-    gsap.from(".tl-about-title", {
-      opacity: 0,
-      y: -80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".tl-about-subtitle", {
-      opacity: 0,
-      y: 80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".tl-about", {
-      opacity: 0,
-      x: -80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-
-    gsap.from(".about-svg-container", {
-      opacity: 0,
-      x: 80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".icon-container", {
-      opacity: 0,
-      x: -80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".tl-skills", {
-      opacity: 0,
-      x: 80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
+    gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
 
     const tlSVG = gsap.timeline({
       defaults: { duration: 1, ease: "power4.inOut" },
@@ -109,14 +76,14 @@ function AboutSection() {
     <section id="about">
       <div className="container">
         <div className="container-fluid">
-          <div className="flex about-container">
-            <header>
+          <motion.div variants={stagger} className="flex about-container">
+            <motion.header variants={fadeInUp}>
               <h2 className="tl-about-title">
                 Hello, I'm <span>Nick</span> -
               </h2>
               <p className="tl-about-subtitle">A self taught web developer.</p>
-            </header>
-            <div className="about">
+            </motion.header>
+            <motion.div variants={fadeInUp} className="about">
               <p className="about-text tl-about">
                 I am passionate about creating projects that can help improve
                 the lives of those around me. I started this company to
@@ -127,8 +94,8 @@ function AboutSection() {
               <div className="about-svg-container">
                 <WebsiteSVG className="about-svg" />
               </div>
-            </div>
-            <div className="skills">
+            </motion.div>
+            <motion.div variants={fadeInUp} className="skills">
               <p className="skills-text tl-skills">
                 I believe anything can be achieved if you work hard enough, and
                 you should never stop learning. Through various resources I have
@@ -136,16 +103,21 @@ function AboutSection() {
                 modern web, new tools are always popping up and it is important
                 to stay on top of the new technology in order to stay relevant .
               </p>
-              <div className="icon-container">
+              <div ref={dragRef} className="icon-container">
                 {SKILLICONS.map(icon => (
-                  <div key={icon.name} className="icon tl-skills-icons">
+                  <motion.div 
+                    drag
+                    dragConstraints={dragRef}
+                    dragTransition={{ bounceStiffness: 100, bounceDamping: 4 }}
+                    whileTap={{ cursor: 'grabbing', scale: 0.8 }}
+                    key={icon.name} className="icon tl-skills-icons">
                     {icon.import}
                     <h5>{icon.name}</h5>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

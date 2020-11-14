@@ -27,7 +27,7 @@ function Nav() {
             <Link id='left-arrow-nav' to={`/${leftPage}`}>
               <FiChevronLeft size={30} />
             </Link>
-            <Link to='/'>
+            <Link id='home-nav' to='/'>
               Home
             </Link>
             <Link id='about-nav' to='/about'>

@@ -1,5 +1,7 @@
 import React, { useEffect, useContext } from "react"
 import gsap from "gsap"
+import { motion } from 'framer-motion'
+import { fadeInUp, stagger } from '../animation/animation'
 import { AiOutlineMail } from "react-icons/ai"
 import { FaPhone } from "react-icons/fa"
 import { PageContext } from "../context/pagecontext"
@@ -12,46 +14,28 @@ function ContactSection() {
     // eslint-disable-next-line
     setLeftPage('portfolio');
     // eslint-disable-next-line
-    setRightPage(null);
+    setRightPage('contact');
 
     gsap.to('#contact-nav',  { css: { className:'+=active'} } , 0 )
-    gsap.to('#right-arrow-nav',  { css: { className:'+=disabled'} } , 0 )
+    // gsap.to('#right-arrow-nav',  { css: { className:'+=disabled'} } , 0 )
+    gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
 
-    gsap.from(".tl-contact-title", {
-      opacity: 0,
-      y: -80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    gsap.from(".tl-contact-subtitle", {
-      opacity: 0,
-      y: 80,
-      ease: "power4.inOut",
-      duration: 1.2,
-    })
-    const tlContact = gsap.timeline({
-      defaults: { duration: 1.6, ease: "power4.inOut" },
-    })
-    tlContact.from(".tl-contact", { opacity: 0, y: 60, stagger: 0.4 })
-
-    const tlForm = gsap.timeline({
-      defaults: { duration: 1.6, ease: "power4.inOut" },
-    })
-    tlForm.from(".tl-form", { opacity: 0, y: 60, stagger: 0.2 })
   }, [])
+ 
   return (
     <section id="contact">
       <div className="container">
         <div className="container-fluid">
-          <div className="flex contact-container">
-            <header>
+          <motion.div variants={stagger} className="flex contact-container">
+            <motion.header variants={fadeInUp}>
               <h2 className="tl-contact-title">Let's get in touch</h2>
               <p className="tl-contact-subtitle">
                 Currently accepting work, lets talk about what <span>you</span>{" "}
                 have in mind!
               </p>
-            </header>
-            <form
+            </motion.header>
+            <motion.form
+              variants={fadeInUp}
               name="contact"
               method="POST"
               data-netlify="true"
@@ -73,8 +57,8 @@ function ContactSection() {
               <div className="form-submit tl-form">
                 <input type="submit" value="Send" />
               </div>
-            </form>
-            <div className="direct-contact">
+            </motion.form>
+            <motion.div variants={fadeInUp} className="direct-contact">
               <hr />
               <h3 className="tl-contact">Contact me directly</h3>
               <div className="direct-methods">
@@ -90,8 +74,8 @@ function ContactSection() {
                 </div>
               </div>
               <hr />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

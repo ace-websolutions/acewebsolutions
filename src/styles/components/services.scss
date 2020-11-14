@@ -1,12 +1,14 @@
 #services {
-  background-color: $bg-grey;
-  color: $bg-light;
+  background: linear-gradient(
+    180deg, rgba(0, 0, 0, 0.24) 0%, $primary-faded 100%);
+  color: #000;
   .serv-container {
     flex-direction: column;
     header {
       width: 100%;
       margin-bottom: 4rem;
       display: block;
+      color: #fff;
       h2 {
         font-size: 2.6rem;
         font-weight: 700;
@@ -16,12 +18,37 @@
         color: #999;
       }
     }
+    .intro-service{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding-top: 3rem;
+      box-sizing: border-box;
+      background: $bg-light;
+      border-radius: 1rem 1rem 0 0;
+      svg {
+        height: 15rem;
+        width: 15rem;
+        fill: #000;
+        .color-prime {
+          fill: $secondary;
+        }
+      }
+      .intro-service-description{
+        max-width: 50%;
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+    }
     .services-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
       align-items: center;
       box-sizing: border-box;
+      background: $bg-light;
+      border-radius: 0 0 1rem 1rem ;
       .service-card {
         min-height: 300px;
         min-width: 25%;
@@ -37,6 +64,7 @@
         padding-top: 2rem;
         color: $bg-dark;
         border-radius: 8px;
+        align-items: center;
         @include media("<=tablet") {
           min-width: 50%;
           width: 50%;
@@ -44,29 +72,22 @@
         @include media("<=phone") {
           min-width: 75%;
           width: 75%;
-          align-items: center;
         }
         svg {
           height: 85%;
           width: 85%;
-          fill: $bg-light;
+          fill: #000;
           .color-prime {
-            fill: $primary;
+            fill: $secondary;
           }
         }
         .service-description {
-          padding: 0.5rem 0;
+          padding: 0.75rem;
           box-sizing: border-box;
-          text-align: left;
-          @include media("<=phone") {
-            text-align: center;
-          }
-          h4 {
+          text-align: center;
+          h3 {
             color: $bg-light;
             text-transform: uppercase;
-          }
-          p {
-            color: #999;
           }
         }
       }

@@ -62,6 +62,8 @@ html {
 }
 
 #about, #services, #portfolio, #contact{
+  background: linear-gradient(
+    60deg, rgb(210, 218, 255) 0%, $primary 100%);
   min-height: 100vh;
   text-align: center;
   box-sizing: border-box;

@@ -20,6 +20,17 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                Photos:{" "}
+                <a
+                  href="http://unsplash.com"
+                  title="unsplash"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Unsplash
+                </a>
+              </li>
+              <li>
                 SVG:{" "}
                 <a
                   href="https://www.flaticon.com/authors/eucalyp"

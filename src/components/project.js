@@ -1,26 +1,25 @@
 import React from "react"
+import { motion } from 'framer-motion'
+import { fadeInUp } from '../animation/animation'
 import Img from 'gatsby-image'
-import AniLink from "gatsby-plugin-transition-link/AniLink";
-
+import { Link } from 'gatsby'
 
 function Project({ project }) {
 
   return (
-    <>
-      <article className="card tl-project">
+      <motion.article variants={fadeInUp} className="card tl-project">
         <div className="img-container">
         <Img fluid={project.img} alt={project.title} backgroundColor/>
         </div>
         <div className="info-container">
           <div className="info">
             <h2>{project.title}</h2>
-            <AniLink paintDrip hex="#4361eeff" to={`/project-${project.link}`}>
+            <Link to={`/project-${project.link}`}>
               See more
-            </AniLink>
+            </Link>
           </div>
         </div>
-      </article>
-    </>
+      </motion.article>
   )
 }
 
