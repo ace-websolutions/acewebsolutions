@@ -27,11 +27,8 @@ const variants = {
 
 
 const Layout = ({ children, location }) => {
-  React.useEffect(() => {
-    console.log(location)
-  })
   return (
-    <PageProvider>
+    <>
       <Nav />
           <AnimatePresence exitBeforeEnter>
           <motion.main  
@@ -43,7 +40,7 @@ const Layout = ({ children, location }) => {
           </motion.main>
         </AnimatePresence>
       <Footer />
-    </PageProvider>
+    </>
   )
 }
 

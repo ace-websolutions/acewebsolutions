@@ -9,14 +9,14 @@ import { Link } from "gatsby"
 
 function AboutSection() {
 
-  const{ setLeftPage, setRightPage } = useContext(PageContext)
+  // const{ setLeftPage, setRightPage } = useContext(PageContext)
   const dragRef = useRef(null)
 
   useEffect(() => {
     // eslint-disable-next-line
-    setLeftPage('');
+    // setLeftPage('');
     // eslint-disable-next-line
-    setRightPage('services'); 
+    // setRightPage('services'); 
 
     gsap.to('#about-nav',  { css: { className:'+=active'} } , 0 )
     gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )

@@ -7,13 +7,13 @@ import { PageContext } from "../context/pagecontext"
 
 const Landing = () => {
 
-  const { setLeftPage, setRightPage } = useContext(PageContext)
+  // const { setLeftPage, setRightPage } = useContext(PageContext)
 
   useEffect(() => {
     // eslint-disable-next-line
-    setLeftPage('');
+    // setLeftPage('');
     // eslint-disable-next-line
-    setRightPage('about'); 
+    // setRightPage('about'); 
 
     gsap.to('#home-nav',  { css: { className:'+=active'} } , 0 )
     // gsap.to('#left-arrow-nav',  { css: { className:'+=disabled'} } , 0 )

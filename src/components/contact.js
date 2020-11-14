@@ -8,13 +8,13 @@ import { PageContext } from "../context/pagecontext"
 
 function ContactSection() {
 
-  const { setLeftPage, setRightPage } = useContext(PageContext)
+  // const { setLeftPage, setRightPage } = useContext(PageContext)
 
   useEffect(() => {
     // eslint-disable-next-line
-    setLeftPage('portfolio');
+    // setLeftPage('portfolio');
     // eslint-disable-next-line
-    setRightPage('contact');
+    // setRightPage('contact');
 
     gsap.to('#contact-nav',  { css: { className:'+=active'} } , 0 )
     // gsap.to('#right-arrow-nav',  { css: { className:'+=disabled'} } , 0 )

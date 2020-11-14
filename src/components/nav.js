@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 function Nav() {
   const [open, setOpen] = useState(false)
-  const { leftPage, rightPage } = useContext(PageContext)
+  // const { leftPage, rightPage } = useContext(PageContext)
 
   useEffect(() => {
     gsap.to("progress", {
@@ -24,9 +24,9 @@ function Nav() {
         <progress max="100" value="0"></progress>
         <nav className="nav-bar">
           <div className="nav-button-group">
-            <Link id='left-arrow-nav' to={`/${leftPage}`}>
+            {/* <Link id='left-arrow-nav' to={`/${leftPage}`}>
               <FiChevronLeft size={30} />
-            </Link>
+            </Link> */}
             <Link id='home-nav' to='/'>
               Home
             </Link>
@@ -42,20 +42,20 @@ function Nav() {
             <Link id='contact-nav' to='/contact'>
               Contact
             </Link>
-            <Link id='right-arrow-nav' to={`/${rightPage}`}>
+            {/* <Link id='right-arrow-nav' to={`/${rightPage}`}>
               <FiChevronRight size={30} />
-            </Link>
+            </Link> */}
           </div>
           <div className="nav-buttons-group-mobile">
-          <Link id='left-arrow-nav' to={`/${leftPage}`}>
+          {/* <Link id='left-arrow-nav' to={`/${leftPage}`}>
               <FiChevronLeft size={30} />
-            </Link>
+            </Link> */}
           <button className="burger" onClick={() => setOpen(!open)}>
             <FiMenu size={30} />
           </button>
-          <Link id='right-arrow-nav' to={`/${rightPage}`}>
+          {/* <Link id='right-arrow-nav' to={`/${rightPage}`}>
               <FiChevronRight size={30} />
-            </Link>
+            </Link> */}
           </div>
           <div className={`nav-button-group-mobile mobile-${open}`}>
             <div className="mobile-buttons">

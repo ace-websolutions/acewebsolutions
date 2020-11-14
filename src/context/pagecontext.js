@@ -4,7 +4,7 @@ import React, { useState, createContext } from "react";
 export const PageContext = createContext();
 
 export const PageProvider = (props) => {
-    const [leftPage, setLeftPage] = useState(null)
+    const [leftPage, setLeftPage] = useState('')
     const [rightPage, setRightPage] = useState('about')
 
   return (

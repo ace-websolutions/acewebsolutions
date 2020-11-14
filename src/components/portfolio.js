@@ -7,7 +7,7 @@ import Project from "./project"
 import { PageContext } from "../context/pagecontext"
 
 function PortfolioSection() {
-  const { setLeftPage, setRightPage } = useContext(PageContext)
+  // const { setLeftPage, setRightPage } = useContext(PageContext)
 
   const data = useStaticQuery(graphql`
     query {
@@ -70,9 +70,9 @@ function PortfolioSection() {
 
 useEffect(() => {
   // eslint-disable-next-line
-  setLeftPage('services');
+  // setLeftPage('services');
   // eslint-disable-next-line
-  setRightPage('contact'); 
+  // setRightPage('contact'); 
 
   gsap.to('#portfolio-nav',  { css: { className:'+=active'} } , 0 )
   // gsap.to("#nav",{ css: { color: "#000" },ease: "none", }, 0 )
