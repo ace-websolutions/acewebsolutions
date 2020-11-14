@@ -90,6 +90,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @include media(">tablet") {
+        display: none;
+      }
       a {
         font-size: 1.1rem;
         position: relative;
@@ -114,9 +117,7 @@
       z-index: 100;
       cursor: pointer;
       text-decoration: none;
-      @include media(">tablet") {
-        display: none;
-      }
+
     }
   }
     .nav-button-group-mobile {
