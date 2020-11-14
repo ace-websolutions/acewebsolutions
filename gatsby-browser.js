@@ -1,5 +1,6 @@
-import CustomLayout from "./src/components/browser/layout"
-// import { PageProvider } from './src/context/pagecontext'
+import React from "react"
+import Layout from "./src/components/layout"
 
-export const wrapPageElement = CustomLayout
-// export const wrapRootElement = PageProvider
+export const wrapPageElement = ({ element, props }) => {
+    return <Layout {...props}>{element}</Layout>
+  }

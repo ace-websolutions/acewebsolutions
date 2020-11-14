@@ -19,7 +19,7 @@ function Nav() {
   }, [])
 
   return (
-    <section id="nav">
+    <nav id="nav">
       <div className="container">
         <progress max="100" value="0"></progress>
         <nav className="nav-bar">
@@ -75,7 +75,7 @@ function Nav() {
           </div>
         </nav>
       </div>
-    </section>
+    </nav>
   )
 }
 

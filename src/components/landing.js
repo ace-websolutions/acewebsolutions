@@ -17,7 +17,7 @@ const Landing = () => {
 
     gsap.to('#home-nav',  { css: { className:'+=active'} } , 0 )
     // gsap.to('#left-arrow-nav',  { css: { className:'+=disabled'} } , 0 )
-    gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
+    // gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
 
     // gsap.to("body", 0, { css: { visibility: "visible" } })
 

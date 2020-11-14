@@ -17,7 +17,7 @@ const ServicesSection = () => {
     // setRightPage('portfolio'); 
 
     gsap.to('#services-nav',  { css: { className:'+=active'} } , 0 )
-    gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
+    // gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
 
     gsap.to(".svg-gear", {
       transformOrigin: "center",

@@ -19,7 +19,7 @@ function AboutSection() {
     // setRightPage('services'); 
 
     gsap.to('#about-nav',  { css: { className:'+=active'} } , 0 )
-    gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
+    // gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
 
     const tlSVG = gsap.timeline({
       defaults: { duration: 1, ease: "power4.inOut" },

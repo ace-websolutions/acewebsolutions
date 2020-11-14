@@ -18,7 +18,7 @@ function ContactSection() {
 
     gsap.to('#contact-nav',  { css: { className:'+=active'} } , 0 )
     // gsap.to('#right-arrow-nav',  { css: { className:'+=disabled'} } , 0 )
-    gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
+    // gsap.to("#nav",{ css: { color: "#fff" },ease: "none", }, 0 )
 
   }, [])
  
