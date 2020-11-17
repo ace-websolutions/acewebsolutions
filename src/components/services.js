@@ -37,12 +37,13 @@ const ServicesSection = () => {
       repeat: -1,
       yoyo: true,
       defaults: {
-        duration: 1.4,
+        duration: 2,
+        ease: "back",
       },
     })
     tlHost.to(".svg-host", {
-      y: -15,
-      ease: "none",
+      transformOrigin: "center",
+      scale: 1.075,
     })
 
     const tlSeo = gsap.timeline({
@@ -62,23 +63,22 @@ const ServicesSection = () => {
         transformOrigin: "right",
         delay: 2,
       })
-    // const tlHand = gsap.timeline({
-    //   repeat: -1,
-    //   repeatDelay: 1.2,
-    //   defaults: {
-    //     scaleY: 0,
-    //     duration: 0.4,
-    //     stagger: 0.8,
-    //   },
-    // })
-    // tlHand
-    //   .from(".svg-hand", {
-    //     transformOrigin: "bottom",
-    //   })
-    //   .to(".svg-hand", {
-    //     transformOrigin: "top",
-    //     delay: 2,
-    //   })
+    const tlHand = gsap.timeline({
+      delay: 1,
+      repeat: -1,
+      repeatDelay: 1.8,
+    })
+    tlHand
+      .to(".svg-hand", {
+        y: 45,
+        duration: 1.8,
+        ease: "elastic.out",
+      })
+      .to(".svg-hand", {
+        y: 0,
+        duration: 0.8,
+        ease: "none",
+      })
   }, [])
 
   return (
@@ -99,7 +99,7 @@ const ServicesSection = () => {
                   key={service.title}
                   className="service-card"
                 >
-                  {service.svg}
+                  <div className="service-svg-container">{service.svg}</div>
                   <div className="service-description">
                     <h3>{service.title}</h3>
                     <p>{service.description}</p>

@@ -1,6 +1,5 @@
 #services {
-  background: linear-gradient(
-    355deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
+  background: linear-gradient(355deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
   color: #000;
   .serv-container {
     flex-direction: column;
@@ -25,49 +24,64 @@
       align-items: center;
       box-sizing: border-box;
       .service-card {
-        height: 425px;
-        width: 325px;
-        box-sizing: border-box;
-        overflow: hidden;
+        width: 100%;
+        color: #fff;
         position: relative;
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        color: #fff;
-        border-radius: 8px;
         align-items: center;
-        padding: 2rem;
-        box-sizing: border-box;
-        background: rgba(121, 121, 121, 0.411);
-        box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);  
-        margin: 0 0.5rem 1rem 0.5rem;
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+          .service-description {
+            text-align: right;
+          }
+        }
         @include media("<=tablet") {
-          min-width: 50%;
+          flex-direction: column;
+          &:nth-child(even) {
+            flex-direction: column;
+            .service-description {
+              text-align: center;
+            }
+          }
+        }
+        .service-svg-container {
           width: 50%;
-        }
-        @include media("<=phone") {
-          height: 450px;
-          min-width: 100%;
-          width: 100%;
-        }
-        svg {
-          min-height: 150px;
-          min-width: 150px;
-          fill: #fff;
-          .color-prime {
-            fill: $primary;
+          height: 425px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: rgba(121, 121, 121, 0.411);
+          box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15),
+            0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+          @include media("<=tablet") {
+            height: 300px;
+          }
+          svg {
+            width: 60%;
+            overflow: visible;
+            fill: #fff;
+            .color-prime {
+              fill: $primary;
+            }
           }
         }
         .service-description {
+          width: 50%;
           padding: 0.75rem;
           box-sizing: border-box;
-          text-align: center;
+          text-align: left;
+          @include media("<=tablet") {
+            text-align: center;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(121, 121, 121, 0.411);
+          }
           h3 {
             color: $bg-light;
             text-transform: uppercase;
           }
-          p{
-            color:#999;
+          p {
+            color: #999;
             line-height: 2rem;
           }
         }
