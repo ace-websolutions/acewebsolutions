@@ -14,8 +14,6 @@ function ContactSection() {
     setLeftPage("portfolio")
     // eslint-disable-next-line
     setRightPage("contact")
-
-    gsap.to("#contact-nav", { css: { className: "+=active" } }, 0)
   }, [])
 
   return (

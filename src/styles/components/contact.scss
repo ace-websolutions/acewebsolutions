@@ -1,6 +1,5 @@
 #contact {
-  background: linear-gradient(
-    315deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
+  background: linear-gradient(315deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
   .contact-container {
     flex-direction: column;
     header {
@@ -76,19 +75,18 @@
         width: 100%;
         box-sizing: border-box;
         input {
-          background: $primary;
-          border: none;
+          background: $primary-faded;
+          border: 1px solid $primary;
           color: #fff;
           font-weight: 600;
-          // letter-spacing: -1px;
           font-size: 1.2rem;
-          border-radius: 16px;
+          border-radius: 8px;
           padding: 0.5rem 2rem;
           box-sizing: border-box;
           cursor: pointer;
-          transition: scale 150ms ease;
+          transition: 300ms ease-out;
           &:hover {
-            scale: (1.1);
+            background: $primary;
           }
           @include media("<=phone") {
             padding: 1rem 3rem;

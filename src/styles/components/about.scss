@@ -1,7 +1,6 @@
 #about {
-  background: linear-gradient(
-    45deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
-  color:#fff;
+  background: linear-gradient(45deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
+  color: #fff;
   .about-container {
     flex-direction: column;
     flex-wrap: wrap;
@@ -32,10 +31,10 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      @include media("<=phone") {
+      @include media("<=tablet") {
         flex-direction: column;
       }
-      .about-info-container{
+      .about-info-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -45,16 +44,18 @@
         padding: 1.5rem;
         box-sizing: border-box;
         p {
-        text-align: left;
-        font-size: 1.15rem;
-        line-height: 2.2rem;
+          text-align: left;
+          font-size: 1.15rem;
+          line-height: 2.2rem;
+        }
+        @include media("<=tablet") {
+          min-width: 100%;
+          width: 100%;
+          p {
+            text-align: center;
+          }
+        }
       }
-      @include media("<=phone") {
-        min-width: 100%;
-        width: 100%;
-        text-align: center;
-      }
-    }
       .about-svg-container {
         height: 450px;
         min-width: 50%;
@@ -66,22 +67,20 @@
         padding: 1rem;
         box-sizing: border-box;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        @include media("<=phone") {
-          height: 300px;
-          min-width: 100%;
+        @include media("<=tablet") {
           width: 100%;
+          max-width: 390px;
+          height: 300px;
+          max-height: 300px;
         }
         svg {
-          height: 75%;
-          transform: rotate(-10deg);
+          width: 75%;
+          transform: translateY(-5%) rotate(-10deg);
           @include media("<=tablet") {
-            transform: scale(0.85) rotate(-10deg);
-          }
-          @include media("<=phone") {
-             transform: scale(0.9) rotate(-10deg);
+            transform: translateY(-20%) rotate(-10deg);
           }
         }
       }

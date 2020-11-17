@@ -15,8 +15,6 @@ const ServicesSection = () => {
     // eslint-disable-next-line
     setRightPage("portfolio")
 
-    gsap.to("#services-nav", { css: { className: "+=active" } }, 0)
-
     gsap.to(".svg-gear", {
       transformOrigin: "center",
       rotate: 360,

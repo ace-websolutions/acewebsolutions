@@ -75,13 +75,17 @@ html {
 }
 
 .next-section-button {
-  background: $primary;
+  background: $primary-faded;
   height: auto;
   max-width: 400px;
-  border: none;
-  border-radius: 16px;
+  border: 1px solid $primary;
+  border-radius: 4px;
   margin: 3rem auto 0 auto;
+  transition: 300ms ease-out;
   cursor: pointer;
+  &:hover {
+    background: $primary;
+  }
   a {
     text-decoration: none;
     display: inline-block;

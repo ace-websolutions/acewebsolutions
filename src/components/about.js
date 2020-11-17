@@ -17,8 +17,6 @@ function AboutSection() {
     // eslint-disable-next-line
     setRightPage("services")
 
-    gsap.to("#about-nav", { css: { className: "+=active" } }, 0)
-
     const tlSVG = gsap.timeline({
       defaults: { duration: 1, ease: "power4.inOut" },
     })

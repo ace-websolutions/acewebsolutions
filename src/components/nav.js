@@ -21,25 +21,25 @@ function Nav() {
   return (
     <nav id="nav">
       <div className="container">
-        <progress max="100" value="0"></progress>
+        {/* <progress max="100" value="0"></progress> */}
         <nav className="nav-bar">
           <div className="nav-button-group">
             <Link id="left-arrow-nav" to={`/${leftPage}`}>
               <FiChevronLeft size={30} />
             </Link>
-            <Link id="home-nav" to="/">
+            <Link id="home-nav" to="/" activeClassName="active">
               Home
             </Link>
-            <Link id="about-nav" to="/about">
+            <Link id="about-nav" to="/about" activeClassName="active">
               About
             </Link>
-            <Link id="services-nav" to="/services">
+            <Link id="services-nav" to="/services" activeClassName="active">
               Services
             </Link>
-            <Link id="portfolio-nav" to="/portfolio">
+            <Link id="portfolio-nav" to="/portfolio" activeClassName="active">
               Portfolio
             </Link>
-            <Link id="contact-nav" to="/contact">
+            <Link id="contact-nav" to="/contact" activeClassName="active">
               Contact
             </Link>
             <Link id="right-arrow-nav" to={`/${rightPage}`}>

@@ -13,8 +13,6 @@ const Landing = () => {
     setLeftPage("")
     // eslint-disable-next-line
     setRightPage("about")
-
-    gsap.to("#home-nav", { css: { className: "+=active" } }, 0)
   }, [])
 
   return (
@@ -49,8 +47,8 @@ const Landing = () => {
               </a>
             </div>
           </div>
+          <div className="logo"></div>
         </div>
-        <div className="logo"></div>
         <Particles
           className="particle"
           params={{

@@ -1,14 +1,18 @@
 #landing {
   height: 100vh;
   overflow: hidden;
+  padding: 6rem 0;
+  box-sizing: border-box;
   .landing-container {
     justify-content: space-between;
     align-items: center;
     z-index: 12;
     color: #fff;
-    width: 100%;
-    margin: 0 auto;
-    .text{
+    @include media("<=tablet") {
+      flex-direction: column;
+      justify-content: center;
+    }
+    .text {
       position: relative;
       width: 600px;
       z-index: 10;
@@ -16,77 +20,102 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-    h2 {
-      margin: 0.25rem 0;
-      font-size: 2.7rem;
-      line-height: 2.2rem;
-      font-weight: 700;
-      z-index: 10;
-      width: 100%;
       @include media("<=tablet") {
-        font-size: 2.6rem;
-        line-height: 3rem;
+        width: 100%;
+        align-items: center;
+        text-align: center;
       }
-      .line {
-        margin-bottom: 8px;
-        height: 45px;
-        position: relative;
-        overflow: hidden;
-        @include media("<=phone") {
-          height: 100px;
-        }
-        span {
-          position: absolute;
-          width: 100%;
-          text-align: left;
-        }
-      }
-    }
-    h4 {
-      margin: 0.25rem 0;
-      font-size: 2rem;
-      line-height: 3rem;
-      font-weight: 100;
-      z-index: 10;
-      width: 100%;
-      // mix-blend-mode: difference;
-      @include media("<=tablet") {
-        font-size: 1.6rem;
+      h2 {
+        margin: 0.25rem 0;
+        font-size: 2.7rem;
         line-height: 2.2rem;
-      }
-      .line {
-        height: 48px;
-        position: relative;
-        overflow: hidden;
+        font-weight: 700;
+        z-index: 10;
+        width: 100%;
         @include media("<=tablet") {
-          height: 32px;
+          font-size: 2.6rem;
+          line-height: 3rem;
         }
-        span {
-          position: absolute;
-          width: 100%;
-          text-align: left;
+        .line {
+          margin-bottom: 8px;
+          height: 45px;
+          position: relative;
+          overflow: hidden;
+          @include media("<=phone") {
+            height: 100px;
+          }
+          span {
+            position: absolute;
+            width: 100%;
+            text-align: left;
+            @include media("<=tablet") {
+              position: relative;
+              text-align: center;
+            }
+          }
+        }
+      }
+      h4 {
+        margin: 0.25rem 0;
+        font-size: 1.7rem;
+        line-height: 3rem;
+        font-weight: 100;
+        z-index: 10;
+        width: 100%;
+        // mix-blend-mode: difference;
+        @include media("<=tablet") {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+        }
+        .line {
+          height: 48px;
+          position: relative;
+          overflow: hidden;
+          @include media("<=tablet") {
+            height: 32px;
+          }
+          span {
+            position: absolute;
+            width: 100%;
+            text-align: left;
+            @include media("<=tablet") {
+              position: relative;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .btn-group {
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        margin-top: 18px;
+        z-index: 10;
+        .landing-contact {
+          margin: 0;
+        }
+        .git-link {
+          text-decoration: none;
+          color: #fff;
+          position: relative;
+          margin-top: 2rem;
+          margin-left: 1rem;
         }
       }
     }
-    .btn-group {
-      display: flex;
-      flex-direction: column;
-      opacity: 1;
-      margin-top: 18px;
+    .logo {
+      display: none;
+      background: red;
       z-index: 10;
-      .landing-contact{
-        margin:0
-      }
-      .git-link {
-        text-decoration: none;
-        color: #fff;
-        position: relative;
-        margin-top: 2rem;
-        margin-left: 1rem;
+      position: relative;
+      width: 500px;
+      height: 400px;
+      @include media("<=tablet") {
+        width: 100%;
+        max-width: 100%;
       }
     }
   }
-}
   .particle {
     position: absolute;
     height: 100vh;
