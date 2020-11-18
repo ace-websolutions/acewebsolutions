@@ -2,8 +2,10 @@ import React, { useState, useEffect, useContext } from "react"
 import gsap from "gsap"
 import { Link } from "gatsby"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { FiMenu, FiChevronRight, FiChevronLeft } from "react-icons/fi"
+import { FiMenu, FiChevronRight, FiChevronLeft, FiX } from "react-icons/fi"
 import { PageContext } from "../context/pagecontext"
+import { motion } from "framer-motion"
+import { navVariants } from "../animation/animation"
 gsap.registerPlugin(ScrollTrigger)
 
 function Nav() {
@@ -51,21 +53,35 @@ function Nav() {
               <FiChevronLeft size={30} />
             </Link>
             <button className="burger" onClick={() => setOpen(!open)}>
-              <FiMenu size={30} />
+              {!open ? <FiMenu size={30} /> : <FiX size={30} />}
             </button>
             <Link id="right-arrow-nav" to={`/${rightPage}`}>
               <FiChevronRight size={30} />
             </Link>
           </div>
-          <div className={`nav-button-group-mobile mobile-${open}`}>
+          <motion.div
+            variants={navVariants}
+            animate={open ? "open" : "closed"}
+            className={`nav-button-group-mobile`}
+          >
             <div className="mobile-buttons">
-              <Link to="/">Home</Link>
-              <Link to="/about">About</Link>
-              <Link to="/services">Services</Link>
-              <Link to="/portfolio">Portfolio</Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/" onClick={() => setOpen(!open)}>
+                Home
+              </Link>
+              <Link to="/about" onClick={() => setOpen(!open)}>
+                About
+              </Link>
+              <Link to="/services" onClick={() => setOpen(!open)}>
+                Services
+              </Link>
+              <Link to="/portfolio" onClick={() => setOpen(!open)}>
+                Portfolio
+              </Link>
+              <Link to="/contact" onClick={() => setOpen(!open)}>
+                Contact
+              </Link>
             </div>
-          </div>
+          </motion.div>
         </nav>
       </div>
     </nav>

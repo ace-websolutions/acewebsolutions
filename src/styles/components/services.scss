@@ -38,6 +38,7 @@
         }
         @include media("<=tablet") {
           flex-direction: column;
+          max-width: 400px;
           &:nth-child(even) {
             flex-direction: column;
             .service-description {
