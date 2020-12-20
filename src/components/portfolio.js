@@ -47,8 +47,8 @@ function PortfolioSection() {
         <div className="container-fluid">
           <motion.div variants={stagger} className="flex proj-container">
             <motion.header variants={fadeInUp}>
-              <h2 className="tl-project-title">My work so far</h2>
-              <p className="tl-project-subtitle">
+              <h2>My work so far</h2>
+              <p>
                 A running list of my projects used to help get me where I am
                 today{" "}
               </p>

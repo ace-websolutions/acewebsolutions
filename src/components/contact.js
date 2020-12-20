@@ -21,8 +21,8 @@ function ContactSection() {
         <div className="container-fluid">
           <motion.div variants={stagger} className="flex contact-container">
             <motion.header variants={fadeInUp}>
-              <h2 className="tl-contact-title">Let's get in touch</h2>
-              <p className="tl-contact-subtitle">
+              <h2>Let's get in touch</h2>
+              <p>
                 Currently accepting work, lets talk about what <span>you</span>{" "}
                 have in mind!
               </p>
@@ -35,32 +35,32 @@ function ContactSection() {
               netlify-honeypot="bot-field"
             >
               <input type="hidden" name="bot-field" />
-              <div className="form-email tl-form">
+              <div className="form-email">
                 <input type="email" name="email" placeholder="Email" />
               </div>
-              <div className="form-name tl-form">
+              <div className="form-name">
                 <input type="text" name="name" placeholder="Name" />
               </div>
-              <div className="form-textarea tl-form">
+              <div className="form-textarea">
                 <textarea
                   name="project-description"
                   placeholder="Project Description"
                 />
               </div>
-              <div className="form-submit tl-form">
+              <div className="form-submit">
                 <input type="submit" value="Send" />
               </div>
             </motion.form>
             <motion.div variants={fadeInUp} className="direct-contact">
               <hr />
-              <h3 className="tl-contact">Contact me directly</h3>
+              <h3>Contact me directly</h3>
               <div className="direct-methods">
-                <div className="contact-email tl-contact">
+                <div className="contact-email">
                   <a href="mailto: info@acewebsolutions.io">
                     <AiOutlineMail size={40} />
                   </a>
                 </div>
-                <div className="contact-phone tl-contact">
+                <div className="contact-phone">
                   <a href="tel:+0000000000">
                     <FaPhone size={35} />
                   </a>

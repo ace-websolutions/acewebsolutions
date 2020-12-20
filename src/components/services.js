@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from "react"
-import gsap from "gsap"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import { SERVICES } from "../context/config"
@@ -14,69 +13,6 @@ const ServicesSection = () => {
     setLeftPage("about")
     // eslint-disable-next-line
     setRightPage("portfolio")
-
-    gsap.to(".svg-gear", {
-      transformOrigin: "center",
-      rotate: 360,
-      repeat: -1,
-      yoyo: true,
-      ease: "none",
-      duration: 7,
-    })
-    gsap.to(".svg-gear-rev", {
-      transformOrigin: "center",
-      rotate: -360,
-      repeat: -1,
-      yoyo: true,
-      ease: "none",
-      duration: 7,
-    })
-    const tlHost = gsap.timeline({
-      repeat: -1,
-      yoyo: true,
-      defaults: {
-        duration: 2,
-        ease: "back",
-      },
-    })
-    tlHost.to(".svg-host", {
-      transformOrigin: "center",
-      scale: 1.075,
-    })
-
-    const tlSeo = gsap.timeline({
-      repeat: -1,
-      repeatDelay: 1.2,
-      defaults: {
-        scaleX: 0,
-        duration: 0.4,
-        stagger: 0.8,
-      },
-    })
-    tlSeo
-      .from(".svg-seo", {
-        transformOrigin: "left",
-      })
-      .to(".svg-seo", {
-        transformOrigin: "right",
-        delay: 2,
-      })
-    const tlHand = gsap.timeline({
-      delay: 1,
-      repeat: -1,
-      repeatDelay: 1.8,
-    })
-    tlHand
-      .to(".svg-hand", {
-        y: 45,
-        duration: 1.8,
-        ease: "elastic.out",
-      })
-      .to(".svg-hand", {
-        y: 0,
-        duration: 0.8,
-        ease: "none",
-      })
   }, [])
 
   return (
@@ -85,10 +21,8 @@ const ServicesSection = () => {
         <div className="container-fluid">
           <motion.div variants={stagger} className="flex serv-container">
             <motion.header variants={fadeInUp}>
-              <h2 className="tl-service-title">Here is what I do</h2>
-              <p className="tl-service-subtitle">
-                Personalized, functional, well maintained web applications
-              </p>
+              <h2>Here is what I do</h2>
+              <p>Personalized, functional, well maintained web applications</p>
             </motion.header>
             <motion.div variants={stagger} className="services-container">
               {SERVICES.map(service => (
