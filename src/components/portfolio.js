@@ -1,17 +1,24 @@
 import React, { useEffect, useContext } from "react"
-import gsap from "gsap"
+import PROJECTS from "../context/projects.json"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
-import { graphql, Link, useStaticQuery } from "gatsby"
 import Project from "./project"
 import { PageContext } from "../context/pagecontext"
 
 function PortfolioSection() {
   const { setLeftPage, setRightPage } = useContext(PageContext)
 
+  useEffect(() => {
+    // eslint-disable-next-line
+    setLeftPage("services")
+    // eslint-disable-next-line
+    setRightPage("contact")
+  }, [])
+
   const data = useStaticQuery(graphql`
     query {
-      placeholder: file(relativePath: { eq: "thumbnail/placeholder.jpg" }) {
+      healthy: file(relativePath: { eq: "thumbnail/healthy.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
@@ -34,46 +41,6 @@ function PortfolioSection() {
       }
     }
   `)
-  const PROJECTS = [
-    {
-      title: "Coming Soon",
-      description:
-        "Example of a single page web application.  Features sections such as: Services, About and Contact.  Uses form submission and completely responsive on mobile devices.",
-      live: "#",
-      code: "#",
-      img: "",
-      tags: [],
-      link: "coming-soon",
-    },
-    {
-      title: "Dog Walking",
-      description:
-        "Example of a single page web application.  Features sections such as: Services, About and Contact.  Uses form submission and completely responsive on mobile devices.",
-      live: "https://festive-villani-dc6a2f.netlify.app/",
-      code: "https://github.com/ace-websolutions/dogwalking",
-      img: data.dog.childImageSharp.fluid,
-      tags: [],
-      link: "dog",
-    },
-    {
-      title: "Construction Underwriters",
-      description:
-        "Example of a single page web application.  Features sections such as: Services, About and Contact.  Uses google maps for directions and is completely responsive on mobile devices.",
-      live: "https://eloquent-brown-193374.netlify.app/",
-      code: "https://github.com/ace-websolutions/construction-underwriters",
-      img: data.construction.childImageSharp.fluid,
-      tags: [],
-      link: "construction",
-    },
-  ]
-
-  useEffect(() => {
-    // eslint-disable-next-line
-    setLeftPage("services")
-    // eslint-disable-next-line
-    setRightPage("contact")
-  }, [])
-
   return (
     <section id="portfolio">
       <div className="container">
@@ -88,7 +55,7 @@ function PortfolioSection() {
             </motion.header>
             <motion.div variants={stagger} className="projects-container">
               {PROJECTS.map(project => (
-                <Project key={project.title} project={project} />
+                <Project key={project.title} project={project} data={data} />
               ))}
             </motion.div>
             <motion.div className="next-section-button" variants={fadeInUp}>

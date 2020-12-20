@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from "react"
-import gsap from "gsap"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import { AiOutlineMail } from "react-icons/ai"

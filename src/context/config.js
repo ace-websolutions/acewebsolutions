@@ -23,7 +23,7 @@ import {
   SiMaterialUi,
   SiGreensock,
   SiGatsby,
-  SiFramer
+  SiFramer,
 } from "react-icons/si"
 
 export const SKILLICONS = [

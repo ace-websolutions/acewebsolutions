@@ -1,29 +1,26 @@
 [
-    {
-      "title": "Coming Soon",
-      "description":
-        "Example of a single page web application.  Features sections such: Services, About and Contact.  Uses form submission and completely responsive on mobile devices.",
-      "live": "#",
-      "code": "#",
-      "tags":["HTML","SCSS","GSAP","REACT","GATSBY"],
-      "link":"coming-soon"
-    },
-    {
-      "title": "Dog Walking",
-      "description":
-        "Example of a single page web application.  Features sections such: Services, About and Contact.  Uses form submission and completely responsive on mobile devices.",
-      "live": "https://festive-villani-dc6a2f.netlify.app/",
-      "code": "https://github.com/ace-websolutions/dogwalking",
-      "tags":["HTML","SCSS","GSAP","REACT","GATSBY"],
-      "link":"dog"
-    },
-    {
-      "title": "Construction Underwriters",
-      "description":
-        "Example of a single page web application.  Features sections such: Services, About and Contact.  Uses google maps for directions and is completely responsive on mobile devices.",
-      "live": "https://eloquent-brown-193374.netlify.app/",
-      "code": "https://github.com/ace-websolutions/construction-underwriters",
-      "tags":["HTML","SCSS","GSAP","REACT","GATSBY"],
-      "link":"construction"
-    }
+  {
+    "title": "Happy Healthy",
+    "description": "Example of a single page web application.  Features sections such: Services, About and Testimonials.  Completely responsive on mobile devices.",
+    "live": "https://health.acewebsolutions.io",
+    "code": "https://github.com/ace-websolutions/healthy",
+    "tags": ["HTML", "SCSS", "FRAMER MOTION", "REACT", "GATSBY"],
+    "link": "healthy"
+  },
+  {
+    "title": "Dog Walking",
+    "description": "Example of a single page web application.  Features sections such: Services, About and Contact.  Uses form submission and completely responsive on mobile devices.",
+    "live": "https://dog.acewebsolutions.io/",
+    "code": "https://github.com/ace-websolutions/dogwalking",
+    "tags": ["HTML", "SCSS", "GSAP", "REACT", "GATSBY"],
+    "link": "dog"
+  },
+  {
+    "title": "Construction Underwriters",
+    "description": "Example of a single page web application.  Features sections such: Services, About and Contact.  Uses google maps for directions and is completely responsive on mobile devices.",
+    "live": "https://con.acewebsolutions.io",
+    "code": "https://github.com/ace-websolutions/construction-underwriters",
+    "tags": ["HTML", "SCSS", "MATERIAL UI", "REACT", "GATSBY"],
+    "link": "construction"
+  }
 ]
