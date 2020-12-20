@@ -1,5 +1,4 @@
 import React, { useEffect, useContext } from "react"
-import gsap from "gsap"
 import { Link } from "gatsby"
 import Particles from "react-particles-js"
 import { FaGithub } from "react-icons/fa"

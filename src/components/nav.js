@@ -1,24 +1,13 @@
-import React, { useState, useEffect, useContext } from "react"
-import gsap from "gsap"
+import React, { useState, useContext } from "react"
 import { Link } from "gatsby"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { FiMenu, FiChevronRight, FiChevronLeft, FiX } from "react-icons/fi"
 import { PageContext } from "../context/pagecontext"
 import { motion } from "framer-motion"
 import { navVariants } from "../animation/animation"
-gsap.registerPlugin(ScrollTrigger)
 
 function Nav() {
   const [open, setOpen] = useState(false)
   const { leftPage, rightPage } = useContext(PageContext)
-
-  useEffect(() => {
-    gsap.to("progress", {
-      value: 100,
-      ease: "none",
-      scrollTrigger: { scrub: 0.3 },
-    })
-  }, [])
 
   return (
     <nav id="nav">

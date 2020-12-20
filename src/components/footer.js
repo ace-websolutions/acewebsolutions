@@ -6,10 +6,34 @@ const Footer = () => {
       <div className="container">
         <div className="container-fluid">
           <div className="flex footer-container">
-            <ul>
-              <li>&copy; Ace Web Solutions. All rights reserved</li>
+            <ul className="business-info">
               <li>
-                Inspiration:{" "}
+                <h3>Info</h3>
+              </li>
+              <li>
+                <h4>&copy; Ace Web Solutions &#183; All rights reserved</h4>
+              </li>
+              <li>
+                <h5>Address</h5>
+                <p>8630-M Guilford Rd STE304 &#183; Columbia, MD 20146</p>
+              </li>
+              <li>
+                <h5>Phone</h5>
+                <a href="tel:+0000000000">(000) 000-0000</a>
+              </li>
+              <li>
+                <h5>Email</h5>
+                <a href="mailto: info@acewebsolutions.io">
+                  info@acewebsolutions.io
+                </a>
+              </li>
+            </ul>
+            <ul className="copy-write">
+              <li>
+                <h3>Inspiration</h3>
+              </li>
+              <li>
+                <h5>Design</h5>
                 <a
                   href="http://html5up.net"
                   title="HTML5 UP"
@@ -20,7 +44,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                Photos:{" "}
+                <h5>Photos</h5>
                 <a
                   href="http://unsplash.com"
                   title="unsplash"
@@ -31,7 +55,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                SVG:{" "}
+                <h5>SVG</h5>
                 <a
                   href="https://www.flaticon.com/authors/eucalyp"
                   title="SVG Author"
@@ -55,8 +79,8 @@ const Footer = () => {
                   target="_blank"
                 >
                   Srip
-                </a>{" "}
-                from{" "}
+                </a>
+                <p>&#183;</p>
                 <a
                   href="https://www.flaticon.com/"
                   title="Flaticon"
