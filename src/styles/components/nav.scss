@@ -1,12 +1,17 @@
 #nav {
-  height: 8vh;
   min-height: 8vh;
   width: 100%;
   max-width: 100%;
+  margin: 0;
   position: fixed;
   top: 0;
   z-index: 100;
   color: #fff;
+  // background: rgba(136, 136, 136, 0.25);
+  // // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  // backdrop-filter: blur(12px);
+  // background-clip: padding-box;
+
   progress {
     appearance: none;
     min-width: 100vw;
@@ -40,7 +45,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: 1rem;
+    margin: 1rem 0;
     .logo {
       padding: 12px 8px 8px 16px;
       cursor: pointer;
@@ -117,6 +122,7 @@
         z-index: 100;
         cursor: pointer;
         text-decoration: none;
+        outline: none;
       }
     }
     .nav-button-group-mobile {
@@ -131,7 +137,10 @@
       .mobile-buttons {
         padding-top: 14vh;
         height: 100%;
-        background-color: rgb(42, 44, 53);
+        background: rgba(136, 136, 136, 0.25);
+        // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(12px);
+        background-clip: padding-box;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -154,7 +163,8 @@
           cursor: pointer;
           text-decoration: none;
           color: #fff;
-          border: 1px solid rgba(255, 255, 255, 0.25);
+          border: 1px solid transparent;
+
           &:hover {
             background-color: $primary-faded;
           }

@@ -1,11 +1,9 @@
 #services {
-  background: linear-gradient(355deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
-  color: #000;
   .serv-container {
     flex-direction: column;
     header {
       width: 100%;
-      margin-bottom: 4rem;
+      margin: 4rem 0;
       display: block;
       color: #fff;
       h2 {
@@ -30,6 +28,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        background: rgba(136, 136, 136, 0.25);
+        // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(12px);
+        border-radius: 1em;
+        border: solid 2px transparent;
+        background-clip: padding-box;
+
         &:nth-child(even) {
           flex-direction: row-reverse;
           .service-description {
@@ -48,19 +53,16 @@
         }
         .service-svg-container {
           width: 50%;
-          height: 425px;
+          height: 325px;
           display: flex;
           justify-content: center;
           align-items: center;
-          background: rgba(121, 121, 121, 0.411);
-          box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15),
-            0px 2px 3px 0px rgba(0, 0, 0, 0.1);
           @include media("<=tablet") {
             height: 300px;
             width: 100%;
           }
           svg {
-            width: 60%;
+            width: 40%;
             overflow: visible;
             fill: #fff;
             .color-prime {
@@ -77,7 +79,6 @@
             text-align: center;
             margin-bottom: 3rem;
             width: 100%;
-            border: 1px solid rgba(121, 121, 121, 0.411);
           }
           h3 {
             color: $bg-light;

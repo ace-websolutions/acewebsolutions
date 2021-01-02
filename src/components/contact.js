@@ -51,7 +51,7 @@ function ContactSection() {
                 <input type="submit" value="Send" />
               </div>
             </motion.form>
-            <motion.div variants={fadeInUp} className="direct-contact">
+            {/* <motion.div variants={fadeInUp} className="direct-contact">
               <hr />
               <h3>Contact me directly</h3>
               <div className="direct-methods">
@@ -67,7 +67,7 @@ function ContactSection() {
                 </div>
               </div>
               <hr />
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>
