@@ -2,13 +2,12 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Nav from "./nav"
 import Footer from "./footer"
-import BackgroundSVG from "../images/backgroundDark.svg"
 import { AnimatePresence, motion } from "framer-motion"
 
 const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "backgroundDark.svg" }) {
+      file(relativePath: { eq: "background.png" }) {
         publicURL
       }
     }
@@ -21,7 +20,6 @@ const Layout = ({ children, location }) => {
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
       }}
-      /* background by SVGBackgrounds.com */
     >
       <Nav />
       <AnimatePresence exitBeforeEnter>
