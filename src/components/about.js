@@ -15,6 +15,7 @@ function AboutSection() {
     setLeftPage("")
     // eslint-disable-next-line
     setRightPage("services")
+    // eslint-disable-next-line
   }, [])
 
   return (
@@ -25,7 +26,7 @@ function AboutSection() {
             <motion.header variants={fadeInUp}>
               <h2>
                 {" "}
-                Hello, I'm <span>Nick</span> -
+                Hello, I'm <span>Nick</span>
               </h2>
               <p>A self taught web developer.</p>
             </motion.header>

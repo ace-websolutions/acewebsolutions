@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Nav from "./nav"
 import Footer from "./footer"
 import { AnimatePresence, motion } from "framer-motion"
+import Arrows from "./arrows"
 
 const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
@@ -22,6 +23,7 @@ const Layout = ({ children, location }) => {
       }}
     >
       <Nav />
+      <Arrows />
       <AnimatePresence exitBeforeEnter>
         <motion.main
           key={location.pathname}

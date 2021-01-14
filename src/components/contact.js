@@ -48,7 +48,7 @@ function ContactSection() {
                 />
               </div>
               <div className="form-submit">
-                <input type="submit" value="Send" />
+                <input type="submit" value="Send message" />
               </div>
             </motion.form>
             {/* <motion.div variants={fadeInUp} className="direct-contact">

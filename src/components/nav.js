@@ -1,23 +1,18 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { FiMenu, FiChevronRight, FiChevronLeft, FiX } from "react-icons/fi"
-import { PageContext } from "../context/pagecontext"
 import { motion } from "framer-motion"
 import { navVariants } from "../animation/animation"
 
 function Nav() {
   const [open, setOpen] = useState(false)
-  const { leftPage, rightPage } = useContext(PageContext)
 
   return (
     <nav id="nav">
       <div className="container">
-        {/* <progress max="100" value="0"></progress> */}
         <nav className="nav-bar">
+          <h3>Ace Web Solutions</h3>
           <div className="nav-button-group">
-            <Link id="left-arrow-nav" to={`/${leftPage}`}>
-              <FiChevronLeft size={30} />
-            </Link>
             <Link id="home-nav" to="/" activeClassName="active">
               Home
             </Link>
@@ -33,11 +28,8 @@ function Nav() {
             <Link id="contact-nav" to="/contact" activeClassName="active">
               Contact
             </Link>
-            <Link id="right-arrow-nav" to={`/${rightPage}`}>
-              <FiChevronRight size={30} />
-            </Link>
           </div>
-          <div className="nav-buttons-group-mobile">
+          {/* <div className="nav-buttons-group-mobile">
             <Link id="left-arrow-nav" to={`/${leftPage}`}>
               <FiChevronLeft size={30} />
             </Link>
@@ -70,7 +62,7 @@ function Nav() {
                 Contact
               </Link>
             </div>
-          </motion.div>
+          </motion.div> */}
         </nav>
       </div>
     </nav>

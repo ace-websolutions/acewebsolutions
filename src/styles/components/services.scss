@@ -10,37 +10,28 @@
         font-size: 2.6rem;
         font-weight: 700;
         margin: 0 0 0.75rem 0;
+        span {
+          color: $primary;
+        }
       }
       p {
-        color: #999;
+        color: rgb(255, 255, 255);
       }
     }
     .services-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       box-sizing: border-box;
       .service-card {
-        width: 100%;
+        width: 48%;
+        height: 15em;
         color: #fff;
         position: relative;
         display: flex;
         justify-content: center;
-        align-items: center;
-        background: rgba(136, 136, 136, 0.25);
-        // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(12px);
-        border-radius: 1em;
-        border: solid 2px transparent;
-        background-clip: padding-box;
-
-        &:nth-child(even) {
-          flex-direction: row-reverse;
-          .service-description {
-            text-align: right;
-          }
-        }
+        align-items: flex-start;
         @include media("<=tablet") {
           flex-direction: column;
           max-width: 400px;
@@ -52,17 +43,17 @@
           }
         }
         .service-svg-container {
-          width: 50%;
-          height: 325px;
+          width: 40%;
+          height: inherit;
           display: flex;
           justify-content: center;
           align-items: center;
           @include media("<=tablet") {
-            height: 300px;
             width: 100%;
           }
           svg {
-            width: 40%;
+            width: 100%;
+            height: inherit;
             overflow: visible;
             fill: #fff;
             .color-prime {
@@ -71,21 +62,27 @@
           }
         }
         .service-description {
-          width: 50%;
-          padding: 0.75rem;
+          height: inherit;
+          padding: 0.75em 0.75em 0.75em 1em;
           box-sizing: border-box;
           text-align: left;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
           @include media("<=tablet") {
             text-align: center;
             margin-bottom: 3rem;
             width: 100%;
           }
           h3 {
-            color: $bg-light;
+            color: $primary;
+            font-size: 1.7em;
             text-transform: uppercase;
+            margin-bottom: 0.2em;
           }
           p {
-            color: #999;
+            color: rgb(255, 255, 255);
             line-height: 2rem;
           }
         }

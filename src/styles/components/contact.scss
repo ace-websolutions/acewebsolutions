@@ -14,7 +14,7 @@
         margin: 0 0 0.75rem 0;
       }
       p {
-        color: #999;
+        color: rgb(255, 255, 255);
         span {
           color: $primary;
         }
@@ -43,7 +43,7 @@
           border: none;
           background: rgba(136, 136, 136, 0.25);
           // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          backdrop-filter: blur(12px);
+          backdrop-filter: blur(8px);
           border-radius: 1em;
           border: solid 2px transparent;
           background-clip: padding-box;
@@ -70,7 +70,7 @@
           border: none;
           background: rgba(136, 136, 136, 0.25);
           // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          backdrop-filter: blur(12px);
+          backdrop-filter: blur(8px);
           border-radius: 1em;
           border: solid 2px transparent;
           background-clip: padding-box;

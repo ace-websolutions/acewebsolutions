@@ -7,55 +7,16 @@
   top: 0;
   z-index: 100;
   color: #fff;
-  // background: rgba(136, 136, 136, 0.25);
-  // // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  // backdrop-filter: blur(12px);
-  // background-clip: padding-box;
-
-  progress {
-    appearance: none;
-    min-width: 100vw;
-    width: 100vw;
-    height: 10px;
-    border: none;
-    position: fixed;
-    top: -5px;
-    left: 0;
-    background: transparent;
-    @include media(">tablet") {
-      display: none;
-    }
-  }
-  ::-webkit-progress-bar {
-    background: transparent;
-  }
-  ::-webkit-progress-value {
-    background: $blue-gradient;
-    background-attachment: fixed;
-  }
-  ::-moz-progress-bar {
-    background: $blue-gradient;
-    background-attachment: fixed;
-  }
-
   .nav-bar {
     width: 100%;
     max-width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     margin: 1rem 0;
-    .logo {
-      padding: 12px 8px 8px 16px;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      span {
-        display: inline-block;
-        padding-left: 0.25rem;
-      }
+    h3 {
+      font-weight: 700;
     }
     .nav-button-group {
       display: flex;
@@ -74,12 +35,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
         &:hover {
           color: $primary;
         }
-        &.active {
-          color: $primary;
+        &.active::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fff;
+          border-radius: 50%;
+          width: 0.5em;
+          height: 0.5em;
+          z-index: 101;
         }
         &.disabled {
           opacity: 0.2;

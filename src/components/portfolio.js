@@ -47,7 +47,9 @@ function PortfolioSection() {
         <div className="container-fluid">
           <motion.div variants={stagger} className="flex proj-container">
             <motion.header variants={fadeInUp}>
-              <h2>My work so far</h2>
+              <h2>
+                My <span>work</span> so far
+              </h2>
               <p>
                 A running list of my projects used to help get me where I am
                 today{" "}
@@ -58,9 +60,9 @@ function PortfolioSection() {
                 <Project key={project.title} project={project} data={data} />
               ))}
             </motion.div>
-            <motion.div className="next-section-button" variants={fadeInUp}>
+            {/* <motion.div className="next-section-button" variants={fadeInUp}>
               <Link to="/contact">Get in touch</Link>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>

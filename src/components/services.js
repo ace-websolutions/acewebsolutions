@@ -21,7 +21,9 @@ const ServicesSection = () => {
         <div className="container-fluid">
           <motion.div variants={stagger} className="flex serv-container">
             <motion.header variants={fadeInUp}>
-              <h2>Here is what I do</h2>
+              <h2>
+                Here is <span>what</span> I do
+              </h2>
               <p>Personalized, functional, well maintained web applications</p>
             </motion.header>
             <motion.div variants={stagger} className="services-container">
@@ -39,9 +41,9 @@ const ServicesSection = () => {
                 </motion.div>
               ))}
             </motion.div>
-            <motion.div className="next-section-button" variants={fadeInUp}>
+            {/* <motion.div className="next-section-button" variants={fadeInUp}>
               <Link to="/portfolio">Look at my work</Link>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </div>
