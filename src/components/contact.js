@@ -51,23 +51,6 @@ function ContactSection() {
                 <input type="submit" value="Send message" />
               </div>
             </motion.form>
-            {/* <motion.div variants={fadeInUp} className="direct-contact">
-              <hr />
-              <h3>Contact me directly</h3>
-              <div className="direct-methods">
-                <div className="contact-email">
-                  <a href="mailto: info@acewebsolutions.io">
-                    <AiOutlineMail size={40} />
-                  </a>
-                </div>
-                <div className="contact-phone">
-                  <a href="tel:+0000000000">
-                    <FaPhone size={35} />
-                  </a>
-                </div>
-              </div>
-              <hr />
-            </motion.div> */}
           </motion.div>
         </div>
       </div>

@@ -41,9 +41,6 @@ const ServicesSection = () => {
                 </motion.div>
               ))}
             </motion.div>
-            {/* <motion.div className="next-section-button" variants={fadeInUp}>
-              <Link to="/portfolio">Look at my work</Link>
-            </motion.div> */}
           </motion.div>
         </div>
       </div>

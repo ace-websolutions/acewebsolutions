@@ -60,9 +60,6 @@ function PortfolioSection() {
                 <Project key={project.title} project={project} data={data} />
               ))}
             </motion.div>
-            {/* <motion.div className="next-section-button" variants={fadeInUp}>
-              <Link to="/contact">Get in touch</Link>
-            </motion.div> */}
           </motion.div>
         </div>
       </div>

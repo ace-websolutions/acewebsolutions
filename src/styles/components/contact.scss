@@ -1,25 +1,6 @@
 #contact {
-  background: linear-gradient(315deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
   .contact-container {
     flex-direction: column;
-    header {
-      width: 100%;
-      margin: 4rem 0;
-      display: block;
-      color: #fff;
-      text-shadow: -1px -1px 0px #181818;
-      h2 {
-        font-size: 2.6rem;
-        font-weight: 700;
-        margin: 0 0 0.75rem 0;
-      }
-      p {
-        color: rgb(255, 255, 255);
-        span {
-          color: $primary;
-        }
-      }
-    }
     form {
       width: 100%;
       display: flex;
@@ -100,44 +81,6 @@
           }
           @include media("<=phone") {
             padding: 1rem 3rem;
-          }
-        }
-      }
-    }
-    .direct-contact {
-      hr {
-        border-top: solid 1px #444;
-        border-top-color: rgba(0, 0, 0, 0.35);
-        box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.1);
-        height: 1px;
-        margin: 3em auto;
-        color: #999;
-        max-width: 600px;
-      }
-      h3 {
-        text-shadow: -1px -1px 0px #181818;
-        color: #fff;
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin: 0.75rem 0;
-        padding-top: 0.75rem;
-        box-sizing: border-box;
-      }
-      .direct-methods {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .contact-email,
-        .contact-phone {
-          position: relative;
-          top: 0;
-          display: inline-block;
-          margin: 0.25rem;
-          padding: 0.5rem;
-          box-sizing: border-box;
-          a {
-            color: #999;
-            text-shadow: -1px -1px 0px #181818;
           }
         }
       }

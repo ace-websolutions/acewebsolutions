@@ -1,26 +1,7 @@
 #portfolio {
-  background: linear-gradient(335deg, #2344d507 0%, rgba(0, 0, 0, 0.24) 100%);
-  // color: $bg-dark;
   color: #fff;
   .proj-container {
     flex-direction: column;
-
-    header {
-      width: 100%;
-      margin: 4rem 0;
-      display: block;
-      h2 {
-        font-size: 2.6rem;
-        font-weight: 700;
-        margin: 0 0 0.75rem 0;
-        span {
-          color: $primary;
-        }
-      }
-      p {
-        color: rgb(255, 255, 255);
-      }
-    }
     .projects-container {
       display: flex;
       flex-wrap: wrap;

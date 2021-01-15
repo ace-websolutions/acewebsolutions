@@ -83,9 +83,6 @@ html {
   margin: 3rem auto 0 auto;
   transition: 300ms ease-out;
   cursor: pointer;
-  &:hover {
-    background: $primary;
-  }
   a {
     text-decoration: none;
     display: inline-block;
@@ -98,6 +95,28 @@ html {
     height: 100%;
   }
 }
+header {
+  width: 100%;
+  margin: 4rem 0;
+  display: block;
+  color: #fff;
+  text-shadow: -1px -1px 0px #181818;
+  h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    span {
+      color: $primary;
+    }
+  }
+  p {
+    color: #999;
+    span {
+      color: $primary;
+    }
+  }
+}
+
 // background: rgba(255, 255, 255, 0.25);
 // // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 // backdrop-filter: blur(12px);
