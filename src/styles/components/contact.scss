@@ -1,86 +1,246 @@
 #contact {
   .contact-container {
     flex-direction: column;
-    form {
-      width: 100%;
+    .contact {
+      height: 35em;
       display: flex;
-      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
       box-sizing: border-box;
-      .form-email,
-      .form-name {
-        width: 50%;
-        padding: 1rem;
+      .contact-info {
+        min-width: 40em;
+        height: inherit;
+        background-color: $primary;
+        padding: 3em 5em 3em 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-radius: 1em;
         box-sizing: border-box;
-        @include media("<=phone") {
-          width: 100%;
-        }
-        input {
-          width: 100%;
-          display: block;
-          padding: 0.75rem;
-          box-sizing: border-box;
-          font-size: 1rem;
-          border-radius: 8px;
-          border: none;
-          background: rgba(136, 136, 136, 0.25);
-          // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          backdrop-filter: blur(8px);
-          border-radius: 1em;
-          border: solid 2px transparent;
-          background-clip: padding-box;
-          color: #bbb;
-          &:focus {
-            box-shadow: 0px 0px 2px 2px $primary;
-            outline: none;
+        .contact-heading {
+          h5 {
+            text-align: left;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem 0;
+            color: #fff;
           }
+          p {
+            text-align: left;
+            font-size: 0.9em;
+            color: #fff;
+          }
+        }
+        ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          padding: 0;
+          li {
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a,
+            p {
+              text-decoration: none;
+              color: inherit;
+              font-size: 0.9em;
+              padding: 1em;
+            }
+          }
+        }
+        .social {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 1;
+          z-index: 10;
+          a {
+            text-decoration: none;
+            color: #fff;
+            position: relative;
+            margin: 1em;
+          }
+        }
+        p {
+          font-size: 1.15em;
+          font-weight: 300;
+          text-align: center;
         }
       }
-      .form-textarea {
-        width: 100%;
-        padding: 1rem;
+      .contact-form {
+        min-width: 30em;
+        background-color: transparent;
+        height: inherit;
         box-sizing: border-box;
-        textarea {
-          width: 100%;
-          height: 18rem;
-          font-family: "Montserrat", sans-serif;
-          display: block;
-          padding: 0.75rem;
+        padding: 1.5em;
+        position: relative;
+        form {
+          width: 38em;
+          display: flex;
+          flex-wrap: wrap;
           box-sizing: border-box;
-          font-size: 1rem;
-          border-radius: 8px;
-          border: none;
-          background: rgba(136, 136, 136, 0.25);
-          // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          backdrop-filter: blur(8px);
+          padding: 2em;
+          position: absolute;
+          top: 5.5%;
+          left: -35%;
+          transform: translate(-50%, -50%);
+          background: rgba(255, 255, 255, 0.25);
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+            rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          backdrop-filter: blur(12px);
           border-radius: 1em;
           border: solid 2px transparent;
-          background-clip: padding-box;
-          color: #bbb;
-          &:focus {
-            box-shadow: 0px 0px 2px 2px $primary;
-            outline: none;
+
+          .form-email,
+          .form-name {
+            width: 100%;
+            height: 4em;
+            margin: 1em;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            @include media("<=phone") {
+              width: 100%;
+            }
+            input {
+              width: 100%;
+              height: 100%;
+              padding-top: 20px;
+              border: none;
+              background: transparent;
+              outline: none;
+              color: #fff;
+              font-size: 1em;
+              &:focus + .label-form .content-form,
+              &:valid + .label-form .content-form {
+                transform: translateY(-150%);
+                font-size: 0.75em;
+                color: $primary;
+              }
+              &:focus + .label-form::after,
+              &:valid + .label-form::after {
+                transform: translateX(0%);
+              }
+            }
+            label {
+              text-align: left;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              color: #fff;
+              font-size: 1.2em;
+              pointer-events: none;
+              border-bottom: 1px solid #fff;
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                border-bottom: 3px solid $primary;
+                transform: translateX(-100%);
+                transition: all 300ms ease;
+              }
+            }
+            .content-form {
+              position: absolute;
+              bottom: 5px;
+              left: 0;
+              transition: all 300ms ease;
+            }
           }
-        }
-      }
-      .form-submit {
-        width: 100%;
-        box-sizing: border-box;
-        input {
-          background: $primary-faded;
-          border: 1px solid $primary;
-          color: #fff;
-          font-weight: 600;
-          font-size: 1.2rem;
-          border-radius: 8px;
-          padding: 0.5rem 2rem;
-          box-sizing: border-box;
-          cursor: pointer;
-          transition: 300ms ease-out;
-          &:hover {
-            background: $primary;
+          .form-textarea {
+            width: 100%;
+            min-height: 8em;
+            margin: 1em;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            textarea {
+              width: 100%;
+              height: 100%;
+              padding-top: 20px;
+              border: none;
+              background: transparent;
+              outline: none;
+              color: #fff;
+              font-size: 1em;
+              resize: both;
+              &:focus + .label-form .content-form,
+              &:valid + .label-form .content-form {
+                transform: translateY(-590%);
+                font-size: 0.75em;
+                color: $primary;
+              }
+
+              &:focus + .label-form::after,
+              &:valid + .label-form::after {
+                transform: translateX(0%);
+              }
+            }
+
+            label {
+              text-align: left;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              color: #fff;
+              font-size: 1.2em;
+              pointer-events: none;
+              border-bottom: 1px solid #fff;
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                border-bottom: 3px solid $primary;
+                transform: translateX(-100%);
+                transition: all 300ms ease;
+              }
+            }
+            .content-form {
+              position: absolute;
+              bottom: 5px;
+              left: 0;
+              transition: all 300ms ease;
+            }
           }
-          @include media("<=phone") {
-            padding: 1rem 3rem;
+          .form-submit {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 1em;
+            input {
+              background: $primary;
+              border: 1px solid $primary;
+              color: #fff;
+              font-weight: 600;
+              font-size: 1.2rem;
+              border-radius: 8px;
+              padding: 0.75rem 2.25rem;
+              box-sizing: border-box;
+              box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+                rgba(0, 0, 0, 0.23) 0px 6px 6px;
+              cursor: pointer;
+              transition: 300ms ease-out;
+              @include media("<=phone") {
+                padding: 1rem 3rem;
+              }
+            }
           }
         }
       }

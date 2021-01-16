@@ -7,13 +7,13 @@ const Footer = () => {
         <div className="container-fluid">
           <div className="flex footer-container">
             <ul className="business-info">
-              <li>
+              {/* <li>
                 <h3>Info</h3>
-              </li>
+              </li> */}
               <li>
                 <h4>&copy; Ace Web Solutions &#183; All rights reserved</h4>
               </li>
-              <li>
+              {/* <li>
                 <h5>Address</h5>
                 <p>8630-M Guilford Rd STE304 &#183; Columbia, MD 20146</p>
               </li>
@@ -26,13 +26,13 @@ const Footer = () => {
                 <a href="mailto: info@acewebsolutions.io">
                   info@acewebsolutions.io
                 </a>
-              </li>
+              </li> */}
             </ul>
             <ul className="copy-write">
-              <li>
+              {/* <li>
                 <h3>Inspiration</h3>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <h5>Design</h5>
                 <a
                   href="http://html5up.net"
@@ -53,7 +53,7 @@ const Footer = () => {
                 >
                   Unsplash
                 </a>
-              </li>
+              </li> */}
               <li>
                 <h5>SVG</h5>
                 <a

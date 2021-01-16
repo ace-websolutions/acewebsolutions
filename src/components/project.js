@@ -6,6 +6,9 @@ import { Link } from "gatsby"
 
 function Project({ project, data }) {
   const imagePath = data[project.link]
+  // *******************
+  // move page arrows inward and set them to do the left and right photo changes
+  // *******************
 
   return (
     <motion.article variants={fadeInUp} className="card tl-project">

@@ -15,8 +15,11 @@
     align-items: center;
     position: relative;
     margin: 1rem 0;
-    h3 {
+    #logo-nav {
       font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      color: inherit;
     }
     .nav-button-group {
       display: flex;

@@ -11,7 +11,9 @@ function Nav() {
     <nav id="nav">
       <div className="container">
         <nav className="nav-bar">
-          <h3>Ace Web Solutions</h3>
+          <Link id="logo-nav" to="/" activeClassName="active">
+            Ace Web Solutions
+          </Link>
           <div className="nav-button-group">
             <Link id="home-nav" to="/" activeClassName="active">
               Home

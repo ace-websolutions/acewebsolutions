@@ -33,6 +33,7 @@ const ServicesSection = () => {
                   key={service.title}
                   className="service-card"
                 >
+                  <div className="service-mask"></div>
                   <div className="service-svg-container">{service.svg}</div>
                   <div className="service-description">
                     <h3>{service.title}</h3>

@@ -8,7 +8,7 @@ import Arrows from "./arrows"
 const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "background.png" }) {
+      file(relativePath: { eq: "background2.png" }) {
         publicURL
       }
     }
@@ -18,7 +18,8 @@ const Layout = ({ children, location }) => {
     <body
       style={{
         backgroundImage: `url(${data.file.publicURL}`,
-        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundRepeat: "no - repeat",
         backgroundSize: "cover",
       }}
     >

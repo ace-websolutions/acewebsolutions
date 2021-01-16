@@ -8,18 +8,45 @@
     .about {
       width: 100%;
       max-width: 100%;
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
       background: rgba(136, 136, 136, 0.25);
-      // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
       backdrop-filter: blur(12px);
       border-radius: 1em;
       border: solid 2px transparent;
       background-clip: padding-box;
       @include media("<=tablet") {
         flex-direction: column;
+      }
+      .icon-container {
+        background-color: $primary;
+        border-radius: 1em 0 0 1em;
+        box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15),
+          0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        .icon {
+          height: 100px;
+          width: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          cursor: grab;
+          h5 {
+            margin: 0;
+            padding-top: 0.25rem;
+            font-size: 0.75rem;
+          }
+        }
       }
       .about-info-container {
         display: flex;
@@ -43,65 +70,15 @@
           }
         }
       }
-      .about-svg-container {
-        height: 450px;
-        min-width: 50%;
-        width: 50%;
-        padding: 1rem;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        @include media("<=tablet") {
-          width: 100%;
-          max-width: 390px;
-          height: 300px;
-          max-height: 300px;
-        }
-        svg {
-          width: 75%;
-          transform: translateY(-5%) rotate(-10deg);
-          @include media("<=tablet") {
-            transform: translateY(-20%) rotate(-10deg);
-          }
-        }
-      }
-    }
-    .skills {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      background: rgba(0, 0, 0, 0.226);
-      @include media("<=phone") {
-        flex-direction: column-reverse;
-      }
-      .icon-container {
-        border-radius: 8px;
-        box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15),
-          0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-        padding: 1rem;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-        .icon {
-          height: 100px;
-          width: 100px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          cursor: grab;
-          h5 {
-            margin: 0;
-            padding-top: 0.25rem;
-            font-size: 0.75rem;
-          }
-        }
+      .about-button {
+        margin: 0;
+        position: absolute;
+        bottom: -7.5%;
+        left: 50%;
+        background-color: $primary;
+        transform: translate(-50%, -50%);
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+          rgba(0, 0, 0, 0.23) 0px 6px 6px;
       }
     }
   }

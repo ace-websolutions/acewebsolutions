@@ -25,14 +25,28 @@ function AboutSection() {
           <motion.div variants={stagger} className="flex about-container">
             <motion.header variants={fadeInUp}>
               <h2>
-                {" "}
                 Hello, I'm <span>Nick</span>
               </h2>
               <p>A self taught web developer.</p>
             </motion.header>
             <motion.div variants={fadeInUp} className="about">
-              <div className="about-svg-container">
-                <WebsiteSVG className="about-svg" />
+              <div ref={dragRef} className="icon-container">
+                {SKILLICONS.map(icon => (
+                  <motion.div
+                    drag
+                    dragConstraints={dragRef}
+                    dragTransition={{
+                      bounceStiffness: 100,
+                      bounceDamping: 4,
+                    }}
+                    whileTap={{ cursor: "grabbing", scale: 0.8 }}
+                    key={icon.name}
+                    className="icon "
+                  >
+                    {icon.import}
+                    <h5>{icon.name}</h5>
+                  </motion.div>
+                ))}
               </div>
               <div className="about-info-container">
                 <p className="about-text">
@@ -48,29 +62,15 @@ function AboutSection() {
                   I have discovered and practiced all of the skills you see
                   here. In the modern web, new tools are always popping up and
                   it is important to stay on top of the new technology in order
-                  to stay relevant .
+                  to stay relevant.
                 </p>
               </div>
-            </motion.div>
-            <motion.div variants={fadeInUp} className="skills">
-              <div ref={dragRef} className="icon-container">
-                {SKILLICONS.map(icon => (
-                  <motion.div
-                    drag
-                    dragConstraints={dragRef}
-                    dragTransition={{ bounceStiffness: 100, bounceDamping: 4 }}
-                    whileTap={{ cursor: "grabbing", scale: 0.8 }}
-                    key={icon.name}
-                    className="icon "
-                  >
-                    {icon.import}
-                    <h5>{icon.name}</h5>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-            <motion.div className="next-section-button" variants={fadeInUp}>
-              <Link to="/services">Look at what I offer</Link>
+              <motion.div
+                className="next-section-button about-button"
+                // variants={fadeInUp}
+              >
+                <Link to="/services">Look at what I offer</Link>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
