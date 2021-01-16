@@ -17,9 +17,10 @@
     margin: 1rem 0;
     #logo-nav {
       font-weight: 700;
+      font-size: 1.2em;
       text-decoration: none;
       cursor: pointer;
-      color: inherit;
+      color: #000;
     }
     .nav-button-group {
       display: flex;
@@ -39,7 +40,7 @@
         justify-content: center;
         align-items: center;
         &:hover {
-          color: $primary;
+          color: #000;
         }
         &.active::before {
           content: "";

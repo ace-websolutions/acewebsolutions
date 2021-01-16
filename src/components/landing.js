@@ -23,6 +23,7 @@ const Landing = () => {
           </div>
           <div className="text">
             <h2>Front end web developer </h2>
+            <p>Want a hand with anything in the world wide web? Here I am! </p>
             <div className="btn-group">
               <a
                 href="https://www.github.com/ace-websolutions"
@@ -46,9 +47,6 @@ const Landing = () => {
                 <FaLinkedinIn size={25} />
               </a>
             </div>
-            <p>
-              Want a hand with anything in the world wide web? <br /> Here I am!{" "}
-            </p>
             <div className="next-section-button landing-contact">
               <Link to="/contact">Contact Me</Link>
             </div>

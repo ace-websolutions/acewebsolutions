@@ -9,6 +9,9 @@
       box-sizing: border-box;
       border-radius: 1em;
       overflow: hidden;
+
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
       .service-card {
         width: 50%;
         height: 15em;
@@ -18,7 +21,7 @@
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
-        border: 1px solid #5a78ff;
+        border: 1px solid #ffffff;
         background: rgba(255, 255, 255, 0.25);
         // box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
         //   rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -41,7 +44,8 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: $primary;
+          // background-color: $primary;
+          background-color: rgb(250, 250, 250);
         }
         .service-svg-container {
           position: absolute;
@@ -63,7 +67,7 @@
             height: 8em;
             height: inherit;
             overflow: visible;
-            fill: #fff;
+            fill: $primary;
             position: relative;
             z-index: 2;
             // .color-prime {
