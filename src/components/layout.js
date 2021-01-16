@@ -21,6 +21,7 @@ const Layout = ({ children, location }) => {
         backgroundPosition: "center",
         backgroundRepeat: "no - repeat",
         backgroundSize: "cover",
+        position: "relative",
       }}
     >
       <Nav />

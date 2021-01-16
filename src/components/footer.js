@@ -57,6 +57,14 @@ const Footer = () => {
               <li>
                 <h5>SVG</h5>
                 <a
+                  href="https://www.flaticon.com/free-icon/wifi_3616339?term=cloud&page=1&position=70&related_id=3616339&origin=search"
+                  title="DinosoftLabs"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  DinosoftLabs
+                </a>
+                <a
                   href="https://www.flaticon.com/authors/eucalyp"
                   title="SVG Author"
                   rel="noreferrer"

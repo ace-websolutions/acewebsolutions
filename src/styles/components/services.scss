@@ -9,7 +9,7 @@
       box-sizing: border-box;
       border-radius: 1em;
       overflow: hidden;
-
+      position: relative;
       box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
         rgba(0, 0, 0, 0.23) 0px 6px 6px;
       .service-card {
@@ -17,17 +17,47 @@
         height: 15em;
         color: #fff;
         position: relative;
+        z-index: 2;
         display: flex;
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
-        border: 1px solid #ffffff;
         background: rgba(255, 255, 255, 0.25);
-        // box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-        //   rgba(0, 0, 0, 0.23) 0px 6px 6px;
         backdrop-filter: blur(12px);
         background-clip: padding-box;
-
+        overflow: hidden;
+        &:nth-child(1) {
+          border-right: 1px solid #777777c4;
+          border-bottom: 1px solid #777777c4;
+        }
+        &:nth-child(2) {
+          border-left: 1px solid #777777c4;
+          border-bottom: 1px solid #777777c4;
+        }
+        &:nth-child(3) {
+          border-right: 1px solid #777777c4;
+          border-top: 1px solid #777777c4;
+        }
+        &:nth-child(4) {
+          border-left: 1px solid #777777c4;
+          border-top: 1px solid #777777c4;
+        }
+        &:hover {
+          .service-mask-top {
+            top: -100%;
+          }
+          .service-mask-bottom {
+            bottom: -100%;
+          }
+          .service-svg-container {
+            svg {
+              height: 5em;
+              width: 5em;
+              top: 25%;
+              left: 80%;
+            }
+          }
+        }
         @include media("<=tablet") {
           flex-direction: column;
           max-width: 400px;
@@ -38,38 +68,42 @@
             }
           }
         }
-        .service-mask {
+        .service-mask-top,
+        .service-mask-bottom {
+          opacity: 1;
           position: absolute;
-          top: 0;
           left: 0;
           width: 100%;
-          height: 100%;
-          // background-color: $primary;
+          height: 50%;
           background-color: rgb(250, 250, 250);
+          transition: all 400ms ease-out;
+        }
+        .service-mask-top {
+          top: 0;
+        }
+        .service-mask-bottom {
+          bottom: 0;
         }
         .service-svg-container {
+          pointer-events: none;
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding-left: 0.5em;
           @include media("<=tablet") {
             width: 100%;
           }
           svg {
-            // width: 6em;
-            // height: 6em;
             width: 8em;
             height: 8em;
-            height: inherit;
             overflow: visible;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             fill: $primary;
-            position: relative;
-            z-index: 2;
+            transition: all 300ms ease-in;
             // .color-prime {
             //   fill: $primary;
             // }
@@ -96,7 +130,7 @@
             margin-bottom: 0.2em;
           }
           p {
-            color: rgb(255, 255, 255);
+            color: #000;
             line-height: 2rem;
           }
         }

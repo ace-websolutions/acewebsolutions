@@ -15,49 +15,56 @@
     align-items: center;
     position: relative;
     margin: 1rem 0;
-    #logo-nav {
-      font-weight: 700;
-      font-size: 1.2em;
-      text-decoration: none;
-      cursor: pointer;
-      color: #000;
+    .logo-span {
+      #logo-nav {
+        font-weight: 700;
+        font-size: 1.2em;
+        text-decoration: none;
+        cursor: pointer;
+        color: #000;
+        .ace {
+          font-family: "Spade Round W05 Regular";
+          font-size: 1.3em;
+          font-weight: 400;
+        }
+      }
     }
     .nav-button-group {
       display: flex;
       justify-content: center;
       align-items: center;
-      a {
-        font-size: 1.1rem;
-        position: relative;
-        box-sizing: border-box;
-        padding: 1rem 0.5rem;
-        color: inherit;
-        text-decoration: none;
-        cursor: pointer;
-        transition: all 150ms ease-out;
-        margin: 0 0.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &:hover {
-          color: #000;
-        }
-        &.active::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: #fff;
-          border-radius: 50%;
-          width: 0.5em;
-          height: 0.5em;
-          z-index: 101;
-        }
-        &.disabled {
-          opacity: 0.2;
-          pointer-events: none;
-          cursor: not-allowed;
+      list-style: none;
+      li {
+        a {
+          font-size: 1.1rem;
+          position: relative;
+          box-sizing: border-box;
+          padding: 1rem 0.5rem;
+          color: inherit;
+          text-decoration: none;
+          cursor: pointer;
+          margin: 0 0.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &.active::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border-radius: 50%;
+            width: 0.5em;
+            height: 0.5em;
+            z-index: 101;
+          }
+          &.disabled {
+            opacity: 0.2;
+            pointer-events: none;
+            cursor: not-allowed;
+          }
         }
       }
       @include media("<=tablet") {
@@ -79,7 +86,6 @@
         color: inherit;
         text-decoration: none;
         cursor: pointer;
-        transition: all 150ms ease-out;
         margin: 0 0.5rem;
         display: flex;
         justify-content: center;

@@ -5,6 +5,20 @@ import { SERVICES } from "../context/config"
 import { PageContext } from "../context/pagecontext"
 import { Link } from "gatsby"
 
+const servVariants = {
+  initial: {
+    boxShadow: "none",
+  },
+  animate: {
+    boxShadow:
+      "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
+    transition: {
+      when: "afterChildren",
+      staggerChildren: 0.1,
+    },
+  },
+}
+
 const ServicesSection = () => {
   const { setLeftPage, setRightPage } = useContext(PageContext)
 
@@ -20,20 +34,23 @@ const ServicesSection = () => {
       <div className="container">
         <div className="container-fluid">
           <motion.div variants={stagger} className="flex serv-container">
-            <motion.header variants={fadeInUp}>
-              <h2>
+            <motion.header variants={stagger}>
+              <motion.h2 variants={fadeInUp}>
                 Here is <span>what</span> I do
-              </h2>
-              <p>Personalized, functional, well maintained web applications</p>
+              </motion.h2>
+              <motion.p variants={fadeInUp}>
+                Personalized, functional, well maintained web applications
+              </motion.p>
             </motion.header>
-            <motion.div variants={stagger} className="services-container">
+            <motion.div variants={servVariants} className="services-container">
               {SERVICES.map(service => (
                 <motion.div
                   variants={fadeInUp}
                   key={service.title}
                   className="service-card"
                 >
-                  <div className="service-mask"></div>
+                  <motion.div className="service-mask-top"></motion.div>
+                  <motion.div className="service-mask-bottom"></motion.div>
                   <div className="service-svg-container">{service.svg}</div>
                   <div className="service-description">
                     <h3>{service.title}</h3>

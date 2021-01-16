@@ -176,7 +176,7 @@
               resize: both;
               &:focus + .label-form .content-form,
               &:valid + .label-form .content-form {
-                transform: translateY(-590%);
+                transform: translateY(-700%);
                 font-size: 0.75em;
                 color: $primary;
               }
@@ -218,15 +218,15 @@
             }
           }
           .form-submit {
-            width: 100%;
+            width: auto;
             box-sizing: border-box;
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            margin: 1em;
+            margin: 1em 1em 1em auto;
             input {
               background: $primary;
-              border: 1px solid $primary;
+              border: none;
               color: #fff;
               font-weight: 600;
               font-size: 1.2rem;

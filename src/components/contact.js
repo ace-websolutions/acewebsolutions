@@ -20,64 +20,70 @@ function ContactSection() {
     <section id="contact">
       <div className="container">
         <div className="container-fluid">
-          <motion.div variants={stagger} className="flex contact-container">
-            <motion.header variants={fadeInUp}>
-              <h2>Let's get in touch</h2>
-              <p>
+          <motion.div className="flex contact-container">
+            <motion.header variants={stagger}>
+              <motion.h2 variants={fadeInUp}>
+                Let's get <span>started</span>
+              </motion.h2>
+              <motion.p variants={fadeInUp}>
                 Currently accepting work, lets talk about what <span>you</span>{" "}
                 have in mind!
-              </p>
+              </motion.p>
             </motion.header>
             <div className="contact">
               <motion.div className="contact-info" variants={fadeInUp}>
-                <div className="contact-heading">
-                  <h5>Contact Information</h5>
-                  <p>
+                <motion.div className="contact-heading" variants={stagger}>
+                  <motion.h5 variants={fadeInUp}>Contact Information</motion.h5>
+                  <motion.p variants={fadeInUp}>
                     Thank you for reaching out. I look forward to working with
                     you!
-                  </p>
-                </div>
-                <ul>
-                  <li>
+                  </motion.p>
+                </motion.div>
+                <motion.ul variants={stagger}>
+                  <motion.li variants={fadeInUp}>
                     <FaPhone size={20} />
-                    <a href="tel:+0000000000">(000) 000-0000</a>
-                  </li>
-                  <li>
+                    <motion.a href="tel:+0000000000">(000) 000-0000</motion.a>
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
                     <AiOutlineMail size={20} />
-                    <a href="mailto: info@acewebsolutions.io">
+                    <motion.a href="mailto: info@acewebsolutions.io">
                       info@acewebsolutions.io
-                    </a>
-                  </li>
-                  <li>
+                    </motion.a>
+                  </motion.li>
+                  <motion.li variants={fadeInUp}>
                     <FaMapMarker size={20} />
                     <p>8630-M Guilford Rd STE304 &#183; Columbia, MD 20146</p>
-                  </li>
-                </ul>
-                <div className="social">
-                  <a
+                  </motion.li>
+                </motion.ul>
+                <motion.div className="social" variants={stagger}>
+                  <motion.a
+                    variants={fadeInUp}
                     href="https://www.github.com/ace-websolutions"
                     rel="noreferrer"
                     target="_blank"
                   >
+                    {" "}
                     <FaGithub size={18} />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
+                    variants={fadeInUp}
                     href="https://www.github.com/ace-websolutions"
                     rel="noreferrer"
                     target="_blank"
                   >
                     <FaFacebookF size={18} />
-                  </a>
-                  <a
+                  </motion.a>
+                  <motion.a
+                    variants={fadeInUp}
                     href="https://www.github.com/ace-websolutions"
                     rel="noreferrer"
                     target="_blank"
                   >
                     <FaLinkedinIn size={18} />
-                  </a>
-                </div>
+                  </motion.a>
+                </motion.div>
               </motion.div>
-              <motion.div className="contact-form">
+              <div className="contact-form">
                 <motion.form
                   variants={fadeInUp}
                   name="contact"
@@ -104,11 +110,17 @@ function ContactSection() {
                       <span className="content-form">Project Description</span>
                     </label>
                   </div>
-                  <div className="form-submit">
+                  <motion.div
+                    className="form-submit"
+                    whileHover={{ scale: 1.1, originX: 0 }}
+                    whileTap={{ scale: 0.8, originX: 0 }}
+                    animate={{ y: 4 }}
+                    transition={{ delay: 3, duration: 0.3, yoyo: Infinity }}
+                  >
                     <input type="submit" value="Send message" />
-                  </div>
+                  </motion.div>
                 </motion.form>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

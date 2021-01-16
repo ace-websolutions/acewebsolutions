@@ -1,24 +1,33 @@
-.arrows {
+.span-arrow {
+  width: 4em;
+  height: 4em;
   position: fixed;
   top: 50%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 0 3em;
   z-index: 1000;
-  a {
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #fff;
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.left {
+    color: #000;
     border-radius: 50%;
     box-sizing: border-box;
     padding: 0.75em;
-  }
-  #left-arrow-nav {
-    color: #000;
     border: 2px solid #000;
+    left: 0;
+    right: unset;
+  }
+  &.right {
+    color: #fff;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 0.75em;
+    border: 2px solid #fff;
+    left: unset;
+    right: 0;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 }

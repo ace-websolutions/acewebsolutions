@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;600;700&display=swap");
+@import url("https://use.typekit.net/kaw0ytn.css");
 @import "react-alice-carousel/lib/scss/alice-carousel.scss";
 @import "./variables.scss";
 @import "./breakpoints.scss";
@@ -14,13 +13,42 @@
 @import "./components/contact.scss";
 @import "./components/footer.scss";
 
+/*
+Fonts added:
+Acumin Pro Bold
+font-family: acumin-pro, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Acumin Pro Bold Italic
+font-family: acumin-pro, sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Acumin Pro Italic
+font-family: acumin-pro, sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Acumin Pro Regular
+font-family: acumin-pro, sans-serif;
+font-weight: 400;
+font-style: normal;
+*/
+@font-face {
+  font-family: "Spade Round W05 Regular";
+  src: url("Fonts/5332184/f2aa5d7e-c7b8-461f-9f02-dc5c6c1d5c00.woff2")
+      format("woff2"),
+    url("Fonts/5332184/41b84784-394b-4295-9ed6-f447410f3539.woff")
+      format("woff");
+}
 body,
 html {
   user-select: none;
   background: #fff;
   overscroll-behavior: none;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: acumin-pro, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -110,18 +138,19 @@ header {
   color: #000;
   h2 {
     font-size: 2.6rem;
-    font-weight: 700;
+    font-weight: 400;
     margin: 0 0 0.75rem 0;
     span {
       // color: $primary;
-      font-weight: 900;
+      font-family: "Spade Round W05 Regular";
+      // font-weight: 900;
     }
   }
   p {
     color: rgb(53, 53, 53);
-    span {
-      color: $primary;
-    }
+    // span {
+    //   color: $primary;
+    // }
   }
 }
 

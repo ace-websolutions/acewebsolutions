@@ -46,14 +46,14 @@ function PortfolioSection() {
       <div className="container">
         <div className="container-fluid">
           <motion.div variants={stagger} className="flex proj-container">
-            <motion.header variants={fadeInUp}>
-              <h2>
+            <motion.header variants={stagger}>
+              <motion.h2 variants={fadeInUp}>
                 My <span>work</span> so far
-              </h2>
-              <p>
+              </motion.h2>
+              <motion.p variants={fadeInUp}>
                 A running list of my projects used to help get me where I am
                 today{" "}
-              </p>
+              </motion.p>
             </motion.header>
             <motion.div variants={stagger} className="projects-container">
               {PROJECTS.map(project => (
