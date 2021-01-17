@@ -17,12 +17,9 @@ const Layout = ({ children, location }) => {
 
   return (
     <div
+      className="svg-background"
       style={{
         backgroundImage: `url(${data.file.publicURL}`,
-        backgroundPosition: "center top",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        position: "relative",
       }}
     >
       <Nav />

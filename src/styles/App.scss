@@ -45,12 +45,18 @@ font-style: normal;
 body,
 html {
   user-select: none;
-  // background: #fff;
   overscroll-behavior: none;
   margin: 0;
   font-family: acumin-pro, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.svg-background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .container {
