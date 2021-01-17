@@ -2,7 +2,7 @@
   .contact-container {
     flex-direction: column;
     .contact {
-      height: 35em;
+      height: 30em;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -95,127 +95,8 @@
           backdrop-filter: blur(12px);
           border-radius: 1em;
           border: solid 2px transparent;
-
-          .form-email,
-          .form-name {
-            width: 100%;
-            height: 4em;
-            margin: 1em;
-            box-sizing: border-box;
-            position: relative;
-            overflow: hidden;
-            @include media("<=phone") {
-              width: 100%;
-            }
-            input {
-              width: 100%;
-              height: 100%;
-              padding-top: 20px;
-              border: none;
-              background: transparent;
-              outline: none;
-              color: #fff;
-              font-size: 1em;
-              &:focus + .label-form .content-form,
-              &:valid + .label-form .content-form {
-                transform: translateY(-150%);
-                font-size: 0.75em;
-                color: $primary;
-              }
-              &:focus + .label-form::after,
-              &:valid + .label-form::after {
-                transform: translateX(0%);
-              }
-            }
-            label {
-              text-align: left;
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              color: #fff;
-              font-size: 1.2em;
-              pointer-events: none;
-              border-bottom: 1px solid #fff;
-              &::after {
-                content: "";
-                position: absolute;
-                bottom: -1px;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                border-bottom: 3px solid $primary;
-                transform: translateX(-100%);
-                transition: all 300ms ease;
-              }
-            }
-            .content-form {
-              position: absolute;
-              bottom: 5px;
-              left: 0;
-              transition: all 300ms ease;
-            }
-          }
-          .form-textarea {
-            width: 100%;
-            min-height: 8em;
-            margin: 1em;
-            box-sizing: border-box;
-            position: relative;
-            overflow: hidden;
-            textarea {
-              width: 100%;
-              height: 100%;
-              padding-top: 20px;
-              border: none;
-              background: transparent;
-              outline: none;
-              color: #fff;
-              font-size: 1em;
-              resize: both;
-              &:focus + .label-form .content-form,
-              &:valid + .label-form .content-form {
-                transform: translateY(-700%);
-                font-size: 0.75em;
-                color: $primary;
-              }
-
-              &:focus + .label-form::after,
-              &:valid + .label-form::after {
-                transform: translateX(0%);
-              }
-            }
-
-            label {
-              text-align: left;
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              color: #fff;
-              font-size: 1.2em;
-              pointer-events: none;
-              border-bottom: 1px solid #fff;
-              &::after {
-                content: "";
-                position: absolute;
-                bottom: -1px;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                border-bottom: 3px solid $primary;
-                transform: translateX(-100%);
-                transition: all 300ms ease;
-              }
-            }
-            .content-form {
-              position: absolute;
-              bottom: 5px;
-              left: 0;
-              transition: all 300ms ease;
-            }
+          & .MuiFormControl-root {
+            margin-bottom: 1em;
           }
           .form-submit {
             width: auto;

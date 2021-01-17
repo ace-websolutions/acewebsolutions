@@ -57,32 +57,34 @@ const Landing = () => {
       // x: 0,
       // y: 100,
       // rotate: 0,
-      // scale: 1,
+      scale: 0,
       // transition: {
       //   type: "spring",
       // },
     },
     animate: {
-      x: [-200, 0, -10, 60, 80, 120, 100, 150, 145, 190, 230, 300, 400],
-      y: [
-        1000,
-        0,
-        -30,
-        -40,
-        -80,
-        -70,
-        -180,
-        -240,
-        -220,
-        -310,
-        -380,
-        -450 - 1000,
-      ],
-      rotate: [0, 0, -2.5, -1.5, 1.5, 0, -2, -2, 1.5, 2, 2.5, -4, 0],
-      scale: [1, 1, 1.05, 1.1, 0.95, 1, 0.9, 0.9, 1, 0.8, 0.7, 0.6, 1],
+      // x: [-200, 0, -10, 60, 80, 120, 100, 150, 145, 190, 230, 300, 400],
+      // y: [
+      //   1000,
+      //   0,
+      //   -30,
+      //   -40,
+      //   -80,
+      //   -70,
+      //   -180,
+      //   -240,
+      //   -220,
+      //   -310,
+      //   -380,
+      //   -450 - 1000,
+      // ],
+      // rotate: [0, 0, -2.5, -1.5, 1.5, 0, -2, -2, 1.5, 2, 2.5, -4, 0],
+      // scale: [1, 1, 1.05, 1.1, 0.95, 1, 0.9, 0.9, 1, 0.8, 0.7, 0.6, 1],
+      scale: 1,
       transition: {
-        repeat: Infinity,
-        duration: 14,
+        // repeat: Infinity,
+        // duration: 14,
+        duration: 2,
         type: "spring",
         delay: 0.5,
       },
@@ -131,6 +133,20 @@ const Landing = () => {
             <motion.div
               variants={textVariations}
               className="next-section-button landing-contact"
+              whileHover={{
+                scale: 1.1,
+                transition: { type: "spring", stiffness: 300, damping: 5 },
+              }}
+              whileTap={{ scale: 0.8 }}
+              animate={{
+                y: [0, -6, 0, -6, 0],
+                transition: {
+                  delay: 3,
+                  duration: 0.6,
+                  repeat: Infinity,
+                  repeatDelay: 3,
+                },
+              }}
             >
               <Link to="/contact">Contact Me</Link>
             </motion.div>

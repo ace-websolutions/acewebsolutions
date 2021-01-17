@@ -5,6 +5,9 @@ import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { AiOutlineMail } from "react-icons/ai"
 import { FaPhone, FaMapMarker } from "react-icons/fa"
 import { PageContext } from "../context/pagecontext"
+import { useFormik } from "formik"
+import * as Yup from "yup"
+import { TextField } from "@material-ui/core"
 
 function ContactSection() {
   const { setLeftPage, setRightPage } = useContext(PageContext)
@@ -16,6 +19,22 @@ function ContactSection() {
     setRightPage("contact")
   }, [])
 
+  const FormSchema = Yup.object().shape({
+    email: Yup.string().email("Invalid email").required("Requited"),
+    name: Yup.string()
+      .min(2, "Too short!")
+      .max(50, "Too long!")
+      .required("Required"),
+    projectDescription: Yup.string().required("Required"),
+  })
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      name: "",
+      projectDescription: "",
+    },
+    validationSchema: FormSchema,
+  })
   return (
     <section id="contact">
       <div className="container">
@@ -134,34 +153,56 @@ function ContactSection() {
                   netlify-honeypot="bot-field"
                 >
                   <input type="hidden" name="bot-field" />
-                  <div className="form-email">
-                    <input type="email" name="email" required />
-                    <label for="email" className="label-form">
-                      <span className="content-form">Email</span>
-                    </label>
-                  </div>
-                  <div className="form-name">
-                    <input type="text" name="name" required />
-                    <label for="name" className="label-form">
-                      <span className="content-form">Name</span>
-                    </label>
-                  </div>
-                  <div className="form-textarea">
-                    <textarea name="project-description" required />
-                    <label for="project-description" className="label-form">
-                      <span className="content-form">Project Description</span>
-                    </label>
-                  </div>
+                  <TextField
+                    fullWidth
+                    id="email"
+                    name="email"
+                    label="Email"
+                    value={formik.values.email}
+                    onChange={formik.handleChange}
+                    error={formik.touched.email && Boolean(formik.errors.email)}
+                    helperText={formik.touched.email && formik.errors.email}
+                  />
+                  <TextField
+                    fullWidth
+                    id="name"
+                    name="name"
+                    label="Name"
+                    value={formik.values.name}
+                    onChange={formik.handleChange}
+                    error={formik.touched.name && Boolean(formik.errors.name)}
+                    helperText={formik.touched.name && formik.errors.name}
+                  />
+                  <TextField
+                    fullWidth
+                    multiline
+                    rows={8}
+                    id="projectDescription"
+                    name="projectDescription"
+                    label="Project Description"
+                    value={formik.values.projectDescription}
+                    onChange={formik.handleChange}
+                    error={
+                      formik.touched.projectDescription &&
+                      Boolean(formik.errors.projectDescription)
+                    }
+                    helperText={
+                      formik.touched.projectDescription &&
+                      formik.errors.projectDescription
+                    }
+                  />
                   <motion.div
                     className="form-submit"
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.1, transition: { type: "spring" } }}
                     whileTap={{ scale: 0.8 }}
-                    animate={{ y: [0, -4, 0, -4, 0] }}
-                    transition={{
-                      delay: 3,
-                      duration: 0.6,
-                      repeat: Infinity,
-                      repeatDelay: 3,
+                    animate={{
+                      y: [0, -4, 0, -4, 0],
+                      transition: {
+                        delay: 3,
+                        duration: 0.6,
+                        repeat: Infinity,
+                        repeatDelay: 3,
+                      },
                     }}
                   >
                     <input type="submit" value="Send message" />
