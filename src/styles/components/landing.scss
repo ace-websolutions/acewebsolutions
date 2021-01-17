@@ -17,8 +17,12 @@
     .logo {
       z-index: 10;
       position: relative;
-      width: 40em;
+      // top: 50vh;
+      width: 50em;
       padding: 0 5em;
+      @include media(">LGdesktop") {
+        width: 55em;
+      }
       @include media("<=tablet") {
         width: 100%;
         max-width: 100%;
@@ -39,6 +43,9 @@
       justify-content: center;
       align-items: flex-start;
       color: #000;
+      @include media(">LGdesktop") {
+        max-width: 40em;
+      }
       @include media("<=tablet") {
         width: 100%;
         align-items: center;
@@ -54,7 +61,9 @@
         width: 100%;
         text-align: left;
         font-family: "Spade Round W05 Regular";
-        // mix-blend-mode: difference;
+        @include media(">LGdesktop") {
+          font-size: 4em;
+        }
         @include media("<=tablet") {
           font-size: 1.6rem;
           line-height: 2.2rem;
@@ -78,6 +87,14 @@
         font-weight: 300;
         text-align: left;
         width: 60%;
+        box-sizing: border-box;
+        margin-bottom: 0.25em;
+        border-top: 3px solid $primary;
+        padding-top: 1em;
+        @include media(">LGdesktop") {
+          margin-top: 1em;
+          font-size: 1.6em;
+        }
       }
       .landing-contact {
         margin: 0;

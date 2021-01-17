@@ -40,23 +40,53 @@ function ContactSection() {
                   </motion.p>
                 </motion.div>
                 <motion.ul variants={stagger}>
-                  <motion.li variants={fadeInUp}>
+                  <motion.li
+                    variants={fadeInUp}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 5,
+                    }}
+                  >
                     <FaPhone size={20} />
                     <motion.a href="tel:+0000000000">(000) 000-0000</motion.a>
                   </motion.li>
-                  <motion.li variants={fadeInUp}>
+                  <motion.li
+                    variants={fadeInUp}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 5,
+                    }}
+                  >
                     <AiOutlineMail size={20} />
                     <motion.a href="mailto: info@acewebsolutions.io">
                       info@acewebsolutions.io
                     </motion.a>
                   </motion.li>
-                  <motion.li variants={fadeInUp}>
+                  <motion.li
+                    variants={fadeInUp}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 5,
+                    }}
+                  >
                     <FaMapMarker size={20} />
                     <p>8630-M Guilford Rd STE304 &#183; Columbia, MD 20146</p>
                   </motion.li>
                 </motion.ul>
                 <motion.div className="social" variants={stagger}>
                   <motion.a
+                    whileHover={{ scale: 1.3 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 5,
+                    }}
                     variants={fadeInUp}
                     href="https://www.github.com/ace-websolutions"
                     rel="noreferrer"
@@ -67,6 +97,12 @@ function ContactSection() {
                   </motion.a>
                   <motion.a
                     variants={fadeInUp}
+                    whileHover={{ scale: 1.3 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 5,
+                    }}
                     href="https://www.github.com/ace-websolutions"
                     rel="noreferrer"
                     target="_blank"
@@ -75,6 +111,12 @@ function ContactSection() {
                   </motion.a>
                   <motion.a
                     variants={fadeInUp}
+                    whileHover={{ scale: 1.3 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 5,
+                    }}
                     href="https://www.github.com/ace-websolutions"
                     rel="noreferrer"
                     target="_blank"
@@ -112,10 +154,15 @@ function ContactSection() {
                   </div>
                   <motion.div
                     className="form-submit"
-                    whileHover={{ scale: 1.1, originX: 0 }}
-                    whileTap={{ scale: 0.8, originX: 0 }}
-                    animate={{ y: 4 }}
-                    transition={{ delay: 3, duration: 0.3, yoyo: Infinity }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.8 }}
+                    animate={{ y: [0, -4, 0, -4, 0] }}
+                    transition={{
+                      delay: 3,
+                      duration: 0.6,
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                    }}
                   >
                     <input type="submit" value="Send message" />
                   </motion.div>

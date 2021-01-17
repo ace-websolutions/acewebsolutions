@@ -1,12 +1,18 @@
 #portfolio-project {
-  color: #fff;
+  color: #000;
   .portfolio-container {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    & header {
+      h2 {
+        font-family: "Spade Round W05 Regular";
+      }
+    }
     .portfolio-image {
       width: 100%;
+      max-width: 1080px;
     }
     .alice-image {
       width: 100%;

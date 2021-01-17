@@ -21,12 +21,12 @@ export const fadeInUp = {
 export const stagger = {
   animate: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
     },
   },
   exit: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
     },
   },
 }

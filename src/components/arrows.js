@@ -9,9 +9,10 @@ const Arrows = () => {
 
   return (
     <>
-      {" "}
       <motion.div
         className="span-arrow left"
+        initial={{ x: -100 }}
+        animate={{ x: 0, transition: { delay: 2 } }}
         whileHover={{ scale: 1.3 }}
         transition={{
           type: "spring",
@@ -25,6 +26,8 @@ const Arrows = () => {
       </motion.div>
       <motion.div
         className="span-arrow right"
+        initial={{ x: 100 }}
+        animate={{ x: 0, transition: { delay: 2 } }}
         whileHover={{ scale: 1.3 }}
         transition={{
           type: "spring",

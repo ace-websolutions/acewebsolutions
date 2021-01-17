@@ -1,5 +1,4 @@
 import React, { useEffect, useContext, useRef } from "react"
-import WebsiteSVG from "../images/website.svg"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import { SKILLICONS } from "../context/config"
@@ -26,7 +25,7 @@ function AboutSection() {
       x: "-50%",
       opacity: 1,
       transition: {
-        delay: 2,
+        delay: 5,
       },
     },
   }
@@ -56,7 +55,6 @@ function AboutSection() {
                 {SKILLICONS.map((icon, i) => (
                   <motion.div
                     variants={skillsVariants}
-                    d
                     custom={i}
                     drag
                     dragConstraints={dragRef}
@@ -92,8 +90,9 @@ function AboutSection() {
               </motion.div>
               <motion.div
                 className="next-section-button about-button"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 variants={buttonVariants}
-                d
               >
                 <Link to="/services">Look at what I offer</Link>
               </motion.div>

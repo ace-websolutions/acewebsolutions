@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -24,6 +24,12 @@ const ProjectTemplate = ({ pageContext, data }) => {
     />,
   ]
 
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const slidePrev = () => setActiveIndex(activeIndex - 1)
+  const slideNext = () => setActiveIndex(activeIndex + 1)
+  const onSlideChanged = ({ item }) => setActiveIndex(item)
+
   return (
     <>
       <SEO title={project.title} />
@@ -35,7 +41,16 @@ const ProjectTemplate = ({ pageContext, data }) => {
                 <h2>{project.title}</h2>
               </motion.header>
               <motion.div variants={fadeInUp} className="portfolio-image">
-                <AliceCarousel items={images} />
+                <AliceCarousel
+                  items={images}
+                  mouseTracking
+                  disableButtonsControls
+                  activeIndex={activeIndex}
+                  onSlideChanged={onSlideChanged}
+                  infinite
+                />
+                <button onClick={slidePrev}>Prev</button>
+                <button onClick={slideNext}>Next</button>
               </motion.div>
               <motion.ul variants={fadeInUp} className="portfolio-tags">
                 {project.tags.map(tag => (

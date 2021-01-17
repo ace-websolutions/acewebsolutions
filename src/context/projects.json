@@ -4,7 +4,7 @@
     "description": "Example of a single page web application.  Features sections such: Services, About and Testimonials.  Completely responsive on mobile devices.",
     "live": "https://health.acewebsolutions.io",
     "code": "https://github.com/ace-websolutions/healthy",
-    "tags": ["HTML", "SCSS", "FRAMER MOTION", "REACT", "GATSBY"],
+    "tags": ["HTML", "SCSS", "REACT", "GATSBY"],
     "link": "healthy"
   },
   {

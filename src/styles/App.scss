@@ -45,7 +45,7 @@ font-style: normal;
 body,
 html {
   user-select: none;
-  background: #fff;
+  // background: #fff;
   overscroll-behavior: none;
   margin: 0;
   font-family: acumin-pro, sans-serif;
@@ -54,11 +54,15 @@ html {
 }
 
 .container {
-  width: 1560px;
-  min-width: 1560px;
+  width: 2320px;
+  min-width: 2320px;
   margin: 0 auto;
   height: 100%;
   max-height: 100%;
+  @include media("<=LGdesktop") {
+    width: 1560px;
+    min-width: 1080px;
+  }
   @include media("<=desktop") {
     width: 1080px;
     min-width: 1080px;
@@ -105,16 +109,15 @@ html {
 .projects-container,
 .serv-container {
   width: 1080px;
-  min-width: 1080px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 .next-section-button {
-  background: $primary-faded;
+  background: $primary;
   backdrop-filter: blur(12px);
   background-clip: padding-box;
   height: auto;
   max-width: 400px;
-  border: 1px solid $primary;
   border-radius: 4px;
   margin: 3rem auto 0 auto;
   transition: 300ms ease-out;
