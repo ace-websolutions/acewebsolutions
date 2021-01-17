@@ -5,7 +5,9 @@
     "live": "https://health.acewebsolutions.io",
     "code": "https://github.com/ace-websolutions/healthy",
     "tags": ["HTML", "SCSS", "REACT", "GATSBY"],
-    "link": "healthy"
+    "link": "healthy",
+    "next": "projects/dog",
+    "prev": "projects/healthy"
   },
   {
     "title": "Dog Walking",
@@ -13,7 +15,9 @@
     "live": "https://dog.acewebsolutions.io/",
     "code": "https://github.com/ace-websolutions/dogwalking",
     "tags": ["HTML", "SCSS", "GSAP", "REACT", "GATSBY"],
-    "link": "dog"
+    "link": "dog",
+    "next": "projects/construction",
+    "prev": "projects/healthy"
   },
   {
     "title": "Construction Underwriters",
@@ -21,6 +25,8 @@
     "live": "https://con.acewebsolutions.io",
     "code": "https://github.com/ace-websolutions/construction-underwriters",
     "tags": ["HTML", "SCSS", "MATERIAL UI", "REACT", "GATSBY"],
-    "link": "construction"
+    "link": "construction",
+    "next": "projects/construction",
+    "prev": "projects/dog"
   }
 ]

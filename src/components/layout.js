@@ -19,8 +19,8 @@ const Layout = ({ children, location }) => {
     <div
       style={{
         backgroundImage: `url(${data.file.publicURL}`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no - repeat",
+        backgroundPosition: "center top",
+        backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         position: "relative",
       }}
