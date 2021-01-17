@@ -16,7 +16,7 @@ const Layout = ({ children, location }) => {
   `)
 
   return (
-    <body
+    <div
       style={{
         backgroundImage: `url(${data.file.publicURL}`,
         backgroundPosition: "center",
@@ -102,7 +102,7 @@ const Layout = ({ children, location }) => {
           },
         }}
       />
-    </body>
+    </div>
   )
 }
 

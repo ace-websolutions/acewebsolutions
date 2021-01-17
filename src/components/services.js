@@ -3,7 +3,6 @@ import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import { SERVICES } from "../context/config"
 import { PageContext } from "../context/pagecontext"
-import { Link } from "gatsby"
 
 const servVariants = {
   initial: {
@@ -23,11 +22,9 @@ const ServicesSection = () => {
   const { setLeftPage, setRightPage } = useContext(PageContext)
 
   useEffect(() => {
-    // eslint-disable-next-line
     setLeftPage("about")
-    // eslint-disable-next-line
     setRightPage("portfolio")
-  }, [])
+  }, [setLeftPage, setRightPage])
 
   return (
     <section id="services">

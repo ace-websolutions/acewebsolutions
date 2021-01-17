@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react"
 import PROJECTS from "../context/projects.json"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import Project from "./project"
@@ -10,11 +10,9 @@ function PortfolioSection() {
   const { setLeftPage, setRightPage } = useContext(PageContext)
 
   useEffect(() => {
-    // eslint-disable-next-line
     setLeftPage("services")
-    // eslint-disable-next-line
     setRightPage("contact")
-  }, [])
+  }, [setLeftPage, setRightPage])
 
   const data = useStaticQuery(graphql`
     query {
