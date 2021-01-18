@@ -93,7 +93,10 @@ function ContactSection() {
                     }}
                   >
                     <FaMapMarker size={20} />
-                    <p>8630-M Guilford Rd STE304 &#183; Columbia, MD 20146</p>
+                    <p>
+                      8630-M Guilford Rd <br /> STE 304 <br /> Columbia, MD
+                      20146
+                    </p>
                   </motion.li>
                 </motion.ul>
                 <motion.div className="social" variants={stagger}>

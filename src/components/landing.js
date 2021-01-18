@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { motion } from "framer-motion"
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { PageContext } from "../context/pagecontext"
-import { stagger } from "../animation/animation.js"
+import { stagger, svgVariants } from "../animation/animation.js"
 import Logo from "../images/logo/Ace.white.svg"
 
 const Landing = () => {
@@ -50,35 +50,27 @@ const Landing = () => {
       rotate: 360,
     },
   }
-  const svgVariations = {
-    initial: {
-      // opacity: 0,
-      // x: 0,
-      // y: 100,
-      // rotate: 0,
-      // scale: 0,
-      // transition: {
-      //   type: "spring",
-      // },
-    },
-    animate: {
-      x: [0, -10, 20, 15, 5, 0],
-      y: [0, -30, -25, -40, -5, 0],
-      rotate: [0, 0, -2.5, -1.5, 1.5, 0],
-      scale: [1, 1, 1.05, 1.08, 0.95, 1],
-      transition: {
-        repeat: Infinity,
-        duration: 14,
-        type: "spring",
-        delay: 0.5,
-      },
-    },
-  }
   return (
     <section id="landing">
       <div className="container">
         <div className="flex landing-container">
-          <motion.div variants={svgVariations} drag className="logo">
+          <motion.div
+            variants={svgVariants}
+            animate={{
+              x: [0, -10, 20, 15, 5, 0],
+              y: [0, -30, -25, -40, -5, 0],
+              rotate: [0, 0, -2.5, -1.5, 1.5, 0],
+              scale: [1, 1, 1.05, 1.08, 0.95, 1],
+              transition: {
+                repeat: Infinity,
+                duration: 14,
+                type: "spring",
+                delay: 1,
+              },
+            }}
+            drag
+            className="logo"
+          >
             <Logo />
           </motion.div>
           <motion.div className="text" variants={stagger}>

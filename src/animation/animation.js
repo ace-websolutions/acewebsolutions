@@ -29,6 +29,7 @@ export const stagger = {
       staggerChildren: 0.2,
     },
   },
+  initial: {},
 }
 
 export const navVariants = {
@@ -39,5 +40,51 @@ export const navVariants = {
 export const deskNavVariants = {
   hover: {
     scale: 1.3,
+  },
+  initial: {
+    opacity: 0,
+    y: -100,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
+}
+export const springTransition = {
+  transition: {
+    type: "spring",
+    stiffness: 300,
+    damping: 5,
+    staggerChildren: 0.3,
+  },
+}
+
+export const svgVariants = {
+  initial: {
+    opacity: 0,
+    y: 1000,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      delay: 0.5,
+    },
+  },
+  infinite: {
+    translateX: [0, -10, 20, 15, 5, 0],
+    translateY: [0, -30, -25, -40, -5, 0],
+    rotate: [0, 0, -2.5, -1.5, 1.5, 0],
+    scale: [1, 1, 1.05, 1.08, 0.95, 1],
+    transition: {
+      repeat: Infinity,
+      duration: 14,
+      type: "spring",
+      delay: 1,
+    },
+    exit: {
+      opacity: 0,
+    },
   },
 }

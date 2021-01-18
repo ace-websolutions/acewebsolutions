@@ -76,7 +76,6 @@ const ProjectTemplate = ({ pageContext, data }) => {
                       className="next-section-button"
                       whileHover={{
                         y: -4,
-                        skewX: -8,
                       }}
                       whileTap={{ scale: 0.95 }}
                       transition={{
@@ -91,7 +90,6 @@ const ProjectTemplate = ({ pageContext, data }) => {
                       className="next-section-button"
                       whileHover={{
                         y: -4,
-                        skewX: -8,
                       }}
                       whileTap={{ scale: 0.95 }}
                       transition={{
@@ -106,7 +104,6 @@ const ProjectTemplate = ({ pageContext, data }) => {
                       className="next-section-button"
                       whileHover={{
                         y: -4,
-                        skewX: -8,
                       }}
                       whileTap={{ scale: 0.95 }}
                       transition={{
