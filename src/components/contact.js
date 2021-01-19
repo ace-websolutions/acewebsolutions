@@ -39,7 +39,7 @@ function ContactSection() {
       projectDescription: "",
     },
     validationSchema: FormSchema,
-    onSubmit: data => {
+    onSubmit: (data, actions) => {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -49,7 +49,8 @@ function ContactSection() {
         }),
       })
         .then(() => {
-          alert("send")
+          alert("Success")
+          actions.resetForm()
         })
         .catch(error => alert(error))
     },
@@ -176,6 +177,7 @@ function ContactSection() {
                   // action="/thank-you"
                   onSubmit={formik.handleSubmit}
                 >
+                  <input type="hidden" name="form-name" value="contact" />
                   <input type="hidden" name="bot-field" />
                   <TextField
                     fullWidth
