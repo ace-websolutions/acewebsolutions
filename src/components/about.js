@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useRef } from "react"
+import React, { useEffect, useContext } from "react"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import { SKILLICONS } from "../context/config"
@@ -7,8 +7,6 @@ import { Link } from "gatsby"
 
 function AboutSection() {
   const { setLeftPage, setRightPage } = useContext(PageContext)
-  const dragRef = useRef(null)
-
   const skillsVariants = {
     initial: { y: -200, opacity: 0 },
     animate: i => ({
@@ -28,6 +26,7 @@ function AboutSection() {
         delay: 5,
       },
     },
+    exit: { y: "100%", x: "-50%", opacity: 0 },
   }
   useEffect(() => {
     // eslint-disable-next-line
@@ -51,13 +50,18 @@ function AboutSection() {
               </motion.p>
             </motion.header>
             <motion.div variants={fadeInUp} className="about">
-              <div ref={dragRef} className="icon-container">
+              <motion.div variants={fadeInUp} className="icon-container">
                 {SKILLICONS.map((icon, i) => (
                   <motion.div
                     variants={skillsVariants}
                     custom={i}
                     drag
-                    dragConstraints={dragRef}
+                    dragConstraints={{
+                      top: -50,
+                      right: 50,
+                      bottom: 50,
+                      left: -50,
+                    }}
                     dragTransition={{
                       bounceStiffness: 100,
                       bounceDamping: 4,
@@ -70,7 +74,7 @@ function AboutSection() {
                     <h5>{icon.name}</h5>
                   </motion.div>
                 ))}
-              </div>
+              </motion.div>
               <motion.div className="about-info-container" variants={stagger}>
                 <motion.p className="about-text" variants={fadeInUp}>
                   I am passionate about creating projects that can help improve

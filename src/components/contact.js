@@ -166,7 +166,7 @@ function ContactSection() {
                   </motion.a>
                 </motion.div>
               </motion.div>
-              <div className="contact-form">
+              <motion.div variants={fadeInUp} className="contact-form">
                 <motion.form
                   variants={fadeInUp}
                   name="contact"
@@ -232,7 +232,7 @@ function ContactSection() {
                     <input type="submit" value="Send message" />
                   </motion.div>
                 </motion.form>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

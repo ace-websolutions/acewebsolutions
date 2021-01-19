@@ -48,27 +48,27 @@ export const SERVICES = [
     svg: <HandSVG />,
     title: "Business Asset",
     description:
-      "My ultimate goal is to help you do your business better.  I want to help drive more traffic to your brand.",
+      "Let me handle everything you see here, so you can focus on the parts of the business you know best. You will have peace of mind knowing your web presence is properly taken care of.",
   },
   {
     icon: <FaCode size={50} />,
     svg: <CodingSVG />,
     title: "Front-End",
     description:
-      "Custom built websites made to your satisfaction.  Every detail approved by you, for you.",
+      "Often times your website is the first impression you get to make on potential clients, so lets make it a good one!  Every detail approved by you, for you.",
   },
   {
     icon: <FaServer size={50} />,
     svg: <HostingSVG />,
     title: "Hosting",
     description:
-      "From domain registration to server deployment, your site will be taken care of.  I host on fast, reliable, secure, and scalable servers.",
+      "From domain registration to server deployment, your site will be taken care of.  Your website will be hosted on fast, reliable, secure, and scalable servers that are accessible from all across the world. ",
   },
   {
     icon: <FaSearch size={50} />,
     svg: <SeoSVG />,
     title: "SEO",
     description:
-      "My code is optimized for search engines, meaning your site will have the best chance of being seen in top search engines.",
+      "I utilise static site generators, which gives your site the best chance to appear at the top of search engines. Couple this with keywords and proper HTML format and you have nothing to worry about.",
   },
 ]

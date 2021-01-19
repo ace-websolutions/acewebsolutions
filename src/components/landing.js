@@ -18,10 +18,12 @@ const Landing = () => {
     initial: {
       x: -500,
       skewY: 8,
+      opacity: 0,
     },
     animate: {
       x: 0,
       skewY: 0,
+      opacity: 1,
       transition: {
         type: "spring",
         duration: 1.6,
@@ -29,6 +31,7 @@ const Landing = () => {
     },
     exit: {
       x: -800,
+      opacity: 0,
     },
   }
 
@@ -67,6 +70,11 @@ const Landing = () => {
                 type: "spring",
                 delay: 1,
               },
+            }}
+            exit={{
+              opacity: 0,
+              y: 500,
+              transition: { delay: 0.5, type: "spring", duration: 1 },
             }}
             drag
             className="logo"
