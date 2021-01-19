@@ -54,7 +54,7 @@ function Nav() {
                 damping: 5,
               }}
             >
-              <Link id="about-nav" to="/about" activeClassName="active">
+              <Link id="about-nav" to="/about/" activeClassName="active">
                 About
               </Link>
             </motion.li>
@@ -69,7 +69,7 @@ function Nav() {
                 damping: 5,
               }}
             >
-              <Link id="services-nav" to="/services" activeClassName="active">
+              <Link id="services-nav" to="/services/" activeClassName="active">
                 Services
               </Link>
             </motion.li>
@@ -84,7 +84,11 @@ function Nav() {
                 damping: 5,
               }}
             >
-              <Link id="portfolio-nav" to="/portfolio" activeClassName="active">
+              <Link
+                id="portfolio-nav"
+                to="/portfolio/"
+                activeClassName="active"
+              >
                 Portfolio
               </Link>
             </motion.li>
@@ -99,7 +103,7 @@ function Nav() {
                 damping: 5,
               }}
             >
-              <Link id="contact-nav" to="/contact" activeClassName="active">
+              <Link id="contact-nav" to="/contact/" activeClassName="active">
                 Contact
               </Link>
             </motion.li>
@@ -124,16 +128,16 @@ function Nav() {
               <Link to="/" onClick={() => setOpen(!open)}>
                 Home
               </Link>
-              <Link to="/about" onClick={() => setOpen(!open)}>
+              <Link to="/about/" onClick={() => setOpen(!open)}>
                 About
               </Link>
-              <Link to="/services" onClick={() => setOpen(!open)}>
+              <Link to="/services/" onClick={() => setOpen(!open)}>
                 Services
               </Link>
-              <Link to="/portfolio" onClick={() => setOpen(!open)}>
+              <Link to="/portfolio/" onClick={() => setOpen(!open)}>
                 Portfolio
               </Link>
-              <Link to="/contact" onClick={() => setOpen(!open)}>
+              <Link to="/contact/" onClick={() => setOpen(!open)}>
                 Contact
               </Link>
             </div>

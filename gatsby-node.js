@@ -10,9 +10,9 @@ exports.createPages = ({ actions: { createPage } }) => {
       component: projectTemplate,
       context: {
         ...project,
-        aliceOne: `/thumbnail\/${project.link}/`,
-        aliceTwo: `/thumbnail\/${project.link}/`,
-        aliceThree: `/thumbnail\/${project.link}/`,
+        aliceOne: `/thumbnail\/${project.link}`,
+        aliceTwo: `/thumbnail\/${project.link}`,
+        aliceThree: `/thumbnail\/${project.link}`,
       },
     })
   })

@@ -174,7 +174,7 @@ function ContactSection() {
                   // method="POST"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
-                  // action="/thank-you"
+                  action="/thank-you/"
                   onSubmit={formik.handleSubmit}
                 >
                   <input type="hidden" name="form-name" value="contact" />
