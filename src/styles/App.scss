@@ -13,6 +13,7 @@
 @import "./components/contact.scss";
 @import "./components/footer.scss";
 @import "./components/thankyou.scss";
+@import "./components/404.scss";
 
 /*
 Fonts added:
@@ -101,7 +102,8 @@ html {
 #portfolio,
 #contact,
 #portfolio-project,
-#thankyou {
+#thankyou,
+#notfound {
   min-height: 100vh;
   text-align: center;
   box-sizing: border-box;
@@ -116,7 +118,8 @@ html {
 .contact,
 .projects-container,
 .serv-container,
-.thankyou-container {
+.thankyou-container,
+.notfound-container {
   width: 1080px;
   max-width: 1080px;
   margin: 0 auto;

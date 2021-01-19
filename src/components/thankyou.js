@@ -1,21 +1,10 @@
-import React, { useEffect, useContext } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
-import { PageContext } from "../context/pagecontext"
 import { Link } from "gatsby"
 import Logo from "../images/logo/Ace.2_c.svg"
 
 const ThankYouSection = () => {
-  const { setLeftPage, setRightPage } = useContext(PageContext)
-
-  useEffect(() => {
-    // eslint-disable-next-line
-    setLeftPage("")
-    // eslint-disable-next-line
-    setRightPage("")
-    // eslint-disable-next-line
-  }, [])
-
   const svgThankYouVariants = {
     initial: { opacity: 0 },
     animate: {

@@ -22,8 +22,12 @@ const Layout = ({ children, location }) => {
         backgroundImage: `url(${data.file.publicURL}`,
       }}
     >
-      {location.pathname !== "/thankyou/" && <Nav />}
-      {location.pathname !== "/thankyou/" && <Arrows />}
+      {location.pathname !== "/thankyou/" && location.pathname !== "/404/" && (
+        <Nav />
+      )}
+      {location.pathname !== "/thankyou/" && location.pathname !== "/404/" && (
+        <Arrows />
+      )}
       <AnimatePresence exitBeforeEnter>
         <motion.main
           key={location.pathname}

@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { AiOutlineMail } from "react-icons/ai"
+import { navigate } from "gatsby"
 import { FaPhone, FaMapMarker } from "react-icons/fa"
 import { PageContext } from "../context/pagecontext"
 import { useFormik } from "formik"
@@ -49,8 +50,8 @@ function ContactSection() {
         }),
       })
         .then(() => {
-          alert("Success")
           actions.resetForm()
+          navigate("/thankyou/")
         })
         .catch(error => alert(error))
     },
@@ -174,7 +175,6 @@ function ContactSection() {
                   // method="POST"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
-                  action="/thank-you/"
                   onSubmit={formik.handleSubmit}
                 >
                   <input type="hidden" name="form-name" value="contact" />
