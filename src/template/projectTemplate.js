@@ -112,7 +112,7 @@ const ProjectTemplate = ({ pageContext, data }) => {
                         damping: 5,
                       }}
                     >
-                      <Link to="/portfolio">Back to Portfolio</Link>
+                      <Link to="/portfolio/">Back to Portfolio</Link>
                     </motion.div>
                   </motion.div>
                 </motion.div>

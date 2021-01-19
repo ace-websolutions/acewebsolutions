@@ -7,6 +7,15 @@ import { Link } from "gatsby"
 
 function AboutSection() {
   const { setLeftPage, setRightPage } = useContext(PageContext)
+
+  useEffect(() => {
+    // eslint-disable-next-line
+    setLeftPage("")
+    // eslint-disable-next-line
+    setRightPage("services/")
+    // eslint-disable-next-line
+  }, [])
+
   const skillsVariants = {
     initial: { y: -200, opacity: 0 },
     animate: i => ({
@@ -28,13 +37,6 @@ function AboutSection() {
     },
     exit: { y: "100%", x: "-50%", opacity: 0 },
   }
-  useEffect(() => {
-    // eslint-disable-next-line
-    setLeftPage("")
-    // eslint-disable-next-line
-    setRightPage("services")
-    // eslint-disable-next-line
-  }, [])
 
   return (
     <motion.section id="about">

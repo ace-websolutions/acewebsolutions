@@ -10,8 +10,8 @@ function PortfolioSection() {
   const { setLeftPage, setRightPage } = useContext(PageContext)
 
   useEffect(() => {
-    setLeftPage("services")
-    setRightPage("contact")
+    setLeftPage("services/")
+    setRightPage("contact/")
   }, [setLeftPage, setRightPage])
 
   const data = useStaticQuery(graphql`

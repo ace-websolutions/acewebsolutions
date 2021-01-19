@@ -11,7 +11,7 @@ const Landing = () => {
 
   useEffect(() => {
     setLeftPage("")
-    setRightPage("about")
+    setRightPage("about/")
   }, [setLeftPage, setRightPage])
 
   const textVariations = {

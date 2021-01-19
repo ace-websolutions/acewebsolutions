@@ -28,8 +28,8 @@ function ContactSection() {
   const { setLeftPage, setRightPage } = useContext(PageContext)
 
   useEffect(() => {
-    setLeftPage("portfolio")
-    setRightPage("contact")
+    setLeftPage("portfolio/")
+    setRightPage("contact/")
   }, [setLeftPage, setRightPage])
 
   const formik = useFormik({
@@ -45,18 +45,10 @@ function ContactSection() {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
           "form-name": "contact",
-          "bot-field": "",
           ...data,
         }),
       })
         .then(() => {
-          // alert(
-          //   encode({
-          //     "form-name": "contact",
-          //     "bot-field": "",
-          //     ...data,
-          //   })
-          // )
           alert("Success")
           actions.resetForm()
         })

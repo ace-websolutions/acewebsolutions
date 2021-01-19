@@ -22,8 +22,8 @@ const ServicesSection = () => {
   const { setLeftPage, setRightPage } = useContext(PageContext)
 
   useEffect(() => {
-    setLeftPage("about")
-    setRightPage("portfolio")
+    setLeftPage("about/")
+    setRightPage("portfolio/")
   }, [setLeftPage, setRightPage])
 
   return (
