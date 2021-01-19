@@ -9,6 +9,21 @@ import { useFormik } from "formik"
 import * as Yup from "yup"
 import { TextField } from "@material-ui/core"
 
+const FormSchema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Required"),
+  name: Yup.string()
+    .min(2, "Too short!")
+    .max(50, "Too long!")
+    .required("Required"),
+  projectDescription: Yup.string().required("Required"),
+})
+
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 function ContactSection() {
   const { setLeftPage, setRightPage } = useContext(PageContext)
 
@@ -17,14 +32,6 @@ function ContactSection() {
     setRightPage("contact")
   }, [setLeftPage, setRightPage])
 
-  const FormSchema = Yup.object().shape({
-    email: Yup.string().email("Invalid email").required("Requited"),
-    name: Yup.string()
-      .min(2, "Too short!")
-      .max(50, "Too long!")
-      .required("Required"),
-    projectDescription: Yup.string().required("Required"),
-  })
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -32,6 +39,20 @@ function ContactSection() {
       projectDescription: "",
     },
     validationSchema: FormSchema,
+    onSubmit: data => {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...data,
+        }),
+      })
+        .then(() => {
+          alert("send")
+        })
+        .catch(error => alert(error))
+    },
   })
   return (
     <section id="contact">
@@ -149,9 +170,11 @@ function ContactSection() {
                 <motion.form
                   variants={fadeInUp}
                   name="contact"
-                  method="POST"
+                  // method="POST"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
+                  // action="/thank-you"
+                  onSubmit={formik.handleSubmit}
                 >
                   <input type="hidden" name="bot-field" />
                   <TextField
