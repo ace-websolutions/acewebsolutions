@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react"
+import { useContext, useEffect } from "react"
 import { PageContext } from "../context/pagecontext"
 
 const useSetArrows = (left, right) => {
@@ -9,7 +9,7 @@ const useSetArrows = (left, right) => {
   useEffect(() => {
     setLeftPage(left)
     setRightPage(right)
-  }, [setLeftPage, setRightPage])
+  }, [left, right, setLeftPage, setRightPage])
   return [leftPage, rightPage]
 }
 

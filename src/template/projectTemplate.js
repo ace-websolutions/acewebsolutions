@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react"
+import React from "react"
 import SEO from "../components/seo"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
