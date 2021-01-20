@@ -1,14 +1,49 @@
 import React from "react"
 import SEO from "../components/seo"
-import ThankYouSection from "../components/thankyou"
+import { motion } from "framer-motion"
+import { fadeInUp, stagger } from "../animation/animation"
+import { Link } from "gatsby"
+import Logo from "../images/logo/Ace.2_c.svg"
 
-const Thankyou = () => {
+const ThankYouSection = () => {
+  const svgThankYouVariants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 1,
+      },
+    },
+    exit: { opacity: 0 },
+  }
+
   return (
-    <>
+    <motion.section id="thankyou">
       <SEO title="Thank You" />
-      <ThankYouSection />
-    </>
+      <div className="container">
+        <div className="container-fluid">
+          <motion.div variants={stagger} className="flex thankyou-container">
+            <motion.div
+              variants={svgThankYouVariants}
+              className="thankyou-logo"
+            >
+              <Logo />
+            </motion.div>{" "}
+            <motion.header variants={fadeInUp} className="thankyou-header">
+              <motion.h1>Thank You!</motion.h1>
+              <motion.h5>I will be in touch very soon</motion.h5>
+            </motion.header>
+            <motion.div
+              variants={fadeInUp}
+              className="thankyou-button next-section-button"
+            >
+              <Link to="/">Back to home</Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </motion.section>
   )
 }
 
-export default Thankyou
+export default ThankYouSection
