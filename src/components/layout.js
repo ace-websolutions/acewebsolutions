@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery, location } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Nav from "./nav"
 import Footer from "./footer"
 import { AnimatePresence, motion } from "framer-motion"
@@ -23,10 +23,10 @@ const Layout = ({ children, location }) => {
       }}
     >
       {location.pathname !== "/thankyou/" && location.pathname !== "/404/" && (
-        <Nav />
-      )}
-      {location.pathname !== "/thankyou/" && location.pathname !== "/404/" && (
-        <Arrows />
+        <>
+          <Nav />
+          <Arrows location={location} />
+        </>
       )}
       <AnimatePresence exitBeforeEnter>
         <motion.main
