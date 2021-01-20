@@ -2,6 +2,8 @@ import React from "react"
 import Layout from "./src/components/layout"
 import { PageProvider } from "./src/context/pagecontext"
 
+import "./src/styles/App.scss"
+
 export const wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>
 }
