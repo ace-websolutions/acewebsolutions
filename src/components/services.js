@@ -1,8 +1,8 @@
-import React, { useEffect, useContext } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import { SERVICES } from "../context/config"
-import { PageContext } from "../context/pagecontext"
+import useSetArrows from "../hooks/useSetArrows"
 
 const servVariants = {
   initial: {
@@ -19,12 +19,7 @@ const servVariants = {
 }
 
 const ServicesSection = () => {
-  const { setLeftPage, setRightPage } = useContext(PageContext)
-
-  useEffect(() => {
-    setLeftPage("about/")
-    setRightPage("portfolio/")
-  }, [setLeftPage, setRightPage])
+  useSetArrows("about/", "portfolio/")
 
   return (
     <section id="services">

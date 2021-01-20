@@ -1,18 +1,13 @@
-import React, { useEffect, useContext } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import { motion } from "framer-motion"
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa"
-import { PageContext } from "../context/pagecontext"
+import useSetArrows from "../hooks/useSetArrows"
 import { stagger, svgVariants } from "../animation/animation.js"
 import Logo from "../images/logo/Ace.white.svg"
 
 const Landing = () => {
-  const { setLeftPage, setRightPage } = useContext(PageContext)
-
-  useEffect(() => {
-    setLeftPage("")
-    setRightPage("about/")
-  }, [setLeftPage, setRightPage])
+  useSetArrows("", "about/")
 
   const textVariations = {
     initial: {

@@ -1,11 +1,11 @@
-import React, { useEffect, useContext } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { AiOutlineMail } from "react-icons/ai"
 import { navigate } from "gatsby"
 import { FaPhone, FaMapMarker } from "react-icons/fa"
-import { PageContext } from "../context/pagecontext"
+import useSetArrows from "../hooks/useSetArrows"
 import { useFormik } from "formik"
 import * as Yup from "yup"
 import { TextField } from "@material-ui/core"
@@ -26,12 +26,7 @@ const encode = data => {
 }
 
 function ContactSection() {
-  const { setLeftPage, setRightPage } = useContext(PageContext)
-
-  useEffect(() => {
-    setLeftPage("portfolio/")
-    setRightPage("contact/")
-  }, [setLeftPage, setRightPage])
+  useSetArrows("portfolio/", "")
 
   const formik = useFormik({
     initialValues: {

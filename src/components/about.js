@@ -1,20 +1,12 @@
-import React, { useEffect, useContext } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import { SKILLICONS } from "../context/config"
-import { PageContext } from "../context/pagecontext"
 import { Link } from "gatsby"
+import useSetArrows from "../hooks/useSetArrows"
 
 function AboutSection() {
-  const { setLeftPage, setRightPage } = useContext(PageContext)
-
-  useEffect(() => {
-    // eslint-disable-next-line
-    setLeftPage("")
-    // eslint-disable-next-line
-    setRightPage("services/")
-    // eslint-disable-next-line
-  }, [])
+  useSetArrows("", "services/")
 
   const skillsVariants = {
     initial: { y: -200, opacity: 0 },

@@ -1,18 +1,13 @@
-import React, { useEffect, useContext } from "react"
+import React from "react"
 import PROJECTS from "../context/projects.json"
 import { useStaticQuery, graphql } from "gatsby"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import Project from "./project"
-import { PageContext } from "../context/pagecontext"
+import useSetArrows from "../hooks/useSetArrows"
 
 function PortfolioSection() {
-  const { setLeftPage, setRightPage } = useContext(PageContext)
-
-  useEffect(() => {
-    setLeftPage("services/")
-    setRightPage("contact/")
-  }, [setLeftPage, setRightPage])
+  useSetArrows("services/", "contact/")
 
   const data = useStaticQuery(graphql`
     query {

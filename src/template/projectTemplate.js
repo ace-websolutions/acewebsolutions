@@ -5,16 +5,11 @@ import Img from "gatsby-image"
 import { motion } from "framer-motion"
 import { fadeInUp, stagger } from "../animation/animation"
 import AliceCarousel from "react-alice-carousel"
-import { PageContext } from "../context/pagecontext"
+import useSetArrows from "../hooks/useSetArrows"
 
 const ProjectTemplate = ({ pageContext, data }) => {
   const project = pageContext
-  const { setLeftPage, setRightPage } = useContext(PageContext)
-
-  useEffect(() => {
-    setLeftPage(project.prev)
-    setRightPage(project.next)
-  }, [setLeftPage, setRightPage])
+  useSetArrows(`${project.prev}`, `${project.next}`)
 
   const images = [
     <Img
