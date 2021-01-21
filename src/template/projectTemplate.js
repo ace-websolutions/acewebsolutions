@@ -3,9 +3,10 @@ import SEO from "../components/seo"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { motion } from "framer-motion"
-import { fadeInUp, stagger } from "../animation/animation"
+import { fadeInUp, springTransition, stagger } from "../animation/animation"
 import AliceCarousel from "react-alice-carousel"
 import useSetArrows from "../hooks/useSetArrows"
+import { projButtonsVar } from "../animation/projectTemplate"
 
 const ProjectTemplate = ({ pageContext, data }) => {
   const project = pageContext
@@ -54,11 +55,7 @@ const ProjectTemplate = ({ pageContext, data }) => {
                       whileHover={{
                         x: "-15%",
                       }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 5,
-                      }}
+                      transition={springTransition}
                     >
                       {tag}
                     </motion.li>
@@ -69,43 +66,28 @@ const ProjectTemplate = ({ pageContext, data }) => {
                   <motion.div variants={fadeInUp} className="portfolio-buttons">
                     <motion.div
                       className="next-section-button"
-                      whileHover={{
-                        y: -4,
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 5,
-                      }}
+                      variants={projButtonsVar}
+                      whileHover="hover"
+                      whileTap="tap"
+                      transition={springTransition}
                     >
                       <a href={project.live}>View Live</a>
                     </motion.div>
                     <motion.div
                       className="next-section-button"
-                      whileHover={{
-                        y: -4,
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 5,
-                      }}
+                      variants={projButtonsVar}
+                      whileHover="hover"
+                      whileTap="tap"
+                      transition={springTransition}
                     >
                       <a href={project.code}>Check Code</a>
                     </motion.div>
                     <motion.div
                       className="next-section-button"
-                      whileHover={{
-                        y: -4,
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 5,
-                      }}
+                      variants={projButtonsVar}
+                      whileHover="hover"
+                      whileTap="tap"
+                      transition={springTransition}
                     >
                       <Link to="/portfolio/">Back to Portfolio</Link>
                     </motion.div>

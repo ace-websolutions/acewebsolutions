@@ -3,7 +3,7 @@ import SEO from "../components/seo"
 import PROJECTS from "../context/projects.json"
 import { useStaticQuery, graphql } from "gatsby"
 import { motion } from "framer-motion"
-import { fadeInUp, stagger } from "../animation/animation"
+import { containerStagger, fadeInUp, stagger } from "../animation/animation"
 import Project from "../components/project"
 import useSetArrows from "../hooks/useSetArrows"
 
@@ -40,7 +40,10 @@ function Portfolio() {
       <SEO title="Portfolio" />
       <div className="container">
         <div className="container-fluid">
-          <motion.div variants={stagger} className="flex proj-container">
+          <motion.div
+            variants={containerStagger}
+            className="flex proj-container"
+          >
             <motion.header variants={stagger}>
               <motion.h2 variants={fadeInUp}>
                 My <span>work</span> so far

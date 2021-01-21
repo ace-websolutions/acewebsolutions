@@ -2,7 +2,13 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import { FiMenu, FiX } from "react-icons/fi"
 import { motion } from "framer-motion"
-import { navVariants, deskNavVariants, stagger } from "../animation/animation"
+import { springTransition } from "../animation/animation"
+import {
+  deskNavVariants,
+  navVariants,
+  staggerDeskNav,
+  logoNavVariants,
+} from "../animation/nav"
 
 function Nav() {
   const [open, setOpen] = useState(false)
@@ -13,31 +19,26 @@ function Nav() {
         <nav className="nav-bar">
           <motion.span
             className="logo-span"
-            variants={deskNavVariants}
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0, transition: { delay: 2 } }}
+            variants={logoNavVariants}
+            initial="initial"
+            animate="animate"
             whileHover="hover"
-            transition={{
-              type: "spring",
-              stiffness: 300,
-              damping: 5,
-            }}
+            transition={springTransition}
           >
             <Link id="logo-nav" to="/" activeClassName="active">
               <span className="ace">Ace </span>Web Solutions
             </Link>
           </motion.span>
-          <motion.ul variants={stagger} className="nav-button-group">
+          <motion.ul
+            variants={staggerDeskNav}
+            className="nav-button-group"
+            initial="initial"
+            animate="animate"
+          >
             <motion.li
               variants={deskNavVariants}
-              initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 2 } }}
               whileHover="hover"
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 5,
-              }}
+              transition={springTransition}
             >
               <Link id="home-nav" to="/" activeClassName="active">
                 Home
@@ -45,14 +46,8 @@ function Nav() {
             </motion.li>
             <motion.li
               variants={deskNavVariants}
-              initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 2.2 } }}
               whileHover="hover"
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 5,
-              }}
+              transition={springTransition}
             >
               <Link id="about-nav" to="/about/" activeClassName="active">
                 About
@@ -60,14 +55,8 @@ function Nav() {
             </motion.li>
             <motion.li
               variants={deskNavVariants}
-              initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 2.4 } }}
               whileHover="hover"
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 5,
-              }}
+              transition={springTransition}
             >
               <Link id="services-nav" to="/services/" activeClassName="active">
                 Services
@@ -75,14 +64,8 @@ function Nav() {
             </motion.li>
             <motion.li
               variants={deskNavVariants}
-              initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 2.6 } }}
               whileHover="hover"
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 5,
-              }}
+              transition={springTransition}
             >
               <Link
                 id="portfolio-nav"
@@ -94,14 +77,8 @@ function Nav() {
             </motion.li>
             <motion.li
               variants={deskNavVariants}
-              initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 2.8 } }}
               whileHover="hover"
-              transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 5,
-              }}
+              transition={springTransition}
             >
               <Link id="contact-nav" to="/contact/" activeClassName="active">
                 Contact

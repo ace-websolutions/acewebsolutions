@@ -1,7 +1,12 @@
 import React from "react"
 import SEO from "../components/seo"
 import { motion } from "framer-motion"
-import { fadeInUp, stagger } from "../animation/animation"
+import {
+  containerStagger,
+  fadeInUp,
+  springTransition,
+  stagger,
+} from "../animation/animation"
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa"
 import { AiOutlineMail } from "react-icons/ai"
 import { navigate } from "gatsby"
@@ -10,6 +15,7 @@ import useSetArrows from "../hooks/useSetArrows"
 import { useFormik } from "formik"
 import * as Yup from "yup"
 import { TextField } from "@material-ui/core"
+import { contactInfoContainerVar, contactInfoVars } from "../animation/contact"
 
 const FormSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -57,7 +63,10 @@ function Contact() {
       <SEO title="Contact" />
       <div className="container">
         <div className="container-fluid">
-          <motion.div className="flex contact-container">
+          <motion.div
+            variants={containerStagger}
+            className="flex contact-container"
+          >
             <motion.header variants={stagger}>
               <motion.h2 variants={fadeInUp}>
                 Let's get <span>started</span>
@@ -76,27 +85,23 @@ function Contact() {
                     you!
                   </motion.p>
                 </motion.div>
-                <motion.ul variants={stagger}>
+                <motion.ul
+                  variants={contactInfoContainerVar}
+                  initial="initial"
+                  animate="animate"
+                >
                   <motion.li
-                    variants={fadeInUp}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 5,
-                    }}
+                    variants={contactInfoVars}
+                    whileHover="hover"
+                    transition={springTransition}
                   >
                     <FaPhone size={20} />
                     <motion.a href="tel:+0000000000">(000) 000-0000</motion.a>
                   </motion.li>
                   <motion.li
-                    variants={fadeInUp}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 5,
-                    }}
+                    variants={contactInfoVars}
+                    whileHover="hover"
+                    transition={springTransition}
                   >
                     <AiOutlineMail size={20} />
                     <motion.a href="mailto: info@acewebsolutions.io">
@@ -104,13 +109,9 @@ function Contact() {
                     </motion.a>
                   </motion.li>
                   <motion.li
-                    variants={fadeInUp}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 5,
-                    }}
+                    variants={contactInfoVars}
+                    whileHover="hover"
+                    transition={springTransition}
                   >
                     <FaMapMarker size={20} />
                     <p>

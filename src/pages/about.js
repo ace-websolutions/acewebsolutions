@@ -1,6 +1,12 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { fadeInUp, stagger } from "../animation/animation"
+import { containerStagger, fadeInUp, stagger } from "../animation/animation"
+import {
+  skillsVariants,
+  buttonVariants,
+  skillsContainerVar,
+  textContainerVar,
+} from "../animation/about"
 import { SKILLICONS } from "../context/config"
 import { Link } from "gatsby"
 import useSetArrows from "../hooks/useSetArrows"
@@ -9,34 +15,15 @@ import SEO from "../components/seo"
 const About = () => {
   useSetArrows("", "services/")
 
-  const skillsVariants = {
-    initial: { y: -200, opacity: 0 },
-    animate: i => ({
-      y: 0,
-      opacity: 1,
-      transition: { delay: i * 0.15 },
-    }),
-  }
-
-  const buttonVariants = {
-    initial: { y: "100%", x: "-50%", opacity: 0 },
-    animate: {
-      y: "-50%",
-      x: "-50%",
-      opacity: 1,
-      transition: {
-        delay: 5,
-      },
-    },
-    exit: { y: "100%", x: "-50%", opacity: 0 },
-  }
-
   return (
     <motion.section id="about">
       <SEO title="About" />
       <div className="container">
         <div className="container-fluid">
-          <motion.div variants={stagger} className="flex about-container">
+          <motion.div
+            variants={containerStagger}
+            className="flex about-container"
+          >
             <motion.header variants={stagger}>
               <motion.h2 variants={fadeInUp}>
                 Hello, I'm <span>Nick</span>
@@ -46,40 +33,39 @@ const About = () => {
               </motion.p>
             </motion.header>
             <motion.div variants={fadeInUp} className="about">
-              <motion.div variants={fadeInUp} className="icon-container">
+              <motion.div
+                variants={skillsContainerVar}
+                className="icon-container"
+              >
                 {SKILLICONS.map((icon, i) => (
                   <motion.div
                     variants={skillsVariants}
                     custom={i}
                     drag
-                    dragConstraints={{
-                      top: -50,
-                      right: 50,
-                      bottom: 50,
-                      left: -50,
-                    }}
-                    dragTransition={{
-                      bounceStiffness: 100,
-                      bounceDamping: 4,
-                    }}
-                    whileTap={{ cursor: "grabbing", scale: 0.8 }}
+                    dragConstraints={skillsVariants.dragConstraints}
+                    dragTransition={skillsVariants.dragTransition}
+                    whileTap="tap"
+                    whileHover="hover"
                     key={icon.name}
-                    className="icon "
+                    className="icon"
                   >
                     {icon.import}
                     <h5>{icon.name}</h5>
                   </motion.div>
                 ))}
               </motion.div>
-              <motion.div className="about-info-container" variants={stagger}>
-                <motion.p className="about-text" variants={fadeInUp}>
+              <motion.div
+                variants={textContainerVar}
+                className="about-info-container"
+              >
+                <motion.p variants={fadeInUp} className="about-text">
                   I am passionate about creating projects that can help improve
                   the lives of those around me. I started this company to
                   challenge myself and see how far I can go. The ability to one
                   day perhaps be making a living off of working with computers
                   keeps me motivated.
                 </motion.p>
-                <motion.p className="skills-text" variants={fadeInUp}>
+                <motion.p variants={fadeInUp} className="skills-text">
                   I believe anything can be achieved if you work hard enough,
                   and you should never stop learning. Through various resources
                   I have discovered and practiced all of the skills you see
@@ -90,9 +76,9 @@ const About = () => {
               </motion.div>
               <motion.div
                 className="next-section-button about-button"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
                 variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
               >
                 <Link to="/services">Look at what I offer</Link>
               </motion.div>

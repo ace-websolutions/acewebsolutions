@@ -5,50 +5,12 @@ import { motion } from "framer-motion"
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa"
 import useSetArrows from "../hooks/useSetArrows"
 import { stagger, svgVariants } from "../animation/animation.js"
+import { textVariations, iconVariations } from "../animation/landing"
 import Logo from "../images/logo/Ace.white.svg"
 
 const IndexPage = () => {
   useSetArrows("", "about/")
 
-  const textVariations = {
-    initial: {
-      x: -500,
-      skewY: 8,
-      opacity: 0,
-    },
-    animate: {
-      x: 0,
-      skewY: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        duration: 1.6,
-      },
-    },
-    exit: {
-      x: -800,
-      opacity: 0,
-    },
-  }
-
-  const iconVariations = {
-    initial: {
-      x: -500,
-      rotate: 360,
-    },
-    animate: {
-      x: 0,
-      rotate: 0,
-      transition: {
-        type: "spring",
-        duration: 1.2,
-      },
-    },
-    exit: {
-      x: -500,
-      rotate: 360,
-    },
-  }
   return (
     <section id="landing">
       <SEO title="Welcome" />

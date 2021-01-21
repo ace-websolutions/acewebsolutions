@@ -21,7 +21,7 @@ export const fadeInUp = {
 export const stagger = {
   animate: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.2,
     },
   },
   exit: {
@@ -31,32 +31,23 @@ export const stagger = {
   },
   initial: {},
 }
-
-export const navVariants = {
-  open: { opacity: 1, y: 0 },
-  closed: { opacity: 0, y: "-100%" },
-}
-
-export const deskNavVariants = {
-  hover: {
-    scale: 1.3,
-  },
-  initial: {
-    opacity: 0,
-    y: -100,
-  },
+export const containerStagger = {
   animate: {
-    opacity: 1,
-    y: 0,
+    transition: {
+      staggerChildren: 0.2,
+    },
   },
+  exit: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+  initial: {},
 }
 export const springTransition = {
-  transition: {
-    type: "spring",
-    stiffness: 300,
-    damping: 5,
-    staggerChildren: 0.3,
-  },
+  type: "spring",
+  stiffness: 300,
+  damping: 5,
 }
 
 export const svgVariants = {

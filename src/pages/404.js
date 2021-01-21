@@ -1,22 +1,13 @@
 import React from "react"
 import { motion } from "framer-motion"
 import SEO from "../components/seo"
-import { fadeInUp, stagger } from "../animation/animation"
+import { fadeInUp, springTransition, stagger } from "../animation/animation"
 import { Link } from "gatsby"
 import Logo from "../images/logo/Ace.2_c.svg"
+import { homeButton } from "../animation/thankyou"
+import { svgNotfoundVariants } from "../animation/404"
 
 const NotFoundPage = () => {
-  const svgNotfoundVariants = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        delay: 1,
-      },
-    },
-    exit: { opacity: 0 },
-  }
-
   return (
     <motion.section id="notfound">
       <SEO title="Not Found" />
@@ -36,7 +27,10 @@ const NotFoundPage = () => {
               </motion.h5>
             </motion.header>
             <motion.div
-              variants={fadeInUp}
+              variants={homeButton}
+              whileHover="hover"
+              whileTap="tap"
+              transition={springTransition}
               className="notfound-button next-section-button"
             >
               <Link to="/">Back to home</Link>
