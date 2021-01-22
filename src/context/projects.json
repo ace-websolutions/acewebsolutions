@@ -1,17 +1,17 @@
 [
   {
     "title": "Happy Healthy",
-    "description": "Example of a single page web application.  Features sections such: Services, About and Testimonials.  Completely responsive on mobile devices.",
+    "description": "Single page website created to practice fundamental skills of modern web development. Features sections such: About, Services, Reviews, and Sign Up.  This site uses an energetic color scheme to tie in the brand and is completely responsive on mobile devices.",
     "live": "https://health.acewebsolutions.io",
     "code": "https://github.com/ace-websolutions/healthy",
-    "tags": ["HTML", "SCSS", "REACT", "GATSBY"],
+    "tags": ["HTML", "SCSS", "FRAMER MOTION", "REACT", "GATSBY"],
     "link": "healthy/",
     "next": "projects/dog/",
     "prev": "projects/healthy/"
   },
   {
     "title": "Dog Walking",
-    "description": "Example of a single page web application.  Features sections such: Services, About and Contact.  Uses form submission and completely responsive on mobile devices.",
+    "description": "Fictitious dog walking business showcased in a single page website.  This site showcases what the company does, previous clients, a history of the company, and a form to have potential users sign up.  This site is completely responsive on mobile devices.",
     "live": "https://dog.acewebsolutions.io/",
     "code": "https://github.com/ace-websolutions/dogwalking",
     "tags": ["HTML", "SCSS", "GSAP", "REACT", "GATSBY"],
@@ -21,7 +21,7 @@
   },
   {
     "title": "Construction Underwriters",
-    "description": "Example of a single page web application.  Features sections such: Services, About and Contact.  Uses google maps for directions and is completely responsive on mobile devices.",
+    "description": "Redesign of a website for a construction underwriting company.  There are sections to meet the employees, see company history, find on google maps, and more.  This is completely responsive on mobile devices.",
     "live": "https://con.acewebsolutions.io",
     "code": "https://github.com/ace-websolutions/construction-underwriters",
     "tags": ["HTML", "SCSS", "MATERIAL UI", "REACT", "GATSBY"],

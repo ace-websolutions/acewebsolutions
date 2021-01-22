@@ -14,6 +14,10 @@ const ProjectTemplate = ({ pageContext, data }) => {
 
   const images = [
     <Img
+      fluid={data.aliceImageZero.childImageSharp.fluid}
+      className="alice-image"
+    />,
+    <Img
       fluid={data.aliceImageOne.childImageSharp.fluid}
       className="alice-image"
     />,
@@ -103,24 +107,36 @@ const ProjectTemplate = ({ pageContext, data }) => {
 }
 
 export const query = graphql`
-  query MyQuery($aliceOne: String, $aliceTwo: String, $aliceThree: String) {
+  query MyQuery(
+    $aliceZero: String
+    $aliceOne: String
+    $aliceTwo: String
+    $aliceThree: String
+  ) {
+    aliceImageZero: file(relativePath: { regex: $aliceZero }) {
+      childImageSharp {
+        fluid(maxWidth: 1080, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
     aliceImageOne: file(relativePath: { regex: $aliceOne }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1080, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     aliceImageTwo: file(relativePath: { regex: $aliceTwo }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1080, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     aliceImageThree: file(relativePath: { regex: $aliceThree }) {
       childImageSharp {
-        fluid {
+        fluid(maxWidth: 1080, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
