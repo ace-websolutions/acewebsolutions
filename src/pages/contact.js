@@ -96,7 +96,7 @@ function Contact() {
                     transition={springTransition}
                   >
                     <FaPhone size={20} />
-                    <motion.a href="tel:+0000000000">(000) 000-0000</motion.a>
+                    <motion.a href="tel:+14435352108">(443) 535-2108</motion.a>
                   </motion.li>
                   <motion.li
                     variants={contactInfoVars}
