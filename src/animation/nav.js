@@ -36,6 +36,21 @@ export const logoNavVariants = {
   },
 }
 
+export const mobileNavVariants = {
+  hover: {
+    scale: 1.3,
+  },
+  initial: {
+    opacity: 0,
+    y: -100,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { ...springTransition, delay: 2.2 },
+  },
+}
+
 export const navVariants = {
   open: { opacity: 1, y: 0 },
   closed: { opacity: 0, y: "-100%" },

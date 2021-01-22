@@ -12,11 +12,6 @@
     color: #fff;
     @include media("<=tablet") {
       flex-direction: column;
-      justify-content: flex-end;
-      height: 82vh;
-    }
-    @include media("<=phone") {
-      flex-direction: column;
       justify-content: center;
     }
     .logo {
@@ -30,13 +25,12 @@
         width: 55em;
       }
       @include media("<=tablet") {
-        width: 100%;
-        max-width: 100%;
-        top: -10%;
-      }
-      @include media("<=phone") {
         position: relative;
-        top: 3%;
+        top: unset;
+        left: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       svg {
         position: absolute;
@@ -48,9 +42,11 @@
           width: 40%;
         }
         @include media("<=tablet") {
-          width: 70%;
-          left: 50%;
-          transform: translateX(-50%) rotate(0deg);
+          position: relative;
+          top: unset;
+          left: unset;
+          width: 100%;
+          transform: rotate(0deg);
         }
       }
     }
@@ -72,6 +68,9 @@
         align-items: center;
         text-align: center;
       }
+      @include media("<=phone") {
+        margin-top: 2em;
+      }
       h2 {
         margin: 0.7em 0 0 0;
         line-height: 3rem;
@@ -90,6 +89,7 @@
         }
         @include media("<=phone") {
           font-size: 2.2em;
+          line-height: 0.9em;
         }
       }
       .btn-group {
@@ -103,6 +103,9 @@
           color: #000;
           position: relative;
           margin: 1em 0.25em;
+          @include media("<=phone") {
+            margin: 0 0.25em;
+          }
         }
       }
       p {
@@ -122,7 +125,7 @@
           text-align: center;
         }
         @include media("<=phone") {
-          width: 100%;
+          width: 80%;
         }
       }
 

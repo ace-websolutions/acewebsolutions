@@ -7,7 +7,7 @@
       justify-content: flex-start;
       align-items: center;
       box-sizing: border-box;
-      @include media("<=phone") {
+      @include media("<=tablet") {
         flex-direction: column-reverse;
         justify-content: center;
         height: 100%;
@@ -27,7 +27,7 @@
         align-items: flex-start;
         border-radius: 1em;
         box-sizing: border-box;
-        @include media("<=phone") {
+        @include media("<=tablet") {
           padding: 2em;
           min-width: 100%;
           width: 100%;
@@ -42,7 +42,7 @@
             font-weight: 700;
             margin: 0 0 0.75rem 0;
             color: #fff;
-            @include media("<=phone") {
+            @include media("<=tablet") {
               text-align: center;
             }
           }
@@ -50,7 +50,7 @@
             text-align: left;
             font-size: 0.9em;
             color: #fff;
-            @include media("<=phone") {
+            @include media("<=tablet") {
               text-align: center;
             }
           }
@@ -62,7 +62,7 @@
           justify-content: center;
           align-items: flex-start;
           padding: 0;
-          @include media("<=phone") {
+          @include media("<=tablet") {
             align-items: center;
           }
           li {
@@ -107,7 +107,7 @@
         box-sizing: border-box;
         padding: 1.5em;
         position: relative;
-        @include media("<=phone") {
+        @include media("<=tablet") {
           width: 100%;
           padding: 0;
           min-width: unset;
@@ -131,7 +131,7 @@
           & .MuiFormControl-root {
             margin-bottom: 1em;
           }
-          @include media("<=phone") {
+          @include media("<=tablet") {
             width: 100%;
             position: relative;
             top: unset;
@@ -146,7 +146,12 @@
             justify-content: flex-end;
             align-items: center;
             margin: 1em 1em 1em auto;
+            @include media("<=tablet") {
+              justify-content: center;
+              margin: 0 auto;
+            }
             input {
+              margin-top: 1em;
               background: $primary;
               border: none;
               color: #fff;
@@ -158,7 +163,7 @@
               box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
                 rgba(0, 0, 0, 0.23) 0px 6px 6px;
               cursor: pointer;
-              @include media("<=phone") {
+              @include media("<=tablet") {
                 padding: 1rem 3rem;
               }
             }

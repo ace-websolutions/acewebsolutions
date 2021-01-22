@@ -2,29 +2,5 @@ $bg-dark: rgb(26, 26, 26);
 $bg-light: rgb(238, 238, 238);
 $bg-grey: #555555;
 $primary: #4361ee;
-$secondary: #d52349;
-$secondary-faded: #d5234941;
-$primary-faded: rgba(67, 98, 238, 0.205);
 
 $spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-
-$blue-gradient: linear-gradient(
-  270deg,
-  rgba(67, 97, 238, 1) 0%,
-  rgba(110, 247, 209, 1) 100%
-);
-
-//agonistic
-$one: #7c39f7; //rgb(124,57,247)
-$two: #3f31d6; //rgb(63,49,214)
-$three: #4361ee; //rgb(67,97,238)
-$four: #317bd6; //rgb(49,123,214)
-$five: #39c1f7; //rgb(57,193,247)
-
-$background-gradient: linear-gradient(
-    217deg,
-    rgba(63, 49, 214, 0.8),
-    rgba(63, 49, 214, 0) 70.71%
-  ),
-  linear-gradient(127deg, rgba(57, 193, 247, 0.8), rgba(57, 193, 247, 0) 70.71%),
-  linear-gradient(336deg, rgba(124, 57, 247, 0.8), rgba(124, 57, 247, 0) 70.71%);

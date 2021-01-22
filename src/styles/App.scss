@@ -115,7 +115,6 @@ html {
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 10;
 }
 .about-container,
 .contact,
@@ -162,22 +161,10 @@ header {
     font-weight: 400;
     margin: 0 0 0.75rem 0;
     span {
-      // color: $primary;
       font-family: "Spade Round W05 Regular";
-      // font-weight: 900;
     }
   }
   p {
     color: rgb(53, 53, 53);
-    // span {
-    //   color: $primary;
-    // }
   }
 }
-
-// background: rgba(255, 255, 255, 0.25);
-// // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-// backdrop-filter: blur(12px);
-// border-radius: 1em;
-// border: solid 2px transparent;
-// background-clip: padding-box;

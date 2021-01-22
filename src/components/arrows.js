@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import PROJECTS from "../context/projects.json"
 import { AnimatePresence, motion } from "framer-motion"
@@ -6,14 +6,17 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 import useSetArrows from "../hooks/useSetArrows"
 import { leftVariants, rightVariants } from "../animation/arrows"
 import { springTransition } from "../animation/animation"
+import { PageContext } from "../context/pagecontext"
 
 const Arrows = ({ location }) => {
   const [leftPage, rightPage] = useSetArrows()
+  const { open } = useContext(PageContext)
 
   return (
     <AnimatePresence>
       {location.pathname !== "/" &&
-        location.pathname !== `/projects/${PROJECTS[0].link}` && (
+        location.pathname !== `/projects/${PROJECTS[0].link}` &&
+        !open && (
           <motion.div
             className="span-arrow left"
             key="left-arrow"
@@ -31,7 +34,8 @@ const Arrows = ({ location }) => {
         )}
       {location.pathname !== "/contact/" &&
         location.pathname !==
-          `/projects/${PROJECTS[PROJECTS.length - 1].link}` && (
+          `/projects/${PROJECTS[PROJECTS.length - 1].link}` &&
+        !open && (
           <motion.div
             className="span-arrow right"
             key="right-arrow"

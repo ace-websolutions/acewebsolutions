@@ -1,17 +1,19 @@
-import React, { useState } from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import { FiMenu, FiX } from "react-icons/fi"
 import { motion } from "framer-motion"
+import { PageContext } from "../context/pagecontext"
 import { springTransition } from "../animation/animation"
 import {
   deskNavVariants,
   navVariants,
   staggerDeskNav,
   logoNavVariants,
+  mobileNavVariants,
 } from "../animation/nav"
 
 function Nav() {
-  const [open, setOpen] = useState(false)
+  const { open, setOpen } = useContext(PageContext)
 
   return (
     <nav id="nav">
@@ -85,21 +87,22 @@ function Nav() {
               </Link>
             </motion.li>
           </motion.ul>
-          {/* <div className="nav-buttons-group-mobile">
-            <Link id="left-arrow-nav" to={`/${leftPage}`}>
-              <FiChevronLeft size={30} />
-            </Link>
+          <motion.div
+            className="nav-burger"
+            variants={mobileNavVariants}
+            initial="initial"
+            animate="animate"
+            whileHover="hover"
+            transition={springTransition}
+          >
             <button className="burger" onClick={() => setOpen(!open)}>
               {!open ? <FiMenu size={30} /> : <FiX size={30} />}
             </button>
-            <Link id="right-arrow-nav" to={`/${rightPage}`}>
-              <FiChevronRight size={30} />
-            </Link>
-          </div>
+          </motion.div>
           <motion.div
             variants={navVariants}
             animate={open ? "open" : "closed"}
-            className={`nav-button-group-mobile`}
+            className="nav-button-group-mobile"
           >
             <div className="mobile-buttons">
               <Link to="/" onClick={() => setOpen(!open)}>
@@ -118,7 +121,7 @@ function Nav() {
                 Contact
               </Link>
             </div>
-          </motion.div> */}
+          </motion.div>
         </nav>
       </div>
     </nav>
