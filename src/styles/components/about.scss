@@ -85,6 +85,7 @@
           rgba(0, 0, 0, 0.23) 0px 6px 6px;
         @include media("<=phone") {
           bottom: -4.25%;
+          width: 80%;
         }
       }
     }

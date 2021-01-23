@@ -7,6 +7,7 @@ import useSetArrows from "../hooks/useSetArrows"
 import { stagger, svgVariants } from "../animation/animation.js"
 import { textVariations, iconVariations } from "../animation/landing"
 import Logo from "../images/logo/Ace.white.svg"
+import { skillsVariants } from "../animation/about"
 
 const IndexPage = () => {
   useSetArrows("", "about/")
@@ -36,6 +37,7 @@ const IndexPage = () => {
               transition: { delay: 0.5, type: "spring", duration: 1 },
             }}
             drag
+            dragConstraints={skillsVariants.dragConstraints}
             className="logo"
           >
             <Logo />
