@@ -59,6 +59,9 @@ html {
   background-repeat: no-repeat;
   background-size: 100vw;
   position: relative;
+  @include media("<=tablet") {
+    background-size: cover;
+  }
   @include media("<=phone") {
     background-size: unset;
   }
