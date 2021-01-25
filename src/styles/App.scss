@@ -57,7 +57,7 @@ html {
 .svg-background {
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100vw;
   position: relative;
   @include media("<=phone") {
     background-size: unset;
