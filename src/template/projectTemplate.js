@@ -75,7 +75,13 @@ const ProjectTemplate = ({ pageContext, data }) => {
                       whileTap="tap"
                       transition={springTransition}
                     >
-                      <a href={project.live}>View Live</a>
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Live
+                      </a>
                     </motion.div>
                     <motion.div
                       className="next-section-button"
@@ -84,7 +90,13 @@ const ProjectTemplate = ({ pageContext, data }) => {
                       whileTap="tap"
                       transition={springTransition}
                     >
-                      <a href={project.code}>Check Code</a>
+                      <a
+                        href={project.code}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Check Code
+                      </a>
                     </motion.div>
                     <motion.div
                       className="next-section-button"
